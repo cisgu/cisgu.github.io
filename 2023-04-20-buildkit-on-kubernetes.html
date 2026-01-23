@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="rgba(0,0,0,0)"><meta name="generator" content="Hexo 8.1.1">
+
+<link rel="preconnect" href="//fonts.loli.net" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.loli.net/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-center-atom.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous" defer></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"blog.k8s.li","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"github","dark":"github"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":"mac"}},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"buttons","active":"disqus","storage":true,"lazyload":false,"nav":{"disqus":{"text":"Load Disqus","order":-1}},"activeClass":"disqus"},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="去年曾写过一篇介绍如何使用 docker in pod 的方式在 Kubernetes 集群上构建容器镜像的博客 ➡️《流水线中使用 docker in pod 方式构建容器镜像》。自己负责的项目中稳定使用了一年多没啥问题，用着还是挺香的。虽然说众多 Kubernetes PaaS 平台都逐渐抛弃了 docker 作为容器运行时，但 docker 在镜像构建领域还是占据着统治地位滴。不过最近的一些">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="使用 BuildKit on Kubernetes 构建多架构容器镜像">
+<meta property="og:url" content="https://blog.k8s.li/2023-04-20-buildkit-on-kubernetes.html">
+<meta property="og:site_name" content="Reimu&#39;s blog">
+<meta property="og:description" content="去年曾写过一篇介绍如何使用 docker in pod 的方式在 Kubernetes 集群上构建容器镜像的博客 ➡️《流水线中使用 docker in pod 方式构建容器镜像》。自己负责的项目中稳定使用了一年多没啥问题，用着还是挺香的。虽然说众多 Kubernetes PaaS 平台都逐渐抛弃了 docker 作为容器运行时，但 docker 在镜像构建领域还是占据着统治地位滴。不过最近的一些">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://p.k8s.li/2023-04-20-build-open-vm-tools.png">
+<meta property="article:published_time" content="2023-04-19T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-04-19T16:00:00.000Z">
+<meta property="article:author" content="Reimu">
+<meta property="article:tag" content="BuildKit">
+<meta property="article:tag" content="kubernetes">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://p.k8s.li/2023-04-20-build-open-vm-tools.png">
+
+
+<link rel="canonical" href="https://blog.k8s.li/2023-04-20-buildkit-on-kubernetes.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://blog.k8s.li/2023-04-20-buildkit-on-kubernetes.html","path":"2023-04-20-buildkit-on-kubernetes.html","title":"使用 BuildKit on Kubernetes 构建多架构容器镜像"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>使用 BuildKit on Kubernetes 构建多架构容器镜像 | Reimu's blog</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Reimu's blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-books"><a href="https://reading.k8s.li/" rel="section" target="_blank"><i class="fa fa-book fa-fw"></i>Books</a></li><li class="menu-item menu-item-kindle"><a href="https://kindle.k8s.li/" rel="section" target="_blank"><i class="fa fa-swatchbook fa-fw"></i>Kindle</a></li><li class="menu-item menu-item-friend"><a href="/friends.html" rel="section"><i class="fa fa-link fa-fw"></i>Friend</a></li><li class="menu-item menu-item-about"><a href="/about.html" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#qemu-VS-native"><span class="nav-number">1.</span> <span class="nav-text">qemu VS native</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BuildKit"><span class="nav-number">2.</span> <span class="nav-text">BuildKit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BuildKit-on-Kubernetes"><span class="nav-number">3.</span> <span class="nav-text">BuildKit on Kubernetes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%84%E5%BB%BA%E6%B5%8B%E8%AF%95"><span class="nav-number">4.</span> <span class="nav-text">构建测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Jenkins-%E6%B5%81%E6%B0%B4%E7%BA%BF"><span class="nav-number">5.</span> <span class="nav-text">Jenkins 流水线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96"><span class="nav-number">6.</span> <span class="nav-text">其他</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">7.</span> <span class="nav-text">参考</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Reimu"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Reimu</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">35</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/muzi502" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;muzi502" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:muzi502.li@gmail.com" title="E-Mail → mailto:muzi502.li@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/muzi_ii" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;muzi_ii" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/muzi502" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;muzi502" rel="noopener" target="_blank"><i class="fa-brands fa-telegram fa-fw"></i>Telegram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa-solid fa-square-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://blog.k8s.li/2023-04-20-buildkit-on-kubernetes.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Reimu">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Reimu's blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="使用 BuildKit on Kubernetes 构建多架构容器镜像 | Reimu's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          使用 BuildKit on Kubernetes 构建多架构容器镜像
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-04-20 2023-04-20T00:00:00+08:00" itemprop="dateCreated datePublished" datetime="2023-04-20T00:00:00+08:00">2023-04-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%8A%80%E8%A1%93/" itemprop="url" rel="index"><span itemprop="name">技術</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2023-04-20-buildkit-on-kubernetes.html#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2023-04-20-buildkit-on-kubernetes.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>去年曾写过一篇介绍如何使用 docker in pod 的方式在 Kubernetes 集群上构建容器镜像的博客 ➡️《<a href="https://blog.k8s.li/docker-in-pod.html">流水线中使用 docker in pod 方式构建容器镜像</a>》。自己负责的项目中稳定使用了一年多没啥问题，用着还是挺香的。虽然说众多 Kubernetes PaaS 平台都逐渐抛弃了 docker 作为容器运行时，但 docker 在镜像构建领域还是占据着统治地位滴。不过最近的一些项目需要构建多 CPU 架构的容器镜像，docker in pod 的方式就不太行了。于是就调研了一下 BuildKit，折腾出来 BuildKit on Kubernetes 构建镜像的新玩法分享给大家。</p>
+<h2 id="qemu-VS-native"><a href="#qemu-VS-native" class="headerlink" title="qemu VS native"></a>qemu VS native</h2><p>默认情况下，docker build 只能构建出与 docker 主机相同 CPU 架构的容器镜像。如果要在同一台主机上构建多 CPU 架构的镜像，需要配置 qemu 或 binfmt。例如，在 amd64 主机上构建 arm64 架构的镜像，可以使用 <a target="_blank" rel="noopener" href="https://github.com/tonistiigi/binfmt">tonistiigi&#x2F;binfmt</a> 项目，在主机上运行 <code>docker run --privileged --rm tonistiigi/binfmt --install arm64</code> 命令来安装一个 CPU 指令集的模拟器，以处理不同 CPU 架构之间的指令集翻译问题。同样我们在 GitHub 上通过 GitHub Action 提供的 <a target="_blank" rel="noopener" href="https://github.com/actions/runner-images">runner</a> 来构建多 CPU 架构的容器镜像，也是采用类似的方式。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Set</span> <span class="string">up</span> <span class="string">QEMU</span></span><br><span class="line">  <span class="attr">uses:</span> <span class="string">docker/setup-qemu-action@v2</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Set</span> <span class="string">up</span> <span class="string">Docker</span> <span class="string">Buildx</span></span><br><span class="line">  <span class="attr">uses:</span> <span class="string">docker/setup-buildx-action@v2</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Build</span> <span class="string">open-vm-tool</span> <span class="string">rpms</span> <span class="string">to</span> <span class="string">local</span></span><br><span class="line">  <span class="attr">uses:</span> <span class="string">docker/build-push-action@v2</span></span><br><span class="line">  <span class="attr">with:</span></span><br><span class="line">    <span class="attr">context:</span> <span class="string">.</span></span><br><span class="line">    <span class="attr">file:</span> <span class="string">Dockerfile</span></span><br><span class="line">    <span class="attr">platforms:</span> <span class="string">linux/$&#123;&#123;</span> <span class="string">matrix.arch</span> <span class="string">&#125;&#125;</span></span><br><span class="line">    <span class="attr">outputs:</span> <span class="string">type=local,dest=artifacts</span></span><br></pre></td></tr></table></figure>
+
+<p>然而，这种方式构建多 CPU 架构的镜像存在着比较严重的性能问题。尤其是在编译构建一些 C&#x2F;C++ 项目时，由于 CPU 指令需要翻译的问题，会导致编译速度十分慢缓慢。例如，使用 GitHub 官方提供的机器上构建 open-vm-tools 这个 RPM 包，构建相同 CPU 架构的 amd64 镜像只需要不到 10 分钟就能完成，而构建异构的 arm64 镜像则接近一个小时，构建速度相差 6 倍之多。如果将 arm64 的镜像放到相同 CPU 架构的主机上来构建，构建时间和 amd64 差不太多。</p>
+<p><img data-src="https://p.k8s.li/2023-04-20-build-open-vm-tools.png"></p>
+<p>由此可见，在同一台机器上构建异构的容器镜像有着比较严重的性能问题。因此构建多 CPU 架构的容器镜像性能最好的方案就是在对应 CPU 架构的机器上来构建，这种原生的构建方式由于没有 CPU 指令翻译这一开销性能当然是最棒滴，这种方式也被称之为 <a target="_blank" rel="noopener" href="https://docs.docker.com/build/building/multi-platform/#building-multi-platform-images">native nodes provide</a>。</p>
+<h2 id="BuildKit"><a href="#BuildKit" class="headerlink" title="BuildKit"></a>BuildKit</h2><p><a target="_blank" rel="noopener" href="https://github.com/moby/buildkit">BuildKit</a> 是一个将 source code 通过自定义的构建语法转换为 build artifacts 的开源构建工具，被称为下一代镜像构建工具。同时它也是 docker 的一部分，负责容器镜像的构建。我们平时使用 docker build 命令时就是它负责后端容器镜像的构建。BuildKit 它支持四种不同的驱动来执行镜像的构建：</p>
+<ul>
+<li>docker：使用内嵌在 Docker 守护程序中的 BuildKit 库。默认情况下 docker build 就是这种方式；</li>
+<li>docker-container：创建一个专门的 BuildKit 容器，将 BuildKit 运行在容器中，有点类似于 docker in docker；</li>
+<li>kubernetes：在 kubernetes 集群中创建  BuildKit pod，类似于我之前提到的 docker in pod 的方式；</li>
+<li>remote：通过 TCP 或 SSH 等方式连接一个远端的 BuildKit  守护进程；</li>
+</ul>
+<p>不同的驱动所支持的特性也不太一样：</p>
+<table>
+<thead>
+<tr>
+<th align="left">Feature</th>
+<th align="center"><code>docker</code></th>
+<th align="center"><code>docker-container</code></th>
+<th align="center"><code>kubernetes</code></th>
+<th align="center"><code>remote</code></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>Automatically load image</strong></td>
+<td align="center">✅</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="left"><strong>Cache export</strong></td>
+<td align="center">Inline only</td>
+<td align="center">✅</td>
+<td align="center">✅</td>
+<td align="center">✅</td>
+</tr>
+<tr>
+<td align="left"><strong>Tarball output</strong></td>
+<td align="center"></td>
+<td align="center">✅</td>
+<td align="center">✅</td>
+<td align="center">✅</td>
+</tr>
+<tr>
+<td align="left"><strong>Multi-arch images</strong></td>
+<td align="center"></td>
+<td align="center">✅</td>
+<td align="center">✅</td>
+<td align="center">✅</td>
+</tr>
+<tr>
+<td align="left"><strong>BuildKit configuration</strong></td>
+<td align="center"></td>
+<td align="center">✅</td>
+<td align="center">✅</td>
+<td align="center">Managed externally</td>
+</tr>
+</tbody></table>
+<p>如果想要使用原生方式构建多 CPU 架构的容器镜像，则需要为 BuildKit 创建多个不同的 driver。同时，由于该构建方案运行在 Kubernetes 集群上，我们当然是采用 Kubernetes 这个 driver 啦。然而，这要求 Kubernetes 集群必须是一个异构集群，即集群中的 node 节点必须同时包含对应 CPU 架构的机器。然而，这也引出了另一个尴尬难题：目前主流的 Kubernetes 部署工具对异构 Kubernetes 集群的支持并不是十分完善，因为异构的 kubernetes 集群有点奇葩需求不多的缘故吧。在此，咱推荐使用 <a target="_blank" rel="noopener" href="https://github.com/k3s-io/k3s">k3s</a> 或 <a target="_blank" rel="noopener" href="https://github.com/kubesphere/kubekey">kubekey</a> 来部署异构 Kubernetes 集群。</p>
+<h2 id="BuildKit-on-Kubernetes"><a href="#BuildKit-on-Kubernetes" class="headerlink" title="BuildKit on Kubernetes"></a>BuildKit on Kubernetes</h2><p>其实在 kubernetes 集群中部署 buildkit 官方是提供了一些 <a target="_blank" rel="noopener" href="https://github.com/moby/buildkit/tree/master/examples/kubernetes">manifest</a>，不过并不适合我们现在的这个场景，因此我们使用 <a target="_blank" rel="noopener" href="https://github.com/docker/buildx">buildx</a> 来部署。Buildx 是一个 Docker CLI 插件，它扩展了 docker build 命令的镜像构建功能，完全支持 BuildKit builder 工具包提供的特性。它提供了与 docker build 相似的操作体验，并增加了许多新的构建特性，例如多架构镜像构建和并发构建。</p>
+<p>在部署 BuildKit 前我们需要先把异构的 kubernetes 集群部署好，部署的方式和流程本文就不在赘述了，可以参考 k3s 或 kubekey 的官方文档。部署好之后我们将 kubeconfig 文件复制到本机并配置好 kubectl 连接这个 kubernetes 集群。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ kubectl get node -o wide --show-labels</span><br><span class="line">NAME                             STATUS   ROLES                  AGE   VERSION        INTERNAL-IP      EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION      CONTAINER-RUNTIME          LABELS</span><br><span class="line">product-builder-ci-arm-node-02   Ready    &lt;none&gt;                 11d   v1.26.3+k3s1   192.168.26.20    &lt;none&gt;        Ubuntu 22.04.1 LTS   5.15.0-69-generic   containerd://1.6.19-k3s1   beta.kubernetes.io/arch=arm64,beta.kubernetes.io/os=linux,kubernetes.io/arch=arm64,kubernetes.io/hostname=product-builder-ci-arm-node-02,kubernetes.io/os=linux</span><br><span class="line">cluster-installer                Ready    control-plane,master   11d   v1.26.3+k3s1   192.168.28.253   &lt;none&gt;        Ubuntu 20.04.2 LTS   5.4.0-146-generic   containerd://1.6.19-k3s1   beta.kubernetes.io/arch=amd64,beta.kubernetes.io/os=linux,kubernetes.io/arch=amd64,kubernetes.io/hostname=cluster-installer,kubernetes.io/os=linux,node-role.kubernetes.io/control-plane=<span class="literal">true</span>,node-role.kubernetes.io/master=<span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>准备好 kubernetes 集群后我们我们还需要安装 docker-cli 以及 buildx 插件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装 docker，如果已经安装可以跳过该步骤</span></span><br><span class="line">$ curl -fsSL https://get.docker.com -o get-docker.sh</span><br><span class="line"><span class="built_in">sudo</span> sh get-docker.sh</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 buildx docker-cli 插件</span></span><br><span class="line">$ BUILDX_VERSION=v0.10.4</span><br><span class="line">$ <span class="built_in">mkdir</span> -p <span class="variable">$HOME</span>/.docker/cli-plugins</span><br><span class="line">$ wget https://github.com/docker/buildx/releases/download/<span class="variable">$BUILDX_VERSION</span>/buildx-<span class="variable">$BUILDX_VERSION</span>.linux-amd64</span><br><span class="line">$ <span class="built_in">mv</span> buildx-<span class="variable">$BUILDX_VERSION</span>.linux-amd64 <span class="variable">$HOME</span>/.docker/cli-plugins/docker-buildx</span><br><span class="line">$ <span class="built_in">chmod</span> +x <span class="variable">$HOME</span>/.docker/cli-plugins/docker-buildx</span><br><span class="line">$ docker buildx version</span><br><span class="line">github.com/docker/buildx v0.10.4 c513d34049e499c53468deac6c4267ee72948f02</span><br></pre></td></tr></table></figure>
+
+<p>接着我们参考 <a target="_blank" rel="noopener" href="https://docs.docker.com/engine/reference/commandline/buildx_create/">docker buildx create</a> 和 <a target="_blank" rel="noopener" href="https://docs.docker.com/build/drivers/kubernetes/">Kubernetes driver</a> 文档在 kubernetes 集群中部署 amd64 和 arm64 CPU 架构对应的 builder。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建一个单独的 namespace 来运行 buildkit</span></span><br><span class="line">$ kubectl create namespace buildkit --dry-run=client -o yaml | kubectl apply -f -</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建 linux/amd64 CPU 架构的 builder</span></span><br><span class="line">$ docker buildx create \</span><br><span class="line">  --bootstrap \</span><br><span class="line">  --name=kube \</span><br><span class="line">  --driver=kubernetes \</span><br><span class="line">  --platform=linux/amd64 \</span><br><span class="line">  --node=builder-amd64 \</span><br><span class="line">  --driver-opt=namespace=buildkit,replicas=2,nodeselector=<span class="string">&quot;kubernetes.io/arch=amd64&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建 linux/arm64 CPU 架构的 builder</span></span><br><span class="line">$ docker buildx create \</span><br><span class="line">  --append \</span><br><span class="line">  --bootstrap \</span><br><span class="line">  --name=kube \</span><br><span class="line">  --driver=kubernetes \</span><br><span class="line">  --platform=linux/arm64 \</span><br><span class="line">  --node=builder-arm64 \</span><br><span class="line">  --driver-opt=namespace=buildkit,replicas=2,nodeselector=<span class="string">&quot;kubernetes.io/arch=arm64&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看 builder 的 deployment 是否正常运行</span></span><br><span class="line">$ kubectl get deploy -n buildkit</span><br><span class="line">NAME            READY   UP-TO-DATE   AVAILABLE   AGE</span><br><span class="line">builder-amd64   2/2     2            2           60s</span><br><span class="line">builder-arm64   2/2     2            2           30s</span><br><span class="line"></span><br><span class="line"><span class="comment"># 最后将 docker 默认的的 builder 设置为我们创建的这个</span></span><br><span class="line">$ docker buildx use kube</span><br></pre></td></tr></table></figure>
+
+<p>docker buildx create 参数</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a target="_blank" rel="noopener" href="https://www.zhaowenyu.com/docker-doc/reference/dockercmd/dockercmd-docker-buildx-create.html#append"><code>--append</code></a></td>
+<td>追加一个构建节点到 builder 实例中</td>
+</tr>
+<tr>
+<td><code>--bootstrap</code></td>
+<td>builder 实例创建后进行初始化启动</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.zhaowenyu.com/docker-doc/reference/dockercmd/dockercmd-docker-buildx-create.html#buildkitd-flags"><code>--buildkitd-flags</code></a></td>
+<td>配置 buildkitd 进程的参数</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.zhaowenyu.com/docker-doc/reference/dockercmd/dockercmd-docker-buildx-create.html#config"><code>--config</code></a></td>
+<td>指定 BuildKit 配置文件</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.zhaowenyu.com/docker-doc/reference/dockercmd/dockercmd-docker-buildx-create.html#driver"><code>--driver</code></a></td>
+<td>指定驱动 (支持: <code>docker</code>, <code>docker-container</code>, <code>kubernetes</code>)</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.zhaowenyu.com/docker-doc/reference/dockercmd/dockercmd-docker-buildx-create.html#driver-opt"><code>--driver-opt</code></a></td>
+<td>驱动选项</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.zhaowenyu.com/docker-doc/reference/dockercmd/dockercmd-docker-buildx-create.html#leave"><code>--leave</code></a></td>
+<td>从 builder 实例中移除一个构建节点</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.zhaowenyu.com/docker-doc/reference/dockercmd/dockercmd-docker-buildx-create.html#name"><code>--name</code></a></td>
+<td>指定 Builder 实例的名称</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.zhaowenyu.com/docker-doc/reference/dockercmd/dockercmd-docker-buildx-create.html#node"><code>--node</code></a></td>
+<td>创建或修改一个构建节点</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.zhaowenyu.com/docker-doc/reference/dockercmd/dockercmd-docker-buildx-create.html#platform"><code>--platform</code></a></td>
+<td>强制指定节点的平台信息</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.zhaowenyu.com/docker-doc/reference/dockercmd/dockercmd-docker-buildx-create.html#use"><code>--use</code></a></td>
+<td>创建成功后，自动切换到该 builder 实例</td>
+</tr>
+</tbody></table>
+<p><code>--driver-opt</code> kubernetes driver 参数</p>
+<table>
+<thead>
+<tr>
+<th align="left">Parameter</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>image</code></td>
+<td align="left">buildkit 的容器镜像</td>
+</tr>
+<tr>
+<td align="left"><code>namespace</code></td>
+<td align="left">buildkit 部署在哪个 namespace</td>
+</tr>
+<tr>
+<td align="left"><code>replicas</code></td>
+<td align="left">deployment 的副本数</td>
+</tr>
+<tr>
+<td align="left"><code>requests.cpu</code></td>
+<td align="left">pod 的资源限额配置，如果并发构建的任务比较多建议多给点或者不配置</td>
+</tr>
+<tr>
+<td align="left"><code>requests.memory</code></td>
+<td align="left">同上</td>
+</tr>
+<tr>
+<td align="left"><code>limits.cpu</code></td>
+<td align="left">同上</td>
+</tr>
+<tr>
+<td align="left"><code>limits.memory</code></td>
+<td align="left">同上</td>
+</tr>
+<tr>
+<td align="left"><code>nodeselector</code></td>
+<td align="left">node 标签选择器，这里我们给对应 CPU 架构的 builder 添加上 <code>kubernetes.io/arch=$arch</code> 这个 node 标签选择器来限制运行在指定节点上。</td>
+</tr>
+<tr>
+<td align="left"><code>tolerations</code></td>
+<td align="left">污点容忍配置</td>
+</tr>
+<tr>
+<td align="left"><code>rootless</code></td>
+<td align="left">是否选择 rootless 模式。不过要求 kubernetes 版本在 1.19 以上并推荐使用 Ubuntu 内核 <a target="_blank" rel="noopener" href="https://github.com/moby/buildkit/blob/master/docs/rootless.md">Using Ubuntu host kernel is recommended</a>。个人感觉 rootless 模式限制比较多而且也有一堆问题，不建议使用。</td>
+</tr>
+<tr>
+<td align="left"><code>loadbalance</code></td>
+<td align="left">负载均衡模式，无特殊要求使用默认值即可。</td>
+</tr>
+<tr>
+<td align="left"><code>qemu.install</code></td>
+<td align="left">是否安装 qemu 以支持在同一台机器上构建多架构的镜像，这种方式就倒车回去了，违背了我们这个方案的初衷，不建议使用</td>
+</tr>
+<tr>
+<td align="left"><code>qemu.image</code></td>
+<td align="left">qemu 模拟器的镜像，不建议使用</td>
+</tr>
+</tbody></table>
+<p>部署好之后我们运行 <code>docker buildx inspect</code> 就可以查看到 builder 的详细信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">$ docker buildx inspect kube</span><br><span class="line">Name:          kube</span><br><span class="line">Driver:        kubernetes</span><br><span class="line">Last Activity: 2023-04-19 00:27:57 +0000 UTC</span><br><span class="line"></span><br><span class="line">Nodes:</span><br><span class="line">Name:           builder-amd64</span><br><span class="line">Endpoint:       kubernetes:///kube?deployment=builder-amd64&amp;kubeconfig=</span><br><span class="line">Driver Options: nodeselector=<span class="string">&quot;kubernetes.io/arch=amd64&quot;</span> replicas=<span class="string">&quot;2&quot;</span> namespace=<span class="string">&quot;buildkit&quot;</span></span><br><span class="line">Status:         running</span><br><span class="line">Buildkit:       v0.11.5</span><br><span class="line">Platforms:      linux/amd64*, linux/amd64/v2, linux/amd64/v3, linux/386</span><br><span class="line"></span><br><span class="line">Name:           builder-amd64</span><br><span class="line">Endpoint:       kubernetes:///kube?deployment=builder-amd64&amp;kubeconfig=</span><br><span class="line">Driver Options: replicas=<span class="string">&quot;2&quot;</span> namespace=<span class="string">&quot;buildkit&quot;</span> nodeselector=<span class="string">&quot;kubernetes.io/arch=amd64&quot;</span></span><br><span class="line">Status:         running</span><br><span class="line">Buildkit:       v0.11.5</span><br><span class="line">Platforms:      linux/amd64*, linux/amd64/v2, linux/amd64/v3, linux/386</span><br><span class="line"></span><br><span class="line">Name:           builder-arm64</span><br><span class="line">Endpoint:       kubernetes:///kube?deployment=builder-arm64&amp;kubeconfig=</span><br><span class="line">Driver Options: image=<span class="string">&quot;docker.io/moby/buildkit:v0.11.5&quot;</span> namespace=<span class="string">&quot;buildkit&quot;</span> nodeselector=<span class="string">&quot;kubernetes.io/arch=arm64&quot;</span> replicas=<span class="string">&quot;2&quot;</span></span><br><span class="line">Status:         running</span><br><span class="line">Buildkit:       v0.11.5</span><br><span class="line">Platforms:      linux/arm64*</span><br><span class="line"></span><br><span class="line">Name:           builder-arm64</span><br><span class="line">Endpoint:       kubernetes:///kube?deployment=builder-arm64&amp;kubeconfig=</span><br><span class="line">Driver Options: nodeselector=<span class="string">&quot;kubernetes.io/arch=arm64&quot;</span> replicas=<span class="string">&quot;2&quot;</span> image=<span class="string">&quot;docker.io/moby/buildkit:v0.11.5&quot;</span> namespace=<span class="string">&quot;buildkit&quot;</span></span><br><span class="line">Status:         running</span><br><span class="line">Buildkit:       v0.11.5</span><br><span class="line">Platforms:      linux/arm64*</span><br></pre></td></tr></table></figure>
+
+<p>同时 buildx 会在当前用户的 <code>~/.docker/buildx/instances/kube</code> 路径下 生成一个 json 格式的配置文件，通过这个配置文件再加上 kubeconfig 文件就可以使用 buildx 来连接 buildkit 构建镜像啦。</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;Name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;kube&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;Driver&quot;</span><span class="punctuation">:</span> <span class="string">&quot;kubernetes&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;Nodes&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;Name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;builder-amd64&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;Endpoint&quot;</span><span class="punctuation">:</span> <span class="string">&quot;kubernetes:///kube?deployment=builder-amd64&amp;kubeconfig=&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;Platforms&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">          <span class="attr">&quot;architecture&quot;</span><span class="punctuation">:</span> <span class="string">&quot;amd64&quot;</span><span class="punctuation">,</span></span><br><span class="line">          <span class="attr">&quot;os&quot;</span><span class="punctuation">:</span> <span class="string">&quot;linux&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">      <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;Flags&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">null</span></span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;DriverOpts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;namespace&quot;</span><span class="punctuation">:</span> <span class="string">&quot;buildkit&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;nodeselector&quot;</span><span class="punctuation">:</span> <span class="string">&quot;kubernetes.io/arch=amd64&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;replicas&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2&quot;</span></span><br><span class="line">      <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;Files&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">null</span></span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;Name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;builder-arm64&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;Endpoint&quot;</span><span class="punctuation">:</span> <span class="string">&quot;kubernetes:///kube?deployment=builder-arm64&amp;kubeconfig=&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;Platforms&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">          <span class="attr">&quot;architecture&quot;</span><span class="punctuation">:</span> <span class="string">&quot;arm64&quot;</span><span class="punctuation">,</span></span><br><span class="line">          <span class="attr">&quot;os&quot;</span><span class="punctuation">:</span> <span class="string">&quot;linux&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">      <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;Flags&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">null</span></span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;DriverOpts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;image&quot;</span><span class="punctuation">:</span> <span class="string">&quot;docker.io/moby/buildkit:v0.11.5&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;namespace&quot;</span><span class="punctuation">:</span> <span class="string">&quot;buildkit&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;nodeselector&quot;</span><span class="punctuation">:</span> <span class="string">&quot;kubernetes.io/arch=arm64&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;replicas&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2&quot;</span></span><br><span class="line">      <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;Files&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">null</span></span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;Dynamic&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>我们将 buildx 生成的配置文件创建为 configmap 保存在 kubernetes 集群中，后面我们需要将这个 configmap 挂载到 pod 里。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ kubectl create cm buildx.config --from-file=data=<span class="variable">$HOME</span>/.docker/buildx/instances/kube</span><br></pre></td></tr></table></figure>
+
+<h2 id="构建测试"><a href="#构建测试" class="headerlink" title="构建测试"></a>构建测试</h2><p>是骡子是马拉出来遛遛，我们就以构建 <strong><a target="_blank" rel="noopener" href="https://github.com/muzi502/open-vm-tools-oe2003">open-vm-tools-oe2003</a></strong> RPM 为例来验证一下咱的这个方案究竟靠不靠谱 🤣。这个项目是给某为的 openEuler 2003 构建 open-vm-tools rpm 包用的 Dockerfile 如下。</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> openeuler/openeuler:<span class="number">20.03</span> as builder</span><br><span class="line"><span class="keyword">RUN</span><span class="language-bash"> sed -i <span class="string">&quot;s#repo.openeuler.org#repo.huaweicloud.com/openeuler#g&quot;</span> /etc/yum.repos.d/openEuler.repo &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">    dnf install rpmdevtools* dnf-utils -y &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">    rpmdev-setuptree</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># clone open-vm-tools source code and update spec file for fixes oe2003 build error</span></span><br><span class="line"><span class="keyword">ARG</span> COMMIT_ID=<span class="number">8</span>a7f961</span><br><span class="line"><span class="keyword">ARG</span> GIT_REPO=https://gitee.com/src-openeuler/open-vm-tools.git</span><br><span class="line"><span class="keyword">WORKDIR</span><span class="language-bash"> /root/rpmbuild/SOURCES</span></span><br><span class="line"><span class="keyword">RUN</span><span class="language-bash"> git <span class="built_in">clone</span> <span class="variable">$GIT_REPO</span> . &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">    git reset --hard <span class="variable">$COMMIT_ID</span> &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">    sed -i <span class="string">&#x27;s#^%&#123;_bindir&#125;/vmhgfs-fuse$##g&#x27;</span> open-vm-tools.spec &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">    sed -i <span class="string">&#x27;s#^%&#123;_bindir&#125;/vmware-vmblock-fuse$##g&#x27;</span> open-vm-tools.spec &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">    sed -i <span class="string">&#x27;s#gdk-pixbuf-xlib#gdk-pixbuf2-xlib#g&#x27;</span> open-vm-tools.spec</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># install open-vm-tools rpm build dependencies</span></span><br><span class="line"><span class="keyword">RUN</span><span class="language-bash"> yum-builddep -y open-vm-tools.spec</span></span><br><span class="line"><span class="keyword">RUN</span><span class="language-bash"> rpmbuild --define <span class="string">&quot;dist .oe1&quot;</span> -ba open-vm-tools.spec --quiet</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># download rpm runtime dependencies</span></span><br><span class="line"><span class="keyword">FROM</span> openeuler/openeuler:<span class="number">20.03</span> as dep</span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> --from=builder /root/rpmbuild/RPMS/ /root/rpmbuild/RPMS/</span></span><br><span class="line"><span class="keyword">RUN</span><span class="language-bash"> sed -i <span class="string">&quot;s#repo.openeuler.org#repo.huaweicloud.com/openeuler#g&quot;</span> /etc/yum.repos.d/openEuler.repo &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">    dnf install -y --downloadonly --downloaddir=/root/rpmbuild/RPMS/$(<span class="built_in">arch</span>) /root/rpmbuild/RPMS/$(<span class="built_in">arch</span>)/*.rpm</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># copy rpms to local</span></span><br><span class="line"><span class="keyword">FROM</span> scratch</span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> --from=dep /root/rpmbuild/RPMS/ /</span></span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> --from=builder /root/rpmbuild/RPMS/ /</span></span><br></pre></td></tr></table></figure>
+
+<p>其中 <code>RUN rpmbuild --define &quot;dist .oe1&quot; -ba open-vm-tools.spec --quiet</code> 这个步骤是构建和编译 RPM 里的二进制文件因此十分耗费 CPU 资源，也是整个镜像构建最耗时的一部分。</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># copy rpms to local</span></span><br><span class="line"><span class="keyword">FROM</span> scratch</span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> --from=dep /root/rpmbuild/RPMS/ /</span></span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> --from=builder /root/rpmbuild/RPMS/ /</span></span><br></pre></td></tr></table></figure>
+
+<p>因为我们构建的目标产物是 RPM 包文件并不需要把镜像 push 到镜像仓库中，所以 <code>Dockerfile</code> 最后面这一段是为了将构建产物捞出来输出到我们本地的目录上，buildx 对应的参数就是 <code>--output type=local,dest=path</code>。同时为了排除 cache 的影响，我们再加上 <code>--no-cache</code> 参数构建过程中不使用缓存。接着我们运行 docker build 命令进行构建，看一下构建的用时是多久 🤓</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">DOCKER_BUILDKIT=1 docker buildx build \</span><br><span class="line">	--no-cache \</span><br><span class="line">	--<span class="built_in">ulimit</span> nofile=1024:1024 \</span><br><span class="line">	--platform linux/amd64,linux/arm64 \</span><br><span class="line">	-f /root/usr/src/github.com/muzi502/open-vm-tools-oe2003/Dockerfile \</span><br><span class="line">	--output <span class="built_in">type</span>=<span class="built_in">local</span>,dest=/root/usr/src/github.com/muzi502/open-vm-tools-oe2003/output \</span><br><span class="line">	/root/usr/src/github.com/muzi502/open-vm-tools-oe2003</span><br><span class="line">[+] Building 364.6s (30/30) FINISHED</span><br><span class="line"> =&gt; [internal] load .dockerignore                                                                                                         0.0s</span><br><span class="line"> =&gt; =&gt; transferring context: 2B                                                                                                           0.0s</span><br><span class="line"> =&gt; [internal] load build definition from Dockerfile                                                                                      0.0s</span><br><span class="line"> =&gt; =&gt; transferring dockerfile: 1.35kB                                                                                                    0.0s</span><br><span class="line"> =&gt; [internal] load .dockerignore                                                                                                         0.0s</span><br><span class="line"> =&gt; =&gt; transferring context: 2B                                                                                                           0.0s</span><br><span class="line"> =&gt; [internal] load build definition from Dockerfile                                                                                      0.0s</span><br><span class="line"> =&gt; =&gt; transferring dockerfile: 1.35kB                                                                                                    0.0s</span><br><span class="line"> =&gt; [linux/amd64 internal] load metadata <span class="keyword">for</span> docker.io/openeuler/openeuler:20.03                                                          2.1s</span><br><span class="line"> =&gt; [linux/arm64 internal] load metadata <span class="keyword">for</span> docker.io/openeuler/openeuler:20.03                                                          2.1s</span><br><span class="line"> =&gt; [auth] openeuler/openeuler:pull token <span class="keyword">for</span> registry-1.docker.io                                                                        0.0s</span><br><span class="line"> =&gt; [auth] openeuler/openeuler:pull token <span class="keyword">for</span> registry-1.docker.io                                                                        0.0s</span><br><span class="line"> =&gt; CACHED [linux/arm64 builder 1/6] FROM docker.io/openeuler/openeuler:20.03@sha256:4aef44f5d6af7b07b02a9a3b29cbac5f1f109779209d7649a2e  0.0s</span><br><span class="line"> =&gt; =&gt; resolve docker.io/openeuler/openeuler:20.03@sha256:4aef44f5d6af7b07b02a9a3b29cbac5f1f109779209d7649a2ea196a681a52ee                0.0s</span><br><span class="line"> =&gt; [linux/arm64 builder 2/6] RUN sed -i <span class="string">&quot;s#repo.openeuler.org#repo.huaweicloud.com/openeuler#g&quot;</span> /etc/yum.repos.d/openEuler.repo &amp;&amp;      54.6s</span><br><span class="line"> =&gt; CACHED [linux/amd64 builder 1/6] FROM docker.io/openeuler/openeuler:20.03@sha256:4aef44f5d6af7b07b02a9a3b29cbac5f1f109779209d7649a2e  0.0s</span><br><span class="line"> =&gt; =&gt; resolve docker.io/openeuler/openeuler:20.03@sha256:4aef44f5d6af7b07b02a9a3b29cbac5f1f109779209d7649a2ea196a681a52ee                0.0s</span><br><span class="line"> =&gt; [linux/amd64 builder 2/6] RUN sed -i <span class="string">&quot;s#repo.openeuler.org#repo.huaweicloud.com/openeuler#g&quot;</span> /etc/yum.repos.d/openEuler.repo &amp;&amp;      65.1s</span><br><span class="line"> =&gt; [linux/arm64 builder 3/6] WORKDIR /root/rpmbuild/SOURCES                                                                              0.3s</span><br><span class="line"> =&gt; [linux/arm64 builder 4/6] RUN git <span class="built_in">clone</span> https://gitee.com/src-openeuler/open-vm-tools.git . &amp;&amp;     git reset --hard 8a7f961 &amp;&amp;     s  1.8s</span><br><span class="line"> =&gt; [linux/arm64 builder 5/6] RUN yum-builddep -y open-vm-tools.spec                                                                     58.8s</span><br><span class="line"> =&gt; [linux/amd64 builder 3/6] WORKDIR /root/rpmbuild/SOURCES                                                                              0.3s</span><br><span class="line"> =&gt; [linux/amd64 builder 4/6] RUN git <span class="built_in">clone</span> https://gitee.com/src-openeuler/open-vm-tools.git . &amp;&amp;     git reset --hard 8a7f961 &amp;&amp;     s  2.1s</span><br><span class="line"> =&gt; [linux/amd64 builder 5/6] RUN yum-builddep -y open-vm-tools.spec                                                                     71.9s</span><br><span class="line"> =&gt; [linux/arm64 builder 6/6] RUN rpmbuild --define <span class="string">&quot;dist .oe1&quot;</span> -ba open-vm-tools.spec --quiet                                          175.2s</span><br><span class="line"> =&gt; [linux/amd64 builder 6/6] RUN rpmbuild --define <span class="string">&quot;dist .oe1&quot;</span> -ba open-vm-tools.spec --quiet                                          181.4s</span><br><span class="line"> =&gt; [linux/arm64 dep 2/3] COPY --from=builder /root/rpmbuild/RPMS/ /root/rpmbuild/RPMS/                                                   0.1s</span><br><span class="line"> =&gt; [linux/arm64 dep 3/3] RUN sed -i <span class="string">&quot;s#repo.openeuler.org#repo.huaweicloud.com/openeuler#g&quot;</span> /etc/yum.repos.d/openEuler.repo &amp;&amp;     dnf  31.6s</span><br><span class="line"> =&gt; [linux/amd64 dep 2/3] COPY --from=builder /root/rpmbuild/RPMS/ /root/rpmbuild/RPMS/                                                   0.1s</span><br><span class="line"> =&gt; [linux/amd64 dep 3/3] RUN sed -i <span class="string">&quot;s#repo.openeuler.org#repo.huaweicloud.com/openeuler#g&quot;</span> /etc/yum.repos.d/openEuler.repo &amp;&amp;     dnf  39.2s</span><br><span class="line"> =&gt; [linux/arm64 stage-2 1/2] COPY --from=dep /root/rpmbuild/RPMS/ /                                                                      0.1s</span><br><span class="line"> =&gt; [linux/arm64 stage-2 2/2] COPY --from=builder /root/rpmbuild/RPMS/ /                                                                  0.2s</span><br><span class="line"> =&gt; exporting to client directory                                                                                                         2.4s</span><br><span class="line"> =&gt; =&gt; copying files linux/arm64 35.93MB                                                                                                  2.3s</span><br><span class="line"> =&gt; [linux/amd64 stage-2 1/2] COPY --from=dep /root/rpmbuild/RPMS/ /                                                                      0.1s</span><br><span class="line"> =&gt; [linux/amd64 stage-2 2/2] COPY --from=builder /root/rpmbuild/RPMS/ /                                                                  0.2s</span><br><span class="line"> =&gt; exporting to client directory                                                                                                         1.6s</span><br><span class="line"> =&gt; =&gt; copying files linux/amd64 36.59MB                                                                                                  1.6s</span><br><span class="line">tree rpms</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>用时对比</th>
+<th>amd64 (Intel(R) Xeon(R) Silver 4110 CPU @ 2.10GHz)</th>
+<th>arm64（HUAWEI Kunpeng 920 5250 2.6 GHz）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>yum-builddep</td>
+<td>71.9s</td>
+<td>58.8s</td>
+</tr>
+<tr>
+<td>rpmbuild</td>
+<td>181.4s</td>
+<td>175.2s</td>
+</tr>
+</tbody></table>
+<p>通过上面的构建用时对比可以看到 arm64 的机器上构建比 amd64 要快一点，是由于 Kunpeng 920 5250 CPU 主频比 Intel Xeon 4110 高的缘故，如果主频拉齐的话二者的构建速度应该是差不多的。可惜我们 IDC 内部的机器 CPU 大多是<strong>十几块钱包邮还送硅脂的钥匙串</strong>（某宝上搜 E5 v3&#x2F;v4）找不到合适的机器进行 PK 对比，大家自己脑补一下吧🥹，要不汝给咱点 CPU 😂。</p>
+<p>总之我们这套方案实现的效果还是蛮不错滴，比用 qemu 模拟多架构的方式不知道高到哪里去了 🤓。</p>
+<h2 id="Jenkins-流水线"><a href="#Jenkins-流水线" class="headerlink" title="Jenkins 流水线"></a>Jenkins 流水线</h2><p>首先，我们需要定制自己的 Jenkins slave pod 的基础镜像，将 docker 和 buildx 这两个二进制工具添加进来。需要注意的是，这里的 docker 命令行只是作为客户端使用，因此我们可以直接从 docker 的官方镜像中提取此二进制文件。不同的项目需要不同的工具集，可以参考我的 <a target="_blank" rel="noopener" href="https://github.com/muzi502/buildkit-on-k8s-example/blob/master/Dockerfile">Dockerfile</a>。</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> python:<span class="number">3.10</span>-slim</span><br><span class="line"><span class="keyword">ARG</span> BUILDER_NAME=kube</span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> --from=docker.io/library/docker:20.10.12-dind-rootless /usr/local/bin/docker /usr/local/bin/docker</span></span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> --from=docker.io/docker/buildx-bin:v0.10 /buildx /usr/libexec/docker/cli-plugins/docker-buildx</span></span><br></pre></td></tr></table></figure>
+
+<p>这里还有一个冷门的 Dockerfile 的小技巧：通过 <code>COPY --from=</code> 的方式来下载一些二进制工具。基本上我写的 Dockerfile 都会用它，可谓是屡试不爽 <code>身经百战了</code>😎。别再用 wget&#x2F;curl 这种方式傻乎乎地安装这些二进制工具啦，一句 <code>COPY --from= </code> 不知道高到哪里去了。</p>
+
+
+<blockquote class="twitter-tweet"><p lang="zh" dir="ltr">分享一个比较冷门的 Dockerfile 的小技巧：<br>当你要安装一个 binary 工具时（比如 jq、yq、kubectl、helm、docker 等等），可以考虑直接从它们的镜像里 COPY 过来，替代使用 wget/curl 下载安装的方式，比如：<br>COPY --from=docker:20.10.12-dind-rootless /usr/local/bin/docker /usr/local/bin/docker <a target="_blank" rel="noopener" href="https://t.co/4ZWFqk5EEv">pic.twitter.com/4ZWFqk5EEv</a></p>&mdash; Reimu (@muzi_ii) <a target="_blank" rel="noopener" href="https://twitter.com/muzi_ii/status/1522599179918647296?ref_src=twsrc%5Etfw">May 6, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+<p>接下来，我们需要自定义 Jenkins Kubernetes 插件的 Pod 模板，将我们上面创建的 buildx 配置文件的 configMap 通过 volume 挂载到 Pod 中。这个 Jenkins slave Pod 就可以在 k8s 中通过 Service Accounts 加上 buildx 配置文件来连接 buildkit 了。可以参考我这个 <a target="_blank" rel="noopener" href="https://github.com/muzi502/buildkit-on-k8s-example/blob/master/Jenkinsfile">Jenkinsfile</a>。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">//</span> <span class="string">Kubernetes</span> <span class="string">pod</span> <span class="string">template</span> <span class="string">to</span> <span class="string">run.</span></span><br><span class="line"><span class="string">podTemplate(</span></span><br><span class="line">    <span class="attr">cloud:</span> <span class="string">JENKINS_CLOUD,</span></span><br><span class="line">    <span class="attr">namespace:</span> <span class="string">POD_NAMESPACE,</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">POD_NAME,</span></span><br><span class="line">    <span class="attr">label:</span> <span class="string">POD_NAME,</span></span><br><span class="line">    <span class="attr">yaml:</span> <span class="string">&quot;&quot;</span><span class="string">&quot;</span></span><br><span class="line"><span class="string">apiVersion: v1</span></span><br><span class="line"><span class="string">kind: Pod</span></span><br><span class="line"><span class="string">metadata:</span></span><br><span class="line"><span class="string"> annotations:</span></span><br><span class="line"><span class="string">    kubectl.kubernetes.io/default-container: runner</span></span><br><span class="line"><span class="string">spec:</span></span><br><span class="line"><span class="string">  nodeSelector:</span></span><br><span class="line"><span class="string">    kubernetes.io/arch: amd64</span></span><br><span class="line"><span class="string">  containers:</span></span><br><span class="line"><span class="string">  - name: runner</span></span><br><span class="line"><span class="string">    image: $&#123;POD_IMAGE&#125;</span></span><br><span class="line"><span class="string">    imagePullPolicy: Always</span></span><br><span class="line"><span class="string">    tty: true</span></span><br><span class="line"><span class="string">    volumeMounts:</span></span><br><span class="line"><span class="string">    # 将 buildx 配置文件挂载到当前用户的 /root/.docker/buildx/instances/kube 目录下</span></span><br><span class="line"><span class="string">    - name: buildx-config</span></span><br><span class="line"><span class="string">      mountPath: /root/.docker/buildx/instances/kube</span></span><br><span class="line"><span class="string">      readOnly: true</span></span><br><span class="line"><span class="string">      subPath: kube</span></span><br><span class="line"><span class="string">    env:</span></span><br><span class="line"><span class="string">    - name: HOST_IP</span></span><br><span class="line"><span class="string">      valueFrom:</span></span><br><span class="line"><span class="string">        fieldRef:</span></span><br><span class="line"><span class="string">          fieldPath: status.hostIP</span></span><br><span class="line"><span class="string">  - name: jnlp</span></span><br><span class="line"><span class="string">    args: [&quot;</span><span class="string">\$(JENKINS_SECRET)&quot;,</span> <span class="string">&quot;\$(JENKINS_NAME)&quot;</span><span class="string">]</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">&quot;docker.io/jenkins/inbound-agent:4.11.2-4-alpine&quot;</span></span><br><span class="line">    <span class="attr">imagePullPolicy:</span> <span class="string">IfNotPresent</span></span><br><span class="line">  <span class="attr">volumes:</span></span><br><span class="line">    <span class="comment"># 配置 configmap 挂载</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">buildx-config</span></span><br><span class="line">      <span class="attr">configMap:</span></span><br><span class="line">        <span class="attr">name:</span> <span class="string">buildx.config</span></span><br><span class="line">        <span class="attr">items:</span></span><br><span class="line">          <span class="bullet">-</span> <span class="attr">key:</span> <span class="string">data</span></span><br><span class="line">            <span class="attr">path:</span> <span class="string">kube</span></span><br><span class="line"><span class="string">&quot;&quot;</span><span class="string">&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>当 Jenkins slave pod 创建好之后，我们还需要进行一些初始化配置，例如设置 buildx 和登录镜像仓库等。我们可以在 Jenkins pipeline 中增加一个 Init 的 stage 来完成这些操作。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">stage(&quot;Init&quot;) &#123;</span><br><span class="line">    withCredentials([usernamePassword(credentialsId: &quot;$&#123;REGISTRY_CREDENTIALS_ID&#125;&quot;, passwordVariable: &quot;REGISTRY_PASSWORD&quot;, usernameVariable: &quot;REGISTRY_USERNAME&quot;)]) &#123;</span><br><span class="line">        sh &quot;&quot;&quot;</span><br><span class="line">        # 将 docker buildx build 重命名为 docker build</span><br><span class="line">        docker buildx install</span><br><span class="line">        # 设置 buildx 使用的 builder，不然会默认使用 unix:///var/run/docker.sock</span><br><span class="line">        docker buildx use kube</span><br><span class="line">        # 登录镜像仓库</span><br><span class="line">        docker login $&#123;REGISTRY&#125; -u &#x27;$&#123;REGISTRY_USERNAME&#125;&#x27; -p &#x27;$&#123;REGISTRY_PASSWORD&#125;&#x27;</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>构建镜像时，我们可以在 buildkit 部署节点上运行 pstree 命令，来查看构建的过程。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">root@product-builder-master:~# pstree -l -c -a -p -h -A 2637</span><br><span class="line">buildkitd,2637</span><br><span class="line">  |-buildkit-runc,989505 --<span class="built_in">log</span> /var/lib/buildkit/runc-overlayfs/executor/runc-log.json --log-format json run --bundle /var/lib/buildkit/runc-overlayfs/executor/82zvcfesf5g19t2682g3j9hrr 82zvcfesf5g19t2682g3j9hrr</span><br><span class="line">  |   |-rpmbuild,989519 --define dist .oe1 -ba open-vm-tools.spec --quiet</span><br><span class="line">  |   |   `-sh,989562 -e /var/tmp/rpm-tmp.xKly7N</span><br><span class="line">  |   |       `-make,995708 -O -j64 V=1 VERBOSE=1</span><br></pre></td></tr></table></figure>
+
+<p>通过 buildkitd 的进程树，我们可以看到 buildkitd 进程中有一个 buildkit-runc 的子进程。它会在一个 runc 容器中运行 Dockerfile 中对应的命令。因此，我们可以得知 buildkit on kubernetes 和之前的 docker in pod 实现原理是类似的，只不过这里的 buildkit 只用于构建镜像而已。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/muzi502/buildkit-on-k8s-example">buildkit-on-k8s-example</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.docker.com/engine/reference/commandline/buildx_create/#driver">docker buildx create</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.docker.com/build/drivers/kubernetes/">Kubernetes driver</a></li>
+<li><a target="_blank" rel="noopener" href="https://yanhang.me/post/2019-04-08-buildkit/">Docker BuildKit 介绍</a></li>
+<li><a target="_blank" rel="noopener" href="https://meaninglive.com/2022/02/14/%E3%80%8Cdocker-buildx%E3%80%8D-%E6%9E%84%E5%BB%BA%E8%B7%A8%E5%B9%B3%E5%8F%B0%E9%95%9C%E5%83%8F/">「Docker Buildx」- 构建“跨平台”镜像</a></li>
+<li><a target="_blank" rel="noopener" href="https://moelove.info/2021/11/03/OCI-%E4%B8%8E%E4%B8%8B%E4%B8%80%E4%BB%A3%E9%95%9C%E5%83%8F%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/">OCI 与下一代镜像构建工具</a></li>
+<li><a target="_blank" rel="noopener" href="https://moelove.info/2021/03/14/%E4%B8%87%E5%AD%97%E9%95%BF%E6%96%87%E5%BD%BB%E5%BA%95%E6%90%9E%E6%87%82%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E6%9E%84%E5%BB%BA/">万字长文：彻底搞懂容器镜像构建</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/docker/buildx/pull/1412">Attestations from buildx </a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+      
+
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/kubernetes/" rel="tag"># kubernetes</a>
+              <a href="/tags/BuildKit/" rel="tag"># BuildKit</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023-04-15-One-Year-After-the-Lockdown-in-Shanghai.html" rel="prev" title="写在上海封城一年之后">
+                  <i class="fa fa-chevron-left"></i> 写在上海封城一年之后
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023-12-29-honda-civic.html" rel="next" title="考驾照和买二手车">
+                  考驾照和买二手车 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2026</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Reimu</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous" defer></script>
+<script src="/js/comments.js" defer></script><script src="/js/utils.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.5.0/dist/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+
+
+  <script src="/js/third-party/pace.js" defer></script>
+
+  
+
+
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"muzi","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js" defer></script>
+
+</body>
+</html>
