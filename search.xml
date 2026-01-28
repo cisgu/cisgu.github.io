@@ -614,121 +614,764 @@
       </tags>
   </entry>
   <entry>
-    <title>端午节游玩：徒步、骑行、跑山</title>
-    <url>/2024-06-10-travel-in-june.html</url>
-    <content><![CDATA[<p>转瞬间距上一次更新博客快半年了，主要是这段时间在享<a href="https://www.thepaper.cn/newsDetail_forward_3291793">福报</a>，享完福报后周末就开车拉着同事去徒步游玩放松一下，因此实在是没有心情来写博客（其实是自己懒，找个借口自欺一下自己 😔</p>
-<p><img data-src="https://p.k8s.li/2024-06-10-travel-in-june/image-20240607205814023.png"></p>
-<p>不过好在端午节前终于修完了所有的 ticket，QE 小伙伴也完成了第一轮测试，项目终于有了个阶段性的成果，没了这个烦恼心情自然好了很多。正好端午节完成了一次环千岛湖骑行，就想着和《<a href="https://blog.k8s.li/taihu.html">2021 五一假期环太湖骑行之旅</a>》一样，水一篇博客来记录一下游玩时的所思所想以及所见所闻吧。那么咱们就开始回顾下端午节游玩的经历吧 😇</p>
-<h2 id="计划篇"><a href="#计划篇" class="headerlink" title="计划篇"></a>计划篇</h2><h3 id="饭搭子"><a href="#饭搭子" class="headerlink" title="饭搭子"></a>饭搭子</h3><p>在《<a href="https://blog.k8s.li/honda-civic.html">考驾照和买二手车</a>》里曾提到过，自从去年买车之后就和同事入坑了户外徒步，每个月都会和同事一起自驾去江浙附近徒步游玩。因为一起出去玩儿的次数多了，和其中两位同事的关系也就密切了很多。其中一位是前端开发，另一位是 UI 设计师，为了后面叙述方便，就分别简称他俩为 <code>FE</code> 和 <code>UI</code> 好了。在公司每到饭点，我们仨个就一起去楼下吃麻辣烫或者油泼面，再或者晚上下班后一起骑车去耀华路附近的路边摊吃炒饭。时间长了，三个人的关系就变得非同一般了，这也是我毕业后工作五多年来结交的关系最好的两个朋友。之前在公司都是做一个小透明，就像学校里的<a href="https://zh.wikipedia.org/wiki/%E6%AD%B8%E5%AE%85%E9%83%A8">归宅部</a>，下班后就早早溜回家一个人玩泥巴，也不太参与同事之间的社交。这种局面从去年我买车之后才开始真正改变的，不得不说有了一辆车之后，生活的确改变了很多，变得越来越现充了。</p>
-<h3 id="熊野古道徒步"><a href="#熊野古道徒步" class="headerlink" title="熊野古道徒步"></a>熊野古道徒步</h3><p>早在过年之前，另一位同事（也是前端开发）和 <code>UI</code> 就计划清明节休假几天去日本田边市和歌山的<a href="https://www.tb-kumano.jp/tw/kumano-kodo/suggested-walks/">熊野古道</a>徒步。春节期间开车回老家顺路送 <code>UI</code>，<code>UI</code> 在车里开始学日语五十音。我们周末出去徒步游玩的时候 <code>UI</code> 也在车里跟着多邻国学日语，有时候他突然蹦出来一句日语，整得我们一阵欢声笑语。</p>
-<p>不过好景不长，正当 <code>UI</code> 每日充满期待干劲满满地学日语的时候，在 3 月底公司迎来了一波裁员，不幸 <code>UI</code> 在裁员的队列中。得知被裁的消息后，<code>UI</code> 直接愣住了，给我说的第一句话居然是：我被裁了，熊野古道徒步去不了了。我赶紧安抚他说：裁员是小事，熊野古道徒步还是要去，因为机会难得，现在放弃了会让你后悔一辈子。<code>UI</code> 听从了我的建议端午节和另一位同事去了熊野古道。</p>
-<p><code>UI</code> 从熊野古道徒步回来后，晚上一起吃饭的时候就和们分享了在日本游玩的经历，听的着实有些羡慕，那时就萌生了也要去熊野古道徒步的念头。接着到了四月底，同事在我们徒步小队微信群里说端午节期间上海到名古屋的往返机票只要 1500 出头，赶紧冲冲冲鸭。当时感觉我的熊野古道徒步机会来了，于是就立马在淘宝上找了个旅行社准备办一个三年多次的赴日签证。因为当时再过几天就到五一假期了，就行动起来准备签证材料。还好准备的都比较顺利，在五一放假前旅行社就牵收到了我邮寄的材料。五一过后大概等了七个工作日，签证就顺利办下来了。</p>
-<p><img data-src="https://p.k8s.li/2024-06-10-travel-in-june/image-20240612071324128.png"></p>
-<p>签证下来后，正准备定酒店和机票，就在那时自己负责的项目出现了风险要延期发布了。当时有点纠结端午节究竟要不要休假去熊野古道徒步。那天正好到了和 leader 每个月 1:1 的时间点，就想着等和 leader 1:1 后再做决定吧。和 leader 1:1 后感觉要凉了，因为端午节前 QE 会完成第一轮的测试，端午节后要进行第二轮的回归测试，由于要搭配两个产品的版本发布，第二轮的回归测试要在这两个版本上分别测一遍。赶在 6 月底项目发布，QE 测试的压力会很大，因此需要投入研发的人力到回归测试中。当时就没有再考虑，果断放弃了熊野古道徒步的计划，等到以后项目发布之后再去吧。端午节就像往常一样，和饭搭子一块去江浙附近徒步游玩吧。</p>
-<h3 id="环千岛湖骑行"><a href="#环千岛湖骑行" class="headerlink" title="环千岛湖骑行"></a>环千岛湖骑行</h3><p>五一假期的时候和饭搭子一块去台州仙居的公盂村以及神仙居景区徒步游玩了几天，可能是路途遥远加上徒步也比较累，端午节 <code>FE</code> 想去享福躺平型的路线，不想再像五一那样那么累了。而 <code>UI</code> 也没有主见，觉着去哪里都可以。期间想过去绍兴东白山露营观星，不过由于天气原因被否了；也想过去嵊泗海岛游玩，但担心由于天气原因被困在岛上买不到回来的票就放弃了；也想过去台州温岭的水桶岙徒步赶海，因为是徒步路线也被 <code>FE</code> 否掉了。就这样大家纠结了很久也没有想好要去哪儿，既然这样那这次就单独行动，自己一个人出去玩儿吧。</p>
-<p>在石头星球和游侠客小程序上都看到了千岛湖两天一夜的骑行玩法，就想着要不端午节来一次环千岛湖骑行，嗯，可以可以，冲冲冲。于是看了下江浙附近的天气预报，说是周六有小雨、周日阴天、周一多云。又看了下环千岛湖骑行的轨迹，不到 140 公里，骑两天感觉太轻松，不如挑战一下自己，一天完成环千岛湖骑行？那就定下了周日完成环千岛湖骑行。</p>
-<p>又接着看了去千岛湖的导航路线，会路过富阳和绍兴，那周六就选择一个在富阳的徒步路线，于是就找到了<a href="https://www.2bulu.com/community/gotohuatinfo.htm?id=ZRcf7qbTjLO8jmiMc8ZMEg==&type=">杏梅尖</a>。然后又看了下回来时的路线，可以绕一点远路去王位山跑山，然后再从莫干山景区附近上 S12 申嘉湖高速回上海。去年 12 月底的时候和饭搭子去过一次王位山徒步，感觉那里的山路真的不错，有杭州秋名山之称，十分适合跑山（练习排水沟过弯）。</p>
-<p>于是端午节大体的游玩计划初步成型：</p>
-<ul>
-<li>Day1：富阳杏梅尖徒步，13 公里爬升 1000 米；</li>
-<li>Day2：环千岛湖 138 公里骑行；</li>
-<li>Day3：余杭王位山跑山，练习排水沟过弯 🤣；</li>
-</ul>
-<p>和往常出去游玩时一样，在 Notion 上制定了一个游玩时的计划表：</p>
-<p><img data-src="https://p.k8s.li/2024-06-10-travel-in-june/image-20240610203217734.png" alt="image-20240610203217734"></p>
-<h2 id="准备篇"><a href="#准备篇" class="headerlink" title="准备篇"></a>准备篇</h2><h3 id="公路车"><a href="#公路车" class="headerlink" title="公路车"></a>公路车</h3><p>在《<a href="https://blog.k8s.li/taihu.html">2021 五一假期环太湖骑行之旅</a>》的时候骑行用的车子是 2012 款 GIANT 捷安特 ATX770-D，这辆车子从杭州搬家来上海的时候也一并带来了，一直用它骑行上下班。在去年四月份的时候想换一辆公路车了，因为 ATX770-D 车身太重骑行起来比较累，于是就在闲鱼上花了 1500 买了辆二手的捷安特 ROAM 2 跨界公路车。这辆车一个特点就是车架是山地车，轮圈可以装山地车宽胎，也可以装公路车窄胎，算是公路车和山地车的缝合怪 😂。自从把买来后它一直是我主力代步工具，每天都会骑着它上下班，这次的环千岛湖骑行就准备带着它去。</p>
-<p>这辆 ROAM2 公路车本身没有太多问题，前段时间后轮辐条断了一根。去公司附近的捷安特专卖店问了下可以修但配件等的时间比较久，但我感觉是只换一根辐条修车的利润比较少，店员不想给修。于是就自己买来辐条进行更换，顺带更换了下前后轮的外胎和内胎。</p>
-<h3 id="小区停车"><a href="#小区停车" class="headerlink" title="小区停车"></a>小区停车</h3><p>由于小区停车很难，对于咱这种实力（习）期的新手而言简直就是噩梦。有好几次停进来的时候很顺利，开出去的时候由于旁边的车停得不讲武德导致我出库的时候被卡住，每次都要保安指挥或者打电话让车主来挪车才能出来：</p>
-<ul>
-<li>我们小区的车道是一个 U 形的单行路，路的左侧可以侧位停车，然后路的右侧有一些画库位线的车位，当侧位停的车太靠外的时候就会导致右侧的车右转出来的时候没有足够转弯半径，由于这被卡住过一次。然后保安指挥了我很久仍没能将车开出来，最后保安只能骂骂咧咧地联系车主让他来挪车，我觉着应该不是我菜 😅；</li>
-<li>我们楼下也有一排车位，当车位满了的时候有些车主就直接停在路上，由此被堵住过三次，这种情况只联系车主来挪车，有的车主电话打不通，保安就会帮忙到车主家里叫他来挪车；</li>
-<li>有车车停得很随意，不是右前轮压住库位线就是车头太靠前，旁边的车位想要左转出来的时候车轮就会碰到马路牙子，再加路不到两米宽，倒库和出库的时候都很极限地贴着旁车或者轮胎碰着路沿石。因为这被卡住一次，那时候保安让车主下来挪车往后倒一点就能将车开出来了；</li>
-</ul>
-<p>为了周六早上出发的时候车子不像往常一样被堵在车位里，周五早上就将车挪到了外面方便出库的位置。后来事实证明这样做是对的，周六早上出发的时候果然有辆车和往常一样停在路上，挡住了车位线里面的车。还好有先见之明，不然早上五点半多让车主来挪车，车主也是挺奔溃的。</p>
-<h3 id="Ticket-修完啦"><a href="#Ticket-修完啦" class="headerlink" title="Ticket 修完啦"></a>Ticket 修完啦</h3><p>周五下午 TL 告诉我项目就剩最后一个待验证的 ticket 了，我瞅了一下 Jira 面板，哦豁，还真是耶。赶紧 DM 鼓励了一下 QE 小伙伴，加油加油，冲冲冲！等收到 ticket close 的邮件后，第一时间感谢了下 QE 小伙伴。这是我入职以来作为主力后端开发的第二个项目，也是我觉着最难的项目。第一轮测试结束算是一个阶段性的胜利，心情好了很多，之前一直在崩溃的边缘挣扎，今天终于要结束了。没了烦恼端午节就能有个好心情愉快地玩耍啦，在这里再次感谢我那位 QE 小伙伴。</p>
-<p><img data-src="https://p.k8s.li/2024-06-10-travel-in-june/image-20240608200713378.png" alt="image-20240608200713378"></p>
-<h3 id="收拾车子"><a href="#收拾车子" class="headerlink" title="收拾车子"></a>收拾车子</h3><p>忙完项目上的事情后看了下时间大概五点多了，就赶紧骑车溜回家，因为要把在骑的这辆公路车塞到我那辆思域车里，还不确定车里能不能放得下，为了以防万一就早点回家吧，要是真的放不下也有时间想办法来处理，不至于忙到天黑。</p>
-<p>到家后，就将公路车的车轮和车座拆下，并用塑封膜包裹住链条和牙盘的部分，以免油泥擦碰到车上。刚开始试着将车子放进后备箱，调整了好几次都不太行。如果是辆两厢或者旅行车就好了，有点后悔当初买了三厢的思域。主要是三厢车后排放倒后空间还是很紧凑，容纳不下山地车横放的空间。于是试着把车子放在后排，没想到能完美地塞进去，就是挤占了后排的空间，不过这次就我一个人出来玩，后排不用坐人所以也没事儿。最后再用安全带固定主车架，以免禁止制动的时候车子由于惯性飞到前排来，这样吃席风险大大减少。</p>
-<p><img data-src="https://p.k8s.li/2024-06-10-travel-in-june/IMG_6177.JPG" alt="IMG_6177"></p>
-<p>把车子装好之后就放心了，本以为放不下的，没想到后排的空间斜放一辆公路车还是绰绰有余滴，等到以后去莫干山或崇明岛骑行游玩的时候就可以采用相同的办法了，非常不戳。</p>
-<h2 id="Day1-杏梅尖徒步"><a href="#Day1-杏梅尖徒步" class="headerlink" title="Day1 杏梅尖徒步"></a>Day1 杏梅尖徒步</h2><h3 id="出发"><a href="#出发" class="headerlink" title="出发"></a>出发</h3><p>每次要出去玩儿的时候，头天晚上就兴奋地睡不着，有点像上学的时候放寒暑假的那天晚上一直睡不着，和宿舍下铺聊天到大半夜一样。晚上睡得不是很好，凌晨四点多就不知不觉醒来了，醒来后干瞪眼睡不着。距离出发还有两个小时，干瞪眼也是浪费时间，索性就起床打开笔记本开始整理博客，思考下这篇游记的内容。一直等到 5 点半左右，就起身洗脸刷牙收拾东西，开始出发了。</p>
-<p>收拾好东西后，就下楼准备把车从车位开出来。下楼后发现果然有个大聪明把车停在出库的路上，幸好昨天早上我把车挪走了，不然今天又要打电话让他来挪车了。因此出门前做好规划，把一些潜在的问题提前规避掉，能省不少事儿。上午先导航到绍兴，去我姐那里拿帐篷以及一些其他的露营装备。这次的导航路线还是和往常一样：S32 申嘉湖高速 -&gt; G60 沪昆高速 -&gt; G1522 常台高速。在浦东出沪去往宁波或绍兴方向，如果是住在 S32 申嘉湖高速以北的地方，还是挺建议这里路线的。会比走 S20 外环高速 -&gt; G60 沪昆高速路况要好很多。因为 S20 外环高速和  G60 沪昆高速途径上海的主要城区，高速的出入口会很多，车流量也很大，节假肯定会堵车。而 S32 申嘉湖高速途径的地方基本上都是一些郊区，车流量会少一些，很少会遇到堵车的情况。不过等到今年 7 月份 <a href="https://www.dongchedi.com/article/7301984401263641138">S32 申嘉湖高速上海段免费</a>之后可能会有所不同了，毕竟还是会有很多人绕一点远路来白嫖这几十公里的高速费的 😂。</p>
-<p><img data-src="https://p.k8s.li/2024-06-10-travel-in-june/IMG_6139.PNG" alt="IMG_6139"></p>
-<p>因为选择了路线比较通畅且出发的比较早，路上基本上没有遇到堵车的情况，一路很顺畅地来到了绍兴，从我姐那拿到帐篷后就继续出发前往富阳杏梅尖了。之所以来拿帐篷因为想着在千岛湖骑行的时候看看能不能在千岛湖找到一个合适的露营地点，晚上就不住酒店来露营。后来事实证明我太天真了，露营什么的根本就不存在。</p>
-<h3 id="杏梅尖徒步"><a href="#杏梅尖徒步" class="headerlink" title="杏梅尖徒步"></a>杏梅尖徒步</h3><p>9 点半左右到达富阳瑶坞村，村子里的露天停车场收费 10 块。车子停好后，收拾好行李就开始跟着两步路上的轨迹徒步。富阳杏梅尖这条经典的徒步路线像空心户外、游侠客、浦东户外、华东户外每个月都会成团来的。这里不是一个正规开发的景区，不过好在当地建设和维护的都还不错，中途还有一个补给点可以休息。虽然这条路线 13 公里爬升 1000 米看着有点难度，但爬升的坡度还是相对轻松一些，不像之前去盐帮古道回来时 1.5 公里爬升 400 米那样十分陡峭难走。只要放慢节奏，正常人还是能走完全程的。</p>
-<ul>
-<li>午餐，一个大大的甜瓜就填饱肚子了 😋</li>
-</ul>
-<p><img data-src="https://p.k8s.li/2024-06-10-travel-in-june/IMG_6151.JPG" alt="IMG_6151"></p>
-<ul>
-<li>登顶杏梅尖，景色真不戳 😆</li>
-</ul>
-<p><img data-src="https://p.k8s.li/2024-06-10-travel-in-june/IMG_6167.JPG" alt="IMG_6167 2"></p>
-<ul>
-<li>途中的蚊虫很多，坐下休息的时候一只小蜜蜂落在我胳膊上</li>
-</ul>
-<p><img data-src="https://p.k8s.li/2024-06-10-travel-in-june/IMG_6161.JPG" alt="IMG_6161"></p>
-<p>下山的时候看到一个很有意思的路标牌，上面写着 「<strong>很明显这里有条近路</strong>」，于是赶紧拍照发在我们的徒步小队微信群里。去年带饭搭子去覆卮山徒步，下山回来的时候因为我选择了抄近路把大家带到了一片深山老林里，在丛林里走了大半天差点就要叫救援，好在有惊无险最终安全下山了。从那以后我只要一提抄近路，就会引来他们的一阵嘲讽，调侃我这是大聪明行为 🤣。这次可是货真价实的近路，而 FE 回复：只有聪明的人才能看到的近路！哈哈，可能是因为那次抄近路翻车，我在他们心中的形象就变成了一个大聪明 😓。</p>
-<p><img data-src="https://p.k8s.li/2024-06-10-travel-in-june/IMG_6173.JPG" alt="IMG_6173"></p>
-<p>顺着这条近路下山，小路周边被树木和芦苇覆盖的严严实实，有时候需要弯腰从这些茂密的树丛钻过去，有那么一点点丛林探险的感觉 😂。半路遇到一处小池子，在里面玩了会水，洗了洗就继续下山了。</p>
-<p><img data-src="https://p.k8s.li/2024-06-10-travel-in-june/IMG_6171.JPG" alt="IMG_6171"></p>
-<p>到达停车场后才下午三点多，比预期回来早一个小时。当时太阳正烈，打开车门发现车内 50 多度。有点后悔没有带隔热的车衣，虽然挡风玻璃上撑开了遮阳伞，但隔热效果并不佳。50 多度简直像蒸拿房一样热，坐在这里一小会已经汗流浃背了，比中午在上山的时候还要热。于是导航看了下去千岛湖的路线，看看能不能在上高速前找个加油站休息会，顺便在阴凉的地方开空调让车内温度降下来。看地图导航发现去千岛湖的长深高速要堵车 30 分钟，原本一个半小时的车程现在要两个小时了。顺着路线找到了另一个高速入口刚好能绕过堵车的路段，附近还有一个加油站，十分合适，于是就开车前往加油站。</p>
-<p><img data-src="https://p.k8s.li/2024-06-10-travel-in-june/IMG_6175.JPG" alt="IMG_6175"></p>
-<h3 id="停车费"><a href="#停车费" class="headerlink" title="停车费"></a>停车费</h3><p>出来村子的时候看到了有个宝马车主和村民小哥发生了冲突。因为杏梅尖这里并不是一个正规开发的景区，不是本村的车进村都要交 10 块钱的停车费。开宝马的老哥很任性，就是不想交这 10 块钱的停车费，想要从逆向车道硬闯过来，我刚好路过差一点点撞上，拿二维码收费的村民小哥也被气得骂骂咧咧地问候他全家。小哥帮我看了下车没有被剐蹭到，我就尴尬地调侃了下：你看吧，人与人之间的差距比宝马与思域的差距还要大。</p>
-<p>虽然村民收停车费不是很正规也没有发票啥的，但这种情况我们徒步的时候也遇到的可多了，不过我们每次都会很爽快地交个停车费。10 块钱的停车费可以避免很多不必要的麻烦，总不能为了省个 10 块钱绕大半天找个车位。如果停的地方不合适的话说不定还会被贴违章罚款 200 块，再或者停路边被剐蹭了也不好弄，所以为了省事和节省时间成本我们都不会太计较这些。之前去绍兴的呼狗崖徒步的时候就停在农家里，收费 10 块；去台州仙居的时候村里的露天停车场收费 10 块；去宁波风车公路的时候在童夏家村，那里建设的比较好，村口会有停车收费的闸机，然后附近还有卫生间，周边的基础设施做的很好。尽管我们徒步游玩去的都是一些免费白嫖的路线，但和当地的村民相处还是很融洽的，从来没有发生过冲突。</p>
-<p>所以嘛，出门在外，花点小钱可以摆平的事情还是不要发生不必要的冲突，和人吵一架一天的好心情就没了。在中国，尤其是农村，说点好话讲点人情世故，互相理解一下，相处起来就会很融洽。就像虽然我没有抽烟的习惯，但我车里仍然会放一包烟，真的遇到点麻烦事儿，给大哥大叔大爷啥的递根烟，说点好话人家还是很愿意帮忙的。之前我在小区停车被堵住的时候，我都会给保安大叔递根烟，说声谢谢麻烦啦等客套话，他都会很乐意帮忙指挥我把车开出来。因为帮的次数多了，慢慢就混熟了，在小区偶尔遇到了也会相互打招呼说两句。</p>
-<h3 id="淳安县城"><a href="#淳安县城" class="headerlink" title="淳安县城"></a>淳安县城</h3><p>导航到加油站加完油，休息了一段时间继续前往淳安县城。下高速进入到淳安县城后，道路就变得十分离谱。双向两车道开着开着右侧的非机动车道就变成了机动车道，然后一过红绿灯又强行变成了两车道，我满脸？？？。然后旁边非机动车道的车就被强行挤了过来，每过路口的时候都要留意一下，还有次险些撞上。还有一些机动车直接开在非机动车道，遇到前面有电驴的时候又加塞过来，开车体验极差。</p>
-<p>更离谱的是酒店门口大概有十个画车位线的车位，这些画车位线的车位都不是酒店的，而是政府规划的。停车按小时收费，每小时 5 块，停一天要 60。然后酒店住客的车就停在车位线外面的一些狭窄空位上。经过酒店保安大叔的指挥总算在一个犄角旮旯里停好了车。停好车后就把山地车拿出来装上轮子，轮子装上后发现刹车盘会蹭碟刹片，一顿操作猛如虎，调试了大半天还是会蹭那么一点点，先就这样凑活着吧，又不是不能骑。</p>
-<p>晚上没有吃饭，简单吃了点水果和粽子就算填饱肚子了。拿出笔记本整理了下今天的日记，就睡了，希望明天的环千岛湖骑行能顺利一些。</p>
-<h2 id="Day2-环千岛湖骑行"><a href="#Day2-环千岛湖骑行" class="headerlink" title="Day2 环千岛湖骑行"></a>Day2 环千岛湖骑行</h2><h3 id="出发-1"><a href="#出发-1" class="headerlink" title="出发"></a>出发</h3><p>之前看天气预报说是千岛湖周六有雨周日多云的，没想到周日早上开始下雨了。用彩云天气看了下，上午会一直下雨，中午会停一会。八点半之后雨会小一些，于是就想着等雨小一点再去骑行吧。如果因为下雨就放弃了感觉还是挺遗憾的。就这样一直等到 9 点左右，雨终于小了一些。已经九点了，再不出发晚上回来就要走夜路是十分危险的。当时内心还是有一点退缩想要放弃的想法，不过又想起了一位推友的话：</p>
-<p><img data-src="https://p.k8s.li/2024-06-10-travel-in-june/image-20240612215737254.png" alt="image-20240612215737254"></p>
-<p>如果放弃了，我可能会后悔一辈子，所以即便还在零星下着小雨，还是毅然决然出发了，冲冲冲！</p>
-<h3 id="骑行"><a href="#骑行" class="headerlink" title="骑行"></a>骑行</h3><p>刚开始骑行的时候就遇到了不顺，由于昨晚没有调整好轮组，刹车碟片会一直蹭外层的刹车片，相当于踩着 10% 的刹车在骑，导致骑起来特别费劲。于是不得不停下来调整轮组的角度，让它刚好卡在一个不碰刹车片的位置。当时雨还突然下大了，穿着雨衣热得满头大汗，再加上忘记带毛巾了，十分地狼狈。不过好在经过一顿操作终于调整好了。调整好车子后就继续骑行，刚开始的一段距离特别难走，因为下雨怕身体被雨淋失温就不得不披着雨衣，雨衣又不透气，出汗之后汗水顺着胳膊流到袖口，手一甩就一大把汗水。，就像一只落汤鸡，好狼狈。</p>
-<ul>
-<li>在桥上遇到了几个驴友，看来雨中骑行的铁憨憨不止我一个 🤡，心态瞬间好了很多。</li>
-</ul>
-<p><img data-src="https://p.k8s.li/2024-06-10-travel-in-june/IMG_6189.JPG" alt="IMG_6189"></p>
-<p>从九点一直骑行到 11 点半，中途休息了十几分钟。出发时只带了一瓶水，刚开始骑行的了大概 20 多公里仍然没有找到一家超市可以买水和。路上刚好碰见一个卖杨梅的老奶奶，就从她那里买了一小筐杨梅。顺便问了下老奶奶附近有没有吃饭的地方，她说还比较远，骑车可能要 20 分钟。老奶奶看着我可怜兮兮的样子，就从饭盒里拿出一个自家做的包子要送给我，让我填一下肚子。当时感觉好尴尬 😅，我就厚着脸皮有点不好意思地接受了。豆腐馅的包子是我喜欢吃的，真好。吃着吃着鼻子一酸，莫名其妙想起了已故的奶奶，小时候经常和弟弟偷偷摸摸向奶奶要零花钱，回想起那一幕着真的好怀念。想起《寻梦环游记》中的一段台词：<strong>死亡不是生命的终点，遗忘才是</strong>。</p>
-<p>吃完包子和杨梅后就继续向前出发，争取十二点前找到一家农家乐吃午饭补充下体力。终于上午骑行了 50 公里后到了一家农家乐，在里面点了一份蛋炒饭和一瓶柚子汁。</p>
-<p><img data-src="https://p.k8s.li/2024-06-10-travel-in-june/IMG_6192.JPG" alt="IMG_6192"></p>
-<p>吃饭的时候听农家乐老板讲了一段故事：他之前是上海的武警，退役之后在杭州找了份工作，这里的农家乐是租的当地村民的房子开的。他们周末会开车来这里，因为他们夫妻俩不想一直生活在大城市里，周末和节假日就来千岛湖这里体验农村的生活，这里是他们的第二个家。听的着实有些羡慕，整得我都有点想把父母接来南方农村生活了。</p>
-<p>吃完饭后在院子里休息了一会就继续出发，现在才骑行了 50 公里，还不到一半。于是就给自己定下了等骑行到 70 公里的时候再休息一会。中途遇到了一片雏菊花田，就在附近拍照休息了一小会。这里一瓜人都没有，独享这番美景，真不错 😌。</p>
-<p><img data-src="https://p.k8s.li/2024-06-10-travel-in-june/IMG_6194.JPG" alt="IMG_6194"></p>
-<p>偶见老大哥语录 「<strong>绿水青山就是金山银山</strong>」。如果和饭搭子 <code>UI</code> 一起来，看到这个标语后肯定又开始键政了 😂。每次和 <code>FE</code> 以及 <code>UI</code> 我们仨出去徒步的时候，政治和历史是必聊的话题，一些无关的话题聊着聊着就会扯上政治。关于政治话题，虽然我们仨的观点都各不相同，有时候也会争论的面红耳赤，不过都能互相包容理解对方，不会像小粉红那样友谊小船说翻就翻。我觉着这也是我们几个能经常聚在一起玩的原因吧，朋友之间的友谊会像生物学进化论那样经过一层层筛选和进化，那些与你相处不来的人可能玩个一两次因为观念不和就分开了。而最终能长久陪你玩下去的那些人，都是会容忍并包容你身上的缺点以及那些不和的观念。</p>
-<p>说到政治，之前写《<a href="https://blog.k8s.li/One-Year-After-the-Lockdown-in-Shanghai.html">写在上海封城一年之后</a>》时感触最深的是：「或许我们已经早已经听惯了<strong>你不关心政治政治会来关心你</strong>这句废话，但当经历了这场灾难（防疫闹剧）之后，我们或多或少地能感触到<strong>一个国家的政治气候的变化是如何深刻地影响和限制人类生存的状态和生存的可能</strong>。在某些性命攸关的时刻，政治它直接或间接地决定了我们还能不能在这个世界生存下去。」</p>
-<p><img data-src="https://p.k8s.li/2024-06-10-travel-in-june/IMG_6197.JPG" alt="IMG_6197"></p>
-<p>有一段下坡了，为了节省体力想多白嫖一些重力势能（大雾，就骑行得特别快，速度已经达到了 56KM&#x2F;h，当时如果稍不留神就有可能当场吃席，还好作为一个骑车驾龄 20 多年的老司机比较稳没有翻车 🤣。</p>
-<p><img data-src="https://p.k8s.li/2024-06-10-travel-in-june/IMG_6201.JPG" alt="IMG_6201"></p>
-<p>休息完后就继续出发，现在差不多已经骑行了一半的路程了，还有 70 公里到终点。继续加油加油，冲冲冲！</p>
-<p><img data-src="https://p.k8s.li/2024-06-10-travel-in-june/IMG_6203.JPG" alt="IMG_6203"></p>
-<p>到了下午五点左右，还剩 30 公里的路程，如果顺利的话 6 点半前就可以到达终点。而这时天气又开始下雨了，虽然不是很大但看天气预报 6 点之后雨量会增大。休息了一会就继续赶路，刚骑没多久在十字路口遇到两个老哥，他俩的充电宝因为上午下雨淋坏了，然后一个人手机没电了，另一个手机还剩百分之十的电。因为如果骑行回淳安县城酒店必须要看轨迹导航的，这点电量肯定是不够的。看了下我带的充电宝，还有 30% 的电量，应该够他们用的了，也没顾虑啥就借给了他俩，希望他们能安全到达淳安县城吧。</p>
-<h3 id="摔车"><a href="#摔车" class="headerlink" title="摔车"></a>摔车</h3><p>就在最后五公里的时候，雨就突然下大了起来，不得不穿上雨衣，顶着大雨继续骑行。在最后两公里，路过千岛湖大桥的时候不幸发生了点意外。当时我记得清清楚楚我骑在了红色的非机动车道上，但到了千岛湖大桥后就没了非机动车道。我就选择骑在了桥的高台上，那是一条瓷砖路，下雨之后路就特别地滑，当时一直纠结要不要把车放到机动车道去骑，这样会更安全一点？正想着要不要停下来到机动车道上骑，前轮就突然侧滑了，连车带人直接从高台上摔了下来。摔到后的第一反应就是连滚带爬赶紧躲到高台上，以免被机动车碾压到。或许是求生本能的挣扎，那一刻肾上腺素急剧上升，反应十分迅速，没有半点拖泥带水。伴随着心脏砰砰地跳动，坐在高台上久久才缓过来，感觉就像从鬼门关走了一遭。旁边机动车道中的车辆见到我的车子摔倒在路边后也很热心地打开双闪停了下来，我挥了挥手说没事儿他就慢慢地开走了。</p>
-<p><img data-src="https://p.k8s.li/2024-06-10-travel-in-june/IMG_6209.JPG" alt="IMG_6209"></p>
-<h3 id="归来"><a href="#归来" class="headerlink" title="归来"></a>归来</h3><p>终于在 7 点前安全到达酒店，把车子锁在路边的栏杆上就感紧到房间洗了个热水澡，顺带叫了一份外卖。吃饭的时候之前遇到的那两个老哥也将充电宝送到酒店的前台，保安帮忙上楼送到了房间。真好，人与人之间的信任就是这样奇妙，你怎么对待别人比人就怎么对待你。吃完饭后太累了很快就睡着了，本想着今晚要在千岛湖附近找个地儿露营来着，看来是我多想了，骑行归来后这么累而且这么大的雨去露营脑袋真的被驴踢了。</p>
-<p><img data-src="https://p.k8s.li/2024-06-10-travel-in-june/IMG_6879.jpg" alt="IMG_6879"></p>
-<h2 id="Day3-王位山跑山"><a href="#Day3-王位山跑山" class="headerlink" title="Day3 王位山跑山"></a>Day3 王位山跑山</h2><h3 id="出发-2"><a href="#出发-2" class="headerlink" title="出发"></a>出发</h3><p>早上醒来后就收拾东西准备出发，6 点之后可能还要下雨。昨晚回来后车子锁在了路边还没有收拾，今早要赶在下雨前把我那辆公路车拆下来重新塞回思域车里。收拾好车子后，让保安帮忙指挥将车开到路边，就导航出发前往王位山。</p>
-<h3 id="跑山"><a href="#跑山" class="headerlink" title="跑山"></a>跑山</h3><p>这里给大家解释一下，这里提到的<strong>跑山</strong>并不是我跑着 🏃 在山里瞎逛，而是开车在山路狂飙，属实有点鬼 👻 火 🔥 少年行为 🌚。平时晚上睡觉前会刷一些交通事故相关的电子榨菜视频，目的是想根据这些交通事故学习一下防御性驾驶，比如路口不超齐头车。每当在视频里看到一些鬼火少年骑摩托在山路飙车压弯摔进排水沟里时，弹幕评论都会嘲笑他们为<strong>又菜又爱玩儿</strong>。也会看一些教你怎么开车跑山的视频，比如 <a href="https://www.bilibili.com/video/BV1Md4y1474T">90% 老司机不会！开 BRZ 跑山悟出的十条道理！慢进快出、左脚刹车</a>、<a href="https://www.bilibili.com/video/BV1KG41137Dc">手动档跑山的正确操作方式!别被假老司机各种错误操作忽悠了</a>、<a href="https://www.bilibili.com/video/BV1JU4y1g7pG">跑山需谨慎，思域上演排水渠过弯</a>。排水渠过弯其实也是一种嘲讽，就是出弯的时候车子推头导致失控前轮一头扎进路边排水沟里，这时你只能打电话叫救援把车拖出来了，妥妥滴<strong>又菜又爱玩儿</strong>。</p>
-<p>不过这次跑山的体验还可以，总共有六十多个弯，其中有十几个发卡弯，十分有挑战性。尤其是在过发卡弯的时候，因为入弯后的坡度很大，不得不用一档全油门轰上去，入弯前二降一减速并配合着降档补油，转速直接拉到六千转，那种燃油车发动机嗡嗡嗡的巨响真的能够激发出你去不断挑战人车合一操控极限的斗志。</p>
-<p><img data-src="https://p.k8s.li/2024-06-10-travel-in-june/IMG_6227.JPG" alt="IMG_6227"></p>
-<p>正因为现在还单身，所以有大把的时间来体验这种驾驶乐趣。寻找这种人车合一的操纵感，不断地试探出人和车的一个极限，是可以提升自己的驾驶技术的，这样也能在一些紧要关头作出正确的反应来自救。不过鬼火少年终究还是会成长的，等将来我有了老婆和孩子，我开手动挡绝对比开 CVT 自动挡还要稳。因为那时候身上已经有了责任，要安全驾驶保护好家人，不能再像现在这样瞎玩了。哈哈哈，开个玩笑，将来我也可能单身一辈子，只是徒步的时候遇到过一些家长带着孩子出来玩，有点羡慕这样的生活，所有偶尔也会想象一下将来这样的生活也未尝不可。</p>
-<h3 id="回家"><a href="#回家" class="headerlink" title="回家"></a>回家</h3><p>跑完山后在周边镇子上逛了一会就返航回家，在服务区简单吃了顿午饭在车里休息了一会，玩了两天多了确实有点累了。到家后收拾完车里的东西，将车开到空地上，自己动手洗了下车。端午假期就这样完美结束了 🎉</p>
-<h2 id="总结篇"><a href="#总结篇" class="headerlink" title="总结篇"></a>总结篇</h2><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
-<li>雨天骑行很危险，一定好多加小心带好保命头盔，自从回来后我每天上下班路上骑车都会带上头盔，虽然长这么大骑车没摔过；</li>
-<li>整体的计划完成度 90%，因为下雨的关系导致周日露营取消了。其实露营也不太现实，因为骑行回来后身心疲惫只想洗个热水澡躺床上睡大觉，去露营睡帐篷不妥妥找罪受吗；</li>
-<li>行程去的地方都是冷门小众免费的路线，不存在堵车，也没有人山人海排队现场，游玩体验极佳；</li>
-</ul>
-<h3 id="费用"><a href="#费用" class="headerlink" title="费用"></a>费用</h3><p>端午节三天大概花了 1200 左右，其中油费高速费就花了 732、住宿花了 262、吃的就花了 157。花了 1200 独自一人游玩三天，感觉这个体验还是挺值的。</p>
-<p><img data-src="https://p.k8s.li/2024-06-10-travel-in-june/image-20240612224210576.png" alt="image-20240612224210576"></p>
-<h2 id="尾声"><a href="#尾声" class="headerlink" title="尾声"></a>尾声</h2><p>洋洋洒洒写完这篇游记才发现不知不觉已经水了一万多字了 🥲，可能是我很久没有写博客太想表达自己的一些内心想法和感受了，终于找回了之前坚持写博客的那种感觉。后面有机会再写一写技术相关的博客吧，不然我要变成一个生活博主了？感谢大家看完我这么多废话，谢谢大家的陪伴。祝大家生活愉快，开开心心 😋。</p>
-]]></content>
+    <title>数据运用与分析</title>
+    <url>/2024-06-06-data-utilization.html</url>
+    <content><![CDATA[<h2 id="数据运用与分析01"><a href="#数据运用与分析01" class="headerlink" title="数据运用与分析01"></a>数据运用与分析01</h2><h3 id="2024-04-20饼图"><a href="#2024-04-20饼图" class="headerlink" title="2024.04.20饼图"></a>2024.04.20饼图</h3><p>In [3]:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">import numpy as np</span><br><span class="line"></span><br><span class="line">plt.rcParams[&#x27;font.sans-serif&#x27;] = &#x27;SimHei&#x27;</span><br><span class="line"></span><br><span class="line"># 准备数据</span><br><span class="line"></span><br><span class="line">data = np.array([20, 50, 10, 15, 30, 55])</span><br><span class="line">pie_labels = np.array([&#x27;A&#x27;, &#x27;B&#x27;, &#x27;C&#x27;, &#x27;D&#x27;, &#x27;E&#x27;, &#x27;F&#x27;])</span><br><span class="line"></span><br><span class="line"># startangle 设置饼图的起始角度 默认是3点钟方向</span><br><span class="line"># counterclock 设置旋转方向 默认是True</span><br><span class="line"># autopct 显示每一部分所占百分比</span><br><span class="line"># shadow 设置饼图的阴影 默认False</span><br><span class="line"># pctdistance 设置百分比值与饼图中心的距离 默认为0.6</span><br><span class="line"># labeldistance 设置标签与饼图中心的距离 默认为1.1</span><br><span class="line"># wedgeprops 设置圆环的宽度</span><br><span class="line">plt.pie(data, radius=1, labels=pie_labels, startangle=180, counterclock=False,</span><br><span class="line">        autopct=&#x27;%.2f%%&#x27;, shadow=True, pctdistance=0.8, labeldistance=1.2,</span><br><span class="line">        wedgeprops=&#123;&#x27;width&#x27;: 0.6&#125; )</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p><img data-src="https://raw.githubusercontent.com/cisgu/typora-picture/master/img/202601280910185.png" alt="image-20260128091024080"></p>
+<h3 id="2024-04-20支付宝数据饼图"><a href="#2024-04-20支付宝数据饼图" class="headerlink" title="2024.04.20支付宝数据饼图"></a>2024.04.20支付宝数据饼图</h3><p>In [3]:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">import numpy as np</span><br><span class="line"></span><br><span class="line">plt.rcParams[&#x27;font.sans-serif&#x27;] = &#x27;SimHei&#x27;</span><br><span class="line"></span><br><span class="line"># 准备数据</span><br><span class="line"></span><br><span class="line">data = np.array([800, 100, 1000, 200, 300, 200, 200, 200])</span><br><span class="line">pie_labels = np.array([&#x27;购物&#x27;, &#x27;人情往来&#x27;, &#x27;餐饮美食&#x27;, &#x27;通讯物流&#x27;, &#x27;生活日用&#x27;, &#x27;交通出行&#x27;, &#x27;休闲娱乐&#x27;, &#x27;其他&#x27;])</span><br><span class="line">div = [0, 0, 0, 0, 0.2, 0, 0, 0.2]</span><br><span class="line"></span><br><span class="line"># startangle 设置饼图的起始角度 默认是3点钟方向</span><br><span class="line"># counterclock 设置旋转方向 默认是True</span><br><span class="line"># autopct 显示每一部分所占百分比</span><br><span class="line"># shadow 设置饼图的阴影 默认False</span><br><span class="line"># pctdistance 设置百分比值与饼图中心的距离 默认为0.6</span><br><span class="line"># labeldistance 设置标签与饼图中心的距离 默认为1.1</span><br><span class="line"># wedgeprops 设置圆环的宽度</span><br><span class="line">plt.pie(data, radius=1, labels=pie_labels, startangle=180, counterclock=False,</span><br><span class="line">        autopct=&#x27;%.2f%%&#x27;, shadow=True, pctdistance=0.8, labeldistance=1.1,</span><br><span class="line">        wedgeprops=&#123;&#x27;width&#x27;: 0.8&#125;, explode=div)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p><img data-src="https://raw.githubusercontent.com/cisgu/typora-picture/master/img/202601280910884.png" alt="image-20260128091047847"></p>
+<h3 id="2024-04-20散点图"><a href="#2024-04-20散点图" class="headerlink" title="2024.04.20散点图"></a>2024.04.20散点图</h3><p>In [4]:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">import numpy as np</span><br><span class="line"></span><br><span class="line">plt.rcParams[&#x27;font.sans-serif&#x27;] = &#x27;SimHei&#x27;</span><br><span class="line"></span><br><span class="line"># 准备数据</span><br><span class="line">num = 100</span><br><span class="line"># 生成0-1的随机数</span><br><span class="line">x = np.random.rand(num)</span><br><span class="line">y = np.random.rand(num)</span><br><span class="line">y2 = np.random.rand(num)</span><br><span class="line"></span><br><span class="line">area = (10 * np.random.rand(num)) * 2</span><br><span class="line"></span><br><span class="line"># c 散点颜色</span><br><span class="line"># alpha 透明度</span><br><span class="line"># marker 设置散点的形状</span><br><span class="line"># linewidths 设置散点边框的宽度</span><br><span class="line"># edgecolors 设置边框颜色</span><br><span class="line"></span><br><span class="line">plt.scatter(x, y, c=&#x27;red&#x27;, alpha=0.5, s=area, linewidths=2, edgecolors=&#x27;g&#x27;)</span><br><span class="line">plt.scatter(x, y2, c=&#x27;yellow&#x27;, alpha=0.6, marker=&#x27;d&#x27;)</span><br><span class="line"># print(x)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p><img data-src="https://raw.githubusercontent.com/cisgu/typora-picture/master/img/202601280911351.png" alt="image-20260128091102318"></p>
+<h3 id="2024-04-20汽车速度与制动距离散点图"><a href="#2024-04-20汽车速度与制动距离散点图" class="headerlink" title="2024.04.20汽车速度与制动距离散点图"></a>2024.04.20汽车速度与制动距离散点图</h3><p>In [5]:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">import numpy as np</span><br><span class="line"></span><br><span class="line">plt.rcParams[&#x27;font.sans-serif&#x27;] = &#x27;SimHei&#x27;</span><br><span class="line"># 准备数据</span><br><span class="line">num = 100</span><br><span class="line"># 生成0-1的随机数</span><br><span class="line">x = np.arange(10, 210, 10)</span><br><span class="line">y = np.array([0.5, 2.0, 4.4, 7.9, 12.3,</span><br><span class="line">              17.5, 24.1, 31.5, 39.9, 48.2,</span><br><span class="line">              59.5, 70.8, 83.1, 96.4, 110.7,</span><br><span class="line">              126.0, 142.2, 159.4, 177.6, 196.8])</span><br><span class="line"></span><br><span class="line">plt.scatter(x, y, c=&#x27;b&#x27;, marker=&#x27;s&#x27;, alpha=0.3, edgecolors=&#x27;y&#x27;)</span><br><span class="line">plt.title(&#x27;汽车速度与制定距离散点图&#x27;)</span><br><span class="line">plt.xlabel(&#x27;速度km/h&#x27;)</span><br><span class="line">plt.ylabel(&#x27;制动距离m&#x27;)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p><img data-src="https://raw.githubusercontent.com/cisgu/typora-picture/master/img/202601280911193.png" alt="image-20260128091117159"></p>
+<h3 id="2024-04-20坐标图图表"><a href="#2024-04-20坐标图图表" class="headerlink" title="2024.04.20坐标图图表"></a>2024.04.20坐标图图表</h3><p>In [6]:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">import numpy as np</span><br><span class="line"></span><br><span class="line">plt.figure(figsize=(20, 6), dpi=80)</span><br><span class="line">plt.rcParams[&#x27;font.sans-serif&#x27;] = [&#x27;SimHei&#x27;]</span><br><span class="line">plt.rcParams[&#x27;axes.unicode_minus&#x27;] = False</span><br><span class="line"></span><br><span class="line">x = np.linspace(-np.pi, np.pi, 256, endpoint=True)</span><br><span class="line">y1, y2 = np.sin(x), np.cos(x)</span><br><span class="line">plt.plot(x, y1, x, y2)</span><br><span class="line"># print(x)</span><br><span class="line"></span><br><span class="line"># 设置坐标轴标签</span><br><span class="line">plt.xlabel(&quot;x轴&quot;, labelpad=10)</span><br><span class="line">plt.ylabel(&quot;y轴&quot;)</span><br><span class="line"></span><br><span class="line">#  设置坐标轴刻度范围</span><br><span class="line">plt.xlim(x.min() * 1.5, x.max() * 1.5)</span><br><span class="line">plt.ylim(-1.5, 1.5)</span><br><span class="line"></span><br><span class="line"># 设置刻度标签</span><br><span class="line">plt.xticks([-np.pi, -np.pi/2, 0, np.pi/2, np.pi],</span><br><span class="line">           [r&#x27;$-\pi$&#x27;, r&#x27;$-\pi/2$&#x27;, 0, r&#x27;$\pi/2$&#x27;, r&#x27;$\pi$&#x27;],</span><br><span class="line">           rotation=45)</span><br><span class="line"></span><br><span class="line"># rotation=&#x27;vertical&#x27;</span><br><span class="line"># 添加标题</span><br><span class="line">plt.title(&quot;正弦曲线与余弦曲线&quot;, loc=&quot;center&quot;, pad=20)</span><br><span class="line"></span><br><span class="line"># 添加图例</span><br><span class="line">plt.legend([&#x27;正弦&#x27;, &#x27;余弦&#x27;], title=&#x27;图例&#x27;, loc=&#x27;upper left&#x27;,</span><br><span class="line">           shadow=True, fancybox=True, ncol=2)</span><br><span class="line"></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p><img data-src="https://raw.githubusercontent.com/cisgu/typora-picture/master/img/202601280911548.png" alt="image-20260128091130503"></p>
+<h3 id="2024-04-20中国电影排行榜"><a href="#2024-04-20中国电影排行榜" class="headerlink" title="2024.04.20中国电影排行榜"></a>2024.04.20中国电影排行榜</h3><p>In [7]:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">import numpy as np</span><br><span class="line"></span><br><span class="line">plt.figure(figsize=(20, 6), dpi=80)</span><br><span class="line">plt.rcParams[&#x27;font.sans-serif&#x27;] = [&#x27;SimHei&#x27;]</span><br><span class="line">plt.rcParams[&#x27;axes.unicode_minus&#x27;] = False</span><br><span class="line"></span><br><span class="line">labels = [&quot;流浪地球&quot;, &quot;疯狂的外星人&quot;, &quot;飞驰人生&quot;, &quot;大黄蜂&quot;,</span><br><span class="line">          &quot;熊出没之原始时代&quot;, &quot;白蛇：缘起&quot;, &quot;新喜剧之王&quot;,&quot;死侍2&quot;,&quot;神探蒲松龄&quot;,&quot;密室逃生&quot;,</span><br><span class="line">          &quot;何以为家&quot;,&quot;绿皮书&quot;,&quot;小丑&quot;,&quot;寄生虫&quot;,&quot;波西米亚狂想曲&quot;]</span><br><span class="line"></span><br><span class="line">bar_width = [48.57, 46.18, 42.05, 21.83, 17.03, 16.70, 14.01, 13.83,</span><br><span class="line">             12.85, 11.38, 10.25, 9.46, 9.27, 8.88, 8.64]</span><br><span class="line"></span><br><span class="line">bar_height = 0.2</span><br><span class="line"></span><br><span class="line">plt.barh(range(len(labels)), bar_width, height=bar_height)</span><br><span class="line"></span><br><span class="line">plt.yticks(range(len(labels)), labels)</span><br><span class="line">plt.xlabel(&quot;总票房(亿元)&quot;)</span><br><span class="line"></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p><img data-src="https://raw.githubusercontent.com/cisgu/typora-picture/master/img/202601280911722.png" alt="image-20260128091144682"></p>
+<h3 id="2024-05-16正余弦曲线-py"><a href="#2024-05-16正余弦曲线-py" class="headerlink" title="2024.05.16正余弦曲线.py"></a>2024.05.16正余弦曲线.py</h3><p>In [1]:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line"></span><br><span class="line"># 用窗体显示</span><br><span class="line"># import matplotlib</span><br><span class="line"># matplotlib.use(&#x27;TkAgg&#x27;)</span><br><span class="line"></span><br><span class="line">plt.rcParams[&#x27;font.sans-serif&#x27;] = [&#x27;SimHei&#x27;]</span><br><span class="line">plt.rcParams[&#x27;axes.unicode_minus&#x27;] = False</span><br><span class="line"></span><br><span class="line"># np.linspace() 创建等差数列</span><br><span class="line">x = np.linspace(-np.pi, np.pi, 256)</span><br><span class="line"># print(x)</span><br><span class="line">y1 = np.sin(x)</span><br><span class="line">y2 = np.cos(x)</span><br><span class="line"></span><br><span class="line">plt.plot(x, y1, x, y2)</span><br><span class="line">plt.xlabel(&#x27;x轴&#x27;, labelpad=10)</span><br><span class="line">plt.ylabel(&#x27;y轴&#x27;)</span><br><span class="line"></span><br><span class="line"># 设置x轴与y轴的刻度范围</span><br><span class="line">plt.xlim(-1.5 * np.pi, 1.5 * np.pi)</span><br><span class="line">plt.ylim(-1.5, 1.5)</span><br><span class="line"></span><br><span class="line"># 设置刻度标签</span><br><span class="line">plt.xticks([-np.pi, -np.pi/2, 0, np.pi/2, np.pi], [r&#x27;$-\pi$&#x27;, r&#x27;$-\pi/2$&#x27;, r&#x27;$0$&#x27;, r&#x27;$\pi/2$&#x27;, r&#x27;$\pi$&#x27;])</span><br><span class="line"></span><br><span class="line"># 设置标题</span><br><span class="line">plt.title(&#x27;正余弦函数曲线&#x27;, pad=15, loc=&#x27;center&#x27;)</span><br><span class="line"></span><br><span class="line"># 设置图例</span><br><span class="line">plt.legend([&#x27;正弦函数&#x27;, &#x27;余弦函数&#x27;], ncol=2, loc=&#x27;upper right&#x27;)</span><br><span class="line"></span><br><span class="line"># 设置网格线 默认是both</span><br><span class="line"># plt.grid(b=True, axis=&#x27;y&#x27;)</span><br><span class="line">plt.grid(visible=True, axis=&#x27;y&#x27;)</span><br><span class="line">plt.show()</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img data-src="https://raw.githubusercontent.com/cisgu/typora-picture/master/img/202601280911540.png" alt="image-20260128091156504"></p>
+<h2 id="数据运用与分析02"><a href="#数据运用与分析02" class="headerlink" title="数据运用与分析02"></a>数据运用与分析02</h2><h3 id="2024-05-16正余弦曲线"><a href="#2024-05-16正余弦曲线" class="headerlink" title="2024.05.16正余弦曲线"></a>2024.05.16正余弦曲线</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用窗体显示</span></span><br><span class="line"><span class="comment"># import matplotlib</span></span><br><span class="line"><span class="comment"># matplotlib.use(&#x27;TkAgg&#x27;)</span></span><br><span class="line"></span><br><span class="line">plt.rcParams[<span class="string">&#x27;font.sans-serif&#x27;</span>] = [<span class="string">&#x27;SimHei&#x27;</span>]</span><br><span class="line">plt.rcParams[<span class="string">&#x27;axes.unicode_minus&#x27;</span>] = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># np.linspace() 创建等差数列</span></span><br><span class="line">x = np.linspace(-np.pi, np.pi, <span class="number">256</span>)</span><br><span class="line"><span class="comment"># print(x)</span></span><br><span class="line">y1 = np.sin(x)</span><br><span class="line">y2 = np.cos(x)</span><br><span class="line"></span><br><span class="line">plt.plot(x, y1, x, y2)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;x轴&#x27;</span>, labelpad=<span class="number">10</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;y轴&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置x轴与y轴的刻度范围</span></span><br><span class="line">plt.xlim(-<span class="number">1.5</span> * np.pi, <span class="number">1.5</span> * np.pi)</span><br><span class="line">plt.ylim(-<span class="number">1.5</span>, <span class="number">1.5</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置刻度标签</span></span><br><span class="line">plt.xticks([-np.pi, -np.pi/<span class="number">2</span>, <span class="number">0</span>, np.pi/<span class="number">2</span>, np.pi], [<span class="string">r&#x27;$-\pi$&#x27;</span>, <span class="string">r&#x27;$-\pi/2$&#x27;</span>, <span class="string">r&#x27;$0$&#x27;</span>, <span class="string">r&#x27;$\pi/2$&#x27;</span>, <span class="string">r&#x27;$\pi$&#x27;</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置标题</span></span><br><span class="line">plt.title(<span class="string">&#x27;正余弦函数曲线&#x27;</span>, pad=<span class="number">15</span>, loc=<span class="string">&#x27;center&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置图例</span></span><br><span class="line">plt.legend([<span class="string">&#x27;正弦函数&#x27;</span>, <span class="string">&#x27;余弦函数&#x27;</span>], ncol=<span class="number">2</span>, loc=<span class="string">&#x27;upper right&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置网格线 默认是both</span></span><br><span class="line"><span class="comment"># plt.grid(b=True, axis=&#x27;y&#x27;)</span></span><br><span class="line">plt.grid(visible=<span class="literal">True</span>, axis=<span class="string">&#x27;y&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p>​<br><img data-src="https://raw.githubusercontent.com/cisgu/typora-picture/master/img/202601280912654.png" alt="image-20260128091213615"><br>​    </p>
+<h3 id="2024-05-16正余弦曲线-设置参考线与参考区域"><a href="#2024-05-16正余弦曲线-设置参考线与参考区域" class="headerlink" title="2024.05.16正余弦曲线(设置参考线与参考区域)"></a>2024.05.16正余弦曲线(设置参考线与参考区域)</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用窗体显示</span></span><br><span class="line"><span class="comment"># import matplotlib</span></span><br><span class="line"><span class="comment"># matplotlib.use(&#x27;TkAgg&#x27;)</span></span><br><span class="line"></span><br><span class="line">plt.rcParams[<span class="string">&#x27;font.sans-serif&#x27;</span>] = [<span class="string">&#x27;SimHei&#x27;</span>]</span><br><span class="line">plt.rcParams[<span class="string">&#x27;axes.unicode_minus&#x27;</span>] = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># np.linspace() 创建等差数列</span></span><br><span class="line">x = np.linspace(-np.pi, np.pi, <span class="number">256</span>)</span><br><span class="line"><span class="comment"># print(x)</span></span><br><span class="line">y1 = np.sin(x)</span><br><span class="line">y2 = np.cos(x)</span><br><span class="line"></span><br><span class="line">plt.plot(x, y1, x, y2)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;x轴&#x27;</span>, labelpad=<span class="number">10</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;y轴&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置x轴与y轴的刻度范围</span></span><br><span class="line">plt.xlim(-<span class="number">1.5</span> * np.pi, <span class="number">1.5</span> * np.pi)</span><br><span class="line">plt.ylim(-<span class="number">1.5</span>, <span class="number">1.5</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置刻度标签</span></span><br><span class="line">plt.xticks([-np.pi, -np.pi/<span class="number">2</span>, <span class="number">0</span>, np.pi/<span class="number">2</span>, np.pi], [<span class="string">r&#x27;$-\pi$&#x27;</span>, <span class="string">r&#x27;$-\pi/2$&#x27;</span>, <span class="string">r&#x27;$0$&#x27;</span>, <span class="string">r&#x27;$\pi/2$&#x27;</span>, <span class="string">r&#x27;$\pi$&#x27;</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置标题</span></span><br><span class="line">plt.title(<span class="string">&#x27;正余弦函数曲线&#x27;</span>, pad=<span class="number">15</span>, loc=<span class="string">&#x27;center&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置图例</span></span><br><span class="line">plt.legend([<span class="string">&#x27;正弦函数&#x27;</span>, <span class="string">&#x27;余弦函数&#x27;</span>], ncol=<span class="number">2</span>, loc=<span class="string">&#x27;upper right&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置网格线 默认是both</span></span><br><span class="line"><span class="comment"># plt.grid(b=True, axis=&#x27;y&#x27;)</span></span><br><span class="line">plt.grid(visible=<span class="literal">True</span>, axis=<span class="string">&#x27;both&#x27;</span>, linewidth=<span class="number">0.3</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加参考线</span></span><br><span class="line">plt.axhline(y=<span class="number">0</span>, linestyle=<span class="string">&#x27;--&#x27;</span>)</span><br><span class="line">plt.axvline(x=<span class="number">0</span>, linestyle=<span class="string">&#x27;--&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加参考区域</span></span><br><span class="line">plt.axhspan(ymin=<span class="number">0.5</span>, ymax=<span class="number">1</span>, alpha=<span class="number">0.3</span>)</span><br><span class="line">plt.axvspan(xmin=<span class="number">0</span>, xmax=np.pi/<span class="number">2</span>, alpha=<span class="number">0.3</span>)</span><br><span class="line"></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p>​<br><img data-src="https://raw.githubusercontent.com/cisgu/typora-picture/master/img/202601280912226.png" alt="image-20260128091235183"><br>​    </p>
+<h3 id="2024-05-16正余弦曲线-设置表格"><a href="#2024-05-16正余弦曲线-设置表格" class="headerlink" title="2024.05.16正余弦曲线(设置表格)"></a>2024.05.16正余弦曲线(设置表格)</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用窗体显示</span></span><br><span class="line"><span class="comment"># import matplotlib</span></span><br><span class="line"><span class="comment"># matplotlib.use(&#x27;TkAgg&#x27;)</span></span><br><span class="line"></span><br><span class="line">plt.rcParams[<span class="string">&#x27;font.sans-serif&#x27;</span>] = [<span class="string">&#x27;SimHei&#x27;</span>]</span><br><span class="line">plt.rcParams[<span class="string">&#x27;axes.unicode_minus&#x27;</span>] = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># np.linspace() 创建等差数列</span></span><br><span class="line">x = np.linspace(-np.pi, np.pi, <span class="number">256</span>)</span><br><span class="line"><span class="comment"># print(x)</span></span><br><span class="line">y1 = np.sin(x)</span><br><span class="line">y2 = np.cos(x)</span><br><span class="line"></span><br><span class="line">plt.plot(x, y1, x, y2)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;x轴&#x27;</span>, labelpad=<span class="number">10</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;y轴&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置x轴与y轴的刻度范围</span></span><br><span class="line">plt.xlim(-<span class="number">1.5</span> * np.pi, <span class="number">1.5</span> * np.pi)</span><br><span class="line">plt.ylim(-<span class="number">1.5</span>, <span class="number">1.5</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置刻度标签</span></span><br><span class="line">plt.xticks([-np.pi, -np.pi/<span class="number">2</span>, <span class="number">0</span>, np.pi/<span class="number">2</span>, np.pi], [<span class="string">r&#x27;$-\pi$&#x27;</span>, <span class="string">r&#x27;$-\pi/2$&#x27;</span>, <span class="string">r&#x27;$0$&#x27;</span>, <span class="string">r&#x27;$\pi/2$&#x27;</span>, <span class="string">r&#x27;$\pi$&#x27;</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置标题</span></span><br><span class="line">plt.title(<span class="string">&#x27;正余弦函数曲线&#x27;</span>, pad=<span class="number">15</span>, loc=<span class="string">&#x27;center&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置图例</span></span><br><span class="line">plt.legend([<span class="string">&#x27;正弦函数&#x27;</span>, <span class="string">&#x27;余弦函数&#x27;</span>], ncol=<span class="number">2</span>, loc=<span class="string">&#x27;upper right&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置网格线 默认是both</span></span><br><span class="line"><span class="comment"># plt.grid(b=True, axis=&#x27;y&#x27;)</span></span><br><span class="line">plt.grid(visible=<span class="literal">True</span>, axis=<span class="string">&#x27;both&#x27;</span>, linewidth=<span class="number">0.3</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加参考线</span></span><br><span class="line">plt.axhline(y=<span class="number">0</span>, linestyle=<span class="string">&#x27;--&#x27;</span>)</span><br><span class="line">plt.axvline(x=<span class="number">0</span>, linestyle=<span class="string">&#x27;--&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加参考区域</span></span><br><span class="line">plt.axhspan(ymin=<span class="number">0.5</span>, ymax=<span class="number">1</span>, alpha=<span class="number">0.3</span>)</span><br><span class="line">plt.axvspan(xmin=<span class="number">0</span>, xmax=np.pi/<span class="number">2</span>, alpha=<span class="number">0.3</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加表格</span></span><br><span class="line">plt.table(cellText=[[<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>], [<span class="number">1</span>, <span class="number">0</span>, -<span class="number">1</span>]],</span><br><span class="line">          cellLoc=<span class="string">&#x27;center&#x27;</span>,</span><br><span class="line">          colWidths=[<span class="number">0.05</span>] * <span class="number">3</span>,</span><br><span class="line">          colColours=[<span class="string">&#x27;blue&#x27;</span>]*<span class="number">3</span>,</span><br><span class="line">          rowColours=[<span class="string">&#x27;red&#x27;</span>]*<span class="number">2</span>,</span><br><span class="line">          rowLabels=[<span class="string">&#x27;sinx&#x27;</span>, <span class="string">&#x27;cosx&#x27;</span>],</span><br><span class="line">          colLabels=[<span class="string">&#x27;0&#x27;</span>, <span class="string">r&#x27;$\pi/2$&#x27;</span>, <span class="string">r&#x27;$\pi$&#x27;</span>],</span><br><span class="line">          loc=<span class="string">&quot;lower right&quot;</span>)</span><br><span class="line"></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p><img data-src="https://raw.githubusercontent.com/cisgu/typora-picture/master/img/202601280912759.png" alt="image-20260128091243718"></p>
+<h3 id="2024-05-16全校高二年级各班男生英语成绩评估"><a href="#2024-05-16全校高二年级各班男生英语成绩评估" class="headerlink" title="2024.05.16全校高二年级各班男生英语成绩评估"></a>2024.05.16全校高二年级各班男生英语成绩评估</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用窗体显示</span></span><br><span class="line"><span class="comment"># import matplotlib</span></span><br><span class="line"><span class="comment"># matplotlib.use(&#x27;TkAgg&#x27;)</span></span><br><span class="line"></span><br><span class="line">plt.rcParams[<span class="string">&#x27;font.sans-serif&#x27;</span>] = [<span class="string">&#x27;SimHei&#x27;</span>]</span><br><span class="line">plt.rcParams[<span class="string">&#x27;axes.unicode_minus&#x27;</span>] = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">men_means = (<span class="number">90.5</span>, <span class="number">89.5</span>, <span class="number">88.7</span>, <span class="number">88.5</span>, <span class="number">85.2</span>, <span class="number">86.6</span>)</span><br><span class="line">women_means = (<span class="number">92.7</span>, <span class="number">87.0</span>, <span class="number">90.5</span>, <span class="number">85.0</span>, <span class="number">89.5</span>, <span class="number">89.8</span>)</span><br><span class="line"></span><br><span class="line">ind = np.arange(<span class="built_in">len</span>(men_means))</span><br><span class="line">width = <span class="number">0.2</span></span><br><span class="line"></span><br><span class="line">plt.bar(ind, men_means, width, label=<span class="string">&quot;男生的平均成绩&quot;</span>)</span><br><span class="line">plt.bar(ind+width, women_means, width, label=<span class="string">&quot;女生的平均成绩&quot;</span>)</span><br><span class="line"></span><br><span class="line">plt.title(<span class="string">&#x27;高二各班男生女生英语的平均成绩&#x27;</span>)</span><br><span class="line">plt.xticks(ind, [<span class="string">&#x27;高二1班&#x27;</span>, <span class="string">&#x27;高二2班&#x27;</span>, <span class="string">&#x27;高二3班&#x27;</span>, <span class="string">&#x27;高二4班&#x27;</span>, <span class="string">&#x27;高二5班&#x27;</span>, <span class="string">&#x27;高二6班&#x27;</span>])</span><br><span class="line">plt.ylabel(<span class="string">&#x27;分数&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加水平参考线</span></span><br><span class="line">plt.axhline(<span class="number">88.5</span>, ls=<span class="string">&#x27;--&#x27;</span>, linewidth=<span class="number">1.0</span>, label=<span class="string">&#x27;全年级平均成绩&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.legend(loc=<span class="string">&quot;upper right&quot;</span>)</span><br><span class="line"></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p>​<br><img data-src="https://raw.githubusercontent.com/cisgu/typora-picture/master/img/202601280912678.png" alt="image-20260128091251639"><br>​    </p>
+<h3 id="2024-05-16设置注释文本"><a href="#2024-05-16设置注释文本" class="headerlink" title="2024.05.16设置注释文本"></a>2024.05.16设置注释文本</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用窗体显示</span></span><br><span class="line"><span class="comment"># import matplotlib</span></span><br><span class="line"><span class="comment"># matplotlib.use(&#x27;TkAgg&#x27;)</span></span><br><span class="line"></span><br><span class="line">plt.rcParams[<span class="string">&#x27;font.sans-serif&#x27;</span>] = [<span class="string">&#x27;SimHei&#x27;</span>]</span><br><span class="line">plt.rcParams[<span class="string">&#x27;axes.unicode_minus&#x27;</span>] = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># np.linspace() 创建等差数列</span></span><br><span class="line">x = np.linspace(-np.pi, np.pi, <span class="number">256</span>)</span><br><span class="line"><span class="comment"># print(x)</span></span><br><span class="line">y1 = np.sin(x)</span><br><span class="line">y2 = np.cos(x)</span><br><span class="line"></span><br><span class="line">plt.plot(x, y1, x, y2)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;x轴&#x27;</span>, labelpad=<span class="number">10</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;y轴&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置x轴与y轴的刻度范围</span></span><br><span class="line">plt.xlim(-<span class="number">1.5</span> * np.pi, <span class="number">1.5</span> * np.pi)</span><br><span class="line">plt.ylim(-<span class="number">1.5</span>, <span class="number">1.5</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置刻度标签</span></span><br><span class="line">plt.xticks([-np.pi, -np.pi/<span class="number">2</span>, <span class="number">0</span>, np.pi/<span class="number">2</span>, np.pi], [<span class="string">r&#x27;$-\pi$&#x27;</span>, <span class="string">r&#x27;$-\pi/2$&#x27;</span>, <span class="string">r&#x27;$0$&#x27;</span>, <span class="string">r&#x27;$\pi/2$&#x27;</span>, <span class="string">r&#x27;$\pi$&#x27;</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置标题</span></span><br><span class="line">plt.title(<span class="string">&#x27;正余弦函数曲线&#x27;</span>, pad=<span class="number">15</span>, loc=<span class="string">&#x27;center&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置图例</span></span><br><span class="line">plt.legend([<span class="string">&#x27;正弦函数&#x27;</span>, <span class="string">&#x27;余弦函数&#x27;</span>], ncol=<span class="number">2</span>, loc=<span class="string">&#x27;upper right&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置网格线 默认是both</span></span><br><span class="line"><span class="comment"># plt.grid(b=True, axis=&#x27;y&#x27;)</span></span><br><span class="line">plt.grid(visible=<span class="literal">True</span>, axis=<span class="string">&#x27;both&#x27;</span>, linewidth=<span class="number">0.3</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加指向性注释文本</span></span><br><span class="line">plt.annotate(<span class="string">&quot;最小值&quot;</span>, xy=(-np.pi/<span class="number">2</span>, -<span class="number">1.0</span>),</span><br><span class="line">             xytext=(-np.pi/<span class="number">2</span>, -<span class="number">0.5</span>),</span><br><span class="line">             arrowprops=<span class="built_in">dict</span>(arrowstyle=<span class="string">&quot;-|&gt;&quot;</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加无指向性注释文本</span></span><br><span class="line">plt.text(<span class="number">3.3</span>, <span class="number">0.1</span>, <span class="string">&quot;y=sin(x)&quot;</span>, bbox=<span class="built_in">dict</span>(alpha=<span class="number">0.5</span>))</span><br><span class="line">plt.text(<span class="number">3.3</span>, -<span class="number">0.9</span>, <span class="string">&quot;y=cos(x)&quot;</span>, bbox=<span class="built_in">dict</span>(alpha=<span class="number">0.5</span>))</span><br><span class="line"></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p>​<br><img data-src="https://raw.githubusercontent.com/cisgu/typora-picture/master/img/202601280913647.png" alt="image-20260128091301607"><br>​    </p>
+<h3 id="2024-05-16阿里巴巴平台成交额柱状图"><a href="#2024-05-16阿里巴巴平台成交额柱状图" class="headerlink" title="2024.05.16阿里巴巴平台成交额柱状图"></a>2024.05.16阿里巴巴平台成交额柱状图</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用窗体显示</span></span><br><span class="line"><span class="comment"># import matplotlib</span></span><br><span class="line"><span class="comment"># matplotlib.use(&#x27;TkAgg&#x27;)</span></span><br><span class="line"></span><br><span class="line">plt.rcParams[<span class="string">&#x27;font.sans-serif&#x27;</span>] = [<span class="string">&#x27;SimHei&#x27;</span>]</span><br><span class="line">plt.rcParams[<span class="string">&#x27;axes.unicode_minus&#x27;</span>] = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">x = np.arange(<span class="number">7</span>)</span><br><span class="line">y = [<span class="number">10770</span>, <span class="number">16780</span>, <span class="number">14440</span>, <span class="number">30920</span>, <span class="number">37670</span>, <span class="number">48200</span>, <span class="number">57270</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘制柱状图</span></span><br><span class="line">bar_rects = plt.bar(x, y, tick_label=[<span class="string">&quot;FY2013&quot;</span>, <span class="string">&quot;FY2014&quot;</span>, <span class="string">&quot;FY2015&quot;</span>,</span><br><span class="line">                                      <span class="string">&quot;FY2016&quot;</span>, <span class="string">&quot;FY2017&quot;</span>, <span class="string">&quot;FY2018&quot;</span>, <span class="string">&quot;FY2019&quot;</span>], width=<span class="number">0.5</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加无指向性注释文本</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">autolabel</span>(<span class="params">rects</span>):</span><br><span class="line">    <span class="comment"># pass</span></span><br><span class="line">    <span class="keyword">for</span> rect <span class="keyword">in</span> rects:</span><br><span class="line">        height = rect.get_height()  <span class="comment"># 获取每个矩阵的高度</span></span><br><span class="line">        <span class="comment"># print(height)</span></span><br><span class="line">        plt.text(rect.get_x() + rect.get_width() / <span class="number">2</span>, height + <span class="number">300</span>,</span><br><span class="line">                 s=<span class="string">&#x27;&#123;&#125;&#x27;</span>.<span class="built_in">format</span>(height), ha=<span class="string">&quot;center&quot;</span>, va=<span class="string">&quot;bottom&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">autolabel(bar_rects)</span><br><span class="line"></span><br><span class="line">plt.ylabel(<span class="string">&#x27;GMV(亿元)&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p>​<br><img data-src="https://raw.githubusercontent.com/cisgu/typora-picture/master/img/202601280913487.png" alt="image-20260128091309446"><br>​    </p>
+<h3 id="2024-05-16果酱面包配料比例"><a href="#2024-05-16果酱面包配料比例" class="headerlink" title="2024.05.16果酱面包配料比例"></a>2024.05.16果酱面包配料比例</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用窗体显示</span></span><br><span class="line"><span class="comment"># import matplotlib</span></span><br><span class="line"><span class="comment"># matplotlib.use(&#x27;TkAgg&#x27;)</span></span><br><span class="line"></span><br><span class="line">plt.figure(figsize=(<span class="number">10</span>, <span class="number">6</span>), dpi=<span class="number">80</span>)</span><br><span class="line">plt.rcParams[<span class="string">&#x27;font.sans-serif&#x27;</span>] = [<span class="string">&#x27;SimHei&#x27;</span>]</span><br><span class="line">plt.rcParams[<span class="string">&#x27;axes.unicode_minus&#x27;</span>] = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">kinds = [<span class="string">&#x27;面粉&#x27;</span>, <span class="string">&#x27;全麦粉&#x27;</span>, <span class="string">&#x27;酵母&#x27;</span>, <span class="string">&#x27;苹果酱&#x27;</span>, <span class="string">&#x27;鸡蛋&#x27;</span>, <span class="string">&#x27;黄油&#x27;</span>, <span class="string">&#x27;盐&#x27;</span>, <span class="string">&#x27;白糖&#x27;</span>]</span><br><span class="line">weight = [<span class="number">250</span>, <span class="number">150</span>, <span class="number">4</span>, <span class="number">250</span>, <span class="number">50</span>, <span class="number">30</span>, <span class="number">4</span>, <span class="number">20</span>]</span><br><span class="line"></span><br><span class="line">plt.pie(weight, autopct=<span class="string">&#x27;%.1f%%&#x27;</span>)</span><br><span class="line">plt.legend(kinds, loc=<span class="string">&quot;upper right&quot;</span>, bbox_to_anchor=[<span class="number">1.3</span>, <span class="number">1.1</span>])</span><br><span class="line">plt.table(cellText=[weight], cellLoc=<span class="string">&#x27;center&#x27;</span>,</span><br><span class="line">          rowLabels=[<span class="string">&#x27;重量(g)&#x27;</span>], colLabels=kinds,</span><br><span class="line">          loc=<span class="string">&#x27;lower center&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p>​<br><img data-src="https://raw.githubusercontent.com/cisgu/typora-picture/master/img/202601280913429.png" alt="image-20260128091316392"><br>​    </p>
+<h2 id="数据分析与运用03"><a href="#数据分析与运用03" class="headerlink" title="数据分析与运用03"></a>数据分析与运用03</h2><h3 id="2024-05-30设置颜色"><a href="#2024-05-30设置颜色" class="headerlink" title="2024.05.30设置颜色"></a>2024.05.30设置颜色</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用窗体显示</span></span><br><span class="line"><span class="comment"># matplotlib.use(&#x27;TkAgg&#x27;)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> name, <span class="built_in">hex</span> <span class="keyword">in</span> matplotlib.colors.cnames.items():</span><br><span class="line">    <span class="built_in">print</span>(name, <span class="built_in">hex</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># plt.plot([1, 2, 3], [4, 5, 6], color=&#x27;#9ACD32&#x27;)</span></span><br><span class="line">plt.plot([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>], color=(<span class="number">0.3</span>, <span class="number">0.4</span>, <span class="number">0.5</span>))</span><br><span class="line">plt.show()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<pre><code>aliceblue #F0F8FF
+antiquewhite #FAEBD7
+aqua #00FFFF
+aquamarine #7FFFD4
+azure #F0FFFF
+beige #F5F5DC
+bisque #FFE4C4
+black #000000
+blanchedalmond #FFEBCD
+blue #0000FF
+blueviolet #8A2BE2
+brown #A52A2A
+burlywood #DEB887
+cadetblue #5F9EA0
+chartreuse #7FFF00
+chocolate #D2691E
+coral #FF7F50
+cornflowerblue #6495ED
+cornsilk #FFF8DC
+crimson #DC143C
+cyan #00FFFF
+darkblue #00008B
+darkcyan #008B8B
+darkgoldenrod #B8860B
+darkgray #A9A9A9
+darkgreen #006400
+darkgrey #A9A9A9
+darkkhaki #BDB76B
+darkmagenta #8B008B
+darkolivegreen #556B2F
+darkorange #FF8C00
+darkorchid #9932CC
+darkred #8B0000
+darksalmon #E9967A
+darkseagreen #8FBC8F
+darkslateblue #483D8B
+darkslategray #2F4F4F
+darkslategrey #2F4F4F
+darkturquoise #00CED1
+darkviolet #9400D3
+deeppink #FF1493
+deepskyblue #00BFFF
+dimgray #696969
+dimgrey #696969
+dodgerblue #1E90FF
+firebrick #B22222
+floralwhite #FFFAF0
+forestgreen #228B22
+fuchsia #FF00FF
+gainsboro #DCDCDC
+ghostwhite #F8F8FF
+gold #FFD700
+goldenrod #DAA520
+gray #808080
+green #008000
+greenyellow #ADFF2F
+grey #808080
+honeydew #F0FFF0
+hotpink #FF69B4
+indianred #CD5C5C
+indigo #4B0082
+ivory #FFFFF0
+khaki #F0E68C
+lavender #E6E6FA
+lavenderblush #FFF0F5
+lawngreen #7CFC00
+lemonchiffon #FFFACD
+lightblue #ADD8E6
+lightcoral #F08080
+lightcyan #E0FFFF
+lightgoldenrodyellow #FAFAD2
+lightgray #D3D3D3
+lightgreen #90EE90
+lightgrey #D3D3D3
+lightpink #FFB6C1
+lightsalmon #FFA07A
+lightseagreen #20B2AA
+lightskyblue #87CEFA
+lightslategray #778899
+lightslategrey #778899
+lightsteelblue #B0C4DE
+lightyellow #FFFFE0
+lime #00FF00
+limegreen #32CD32
+linen #FAF0E6
+magenta #FF00FF
+maroon #800000
+mediumaquamarine #66CDAA
+mediumblue #0000CD
+mediumorchid #BA55D3
+mediumpurple #9370DB
+mediumseagreen #3CB371
+mediumslateblue #7B68EE
+mediumspringgreen #00FA9A
+mediumturquoise #48D1CC
+mediumvioletred #C71585
+midnightblue #191970
+mintcream #F5FFFA
+mistyrose #FFE4E1
+moccasin #FFE4B5
+navajowhite #FFDEAD
+navy #000080
+oldlace #FDF5E6
+olive #808000
+olivedrab #6B8E23
+orange #FFA500
+orangered #FF4500
+orchid #DA70D6
+palegoldenrod #EEE8AA
+palegreen #98FB98
+paleturquoise #AFEEEE
+palevioletred #DB7093
+papayawhip #FFEFD5
+peachpuff #FFDAB9
+peru #CD853F
+pink #FFC0CB
+plum #DDA0DD
+powderblue #B0E0E6
+purple #800080
+rebeccapurple #663399
+red #FF0000
+rosybrown #BC8F8F
+royalblue #4169E1
+saddlebrown #8B4513
+salmon #FA8072
+sandybrown #F4A460
+seagreen #2E8B57
+seashell #FFF5EE
+sienna #A0522D
+silver #C0C0C0
+skyblue #87CEEB
+slateblue #6A5ACD
+slategray #708090
+slategrey #708090
+snow #FFFAFA
+springgreen #00FF7F
+steelblue #4682B4
+tan #D2B48C
+teal #008080
+thistle #D8BFD8
+tomato #FF6347
+turquoise #40E0D0
+violet #EE82EE
+wheat #F5DEB3
+white #FFFFFF
+whitesmoke #F5F5F5
+yellow #FFFF00
+yellowgreen #9ACD32
+</code></pre>
+<p><img data-src="https://raw.githubusercontent.com/cisgu/typora-picture/master/img/202601280913821.png" alt="image-20260128091327783"></p>
+<h3 id="2024-05-30图书案例-堆叠柱形图"><a href="#2024-05-30图书案例-堆叠柱形图" class="headerlink" title="2024.05.30图书案例(堆叠柱形图)"></a>2024.05.30图书案例(堆叠柱形图)</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用窗体显示</span></span><br><span class="line"><span class="comment"># matplotlib.use(&#x27;TkAgg&#x27;)</span></span><br><span class="line"></span><br><span class="line">plt.rcParams[<span class="string">&#x27;font.sans-serif&#x27;</span>] = [<span class="string">&#x27;SimHei&#x27;</span>]</span><br><span class="line"></span><br><span class="line">x = np.arange(<span class="number">5</span>)</span><br><span class="line">y1 = [<span class="number">1200</span>, <span class="number">2400</span>, <span class="number">1800</span>, <span class="number">2200</span>, <span class="number">1600</span>]</span><br><span class="line">y2 = [<span class="number">1050</span>, <span class="number">2100</span>, <span class="number">1300</span>, <span class="number">1600</span>, <span class="number">1340</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 柱形的宽度</span></span><br><span class="line">bar_width = <span class="number">0.5</span></span><br><span class="line"></span><br><span class="line">tick_label = [<span class="string">&quot;家庭&quot;</span>, <span class="string">&quot;小说&quot;</span>, <span class="string">&quot;心里&quot;</span>, <span class="string">&quot;科技&quot;</span>, <span class="string">&quot;儿童&quot;</span>]</span><br><span class="line">plt.bar(x, y1, bar_width, color=<span class="string">&quot;#FFCC00&quot;</span>)</span><br><span class="line"><span class="comment"># bottom=y1 不覆盖，从y1开始堆叠</span></span><br><span class="line">plt.bar(x, y2, bar_width, color=<span class="string">&quot;#B0C4DE&quot;</span>, bottom=y1)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 坐标注释</span></span><br><span class="line">plt.xticks(x, tick_label)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;图书的种类&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;图书的数量&#x27;</span>)</span><br><span class="line"><span class="comment"># 图例</span></span><br><span class="line">plt.legend([<span class="string">&#x27;地区1&#x27;</span>, <span class="string">&#x27;地区2&#x27;</span>])</span><br><span class="line"><span class="comment"># 标题</span></span><br><span class="line">plt.title(<span class="string">&#x27;地区1地区2各类图书的采购数量&#x27;</span>)</span><br><span class="line"><span class="comment"># 网格线</span></span><br><span class="line">plt.grid(<span class="literal">True</span>, axis=<span class="string">&#x27;y&#x27;</span>, color=<span class="string">&quot;gray&quot;</span>, alpha=<span class="number">0.5</span>)</span><br><span class="line">plt.show()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<p><img data-src="https://raw.githubusercontent.com/cisgu/typora-picture/master/img/202601280913588.png" alt="image-20260128091336549"></p>
+<h3 id="2024-05-30设置线型"><a href="#2024-05-30设置线型" class="headerlink" title="2024.05.30设置线型"></a>2024.05.30设置线型</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用窗体显示</span></span><br><span class="line"><span class="comment"># matplotlib.use(&#x27;TkAgg&#x27;)</span></span><br><span class="line"></span><br><span class="line">plt.rcParams[<span class="string">&#x27;font.sans-serif&#x27;</span>] = [<span class="string">&#x27;SimHei&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># ls(linestyle) 设置线型 : -. -- -</span></span><br><span class="line">plt.plot([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>], color=<span class="string">&quot;r&quot;</span>, ls=<span class="string">&quot;-.&quot;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p>​<br><img data-src="https://raw.githubusercontent.com/cisgu/typora-picture/master/img/202601280913320.png" alt="image-20260128091344279"><br>​    </p>
+<h3 id="2024-05-30汇率走势"><a href="#2024-05-30汇率走势" class="headerlink" title="2024.05.30汇率走势"></a>2024.05.30汇率走势</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用窗体显示</span></span><br><span class="line"><span class="comment"># matplotlib.use(&#x27;TkAgg&#x27;)</span></span><br><span class="line"></span><br><span class="line">plt.rcParams[<span class="string">&#x27;font.sans-serif&#x27;</span>] = [<span class="string">&#x27;SimHei&#x27;</span>]</span><br><span class="line"></span><br><span class="line">eurcny_2017 = np.array([<span class="number">6.8007</span>, <span class="number">6.8007</span>, <span class="number">6.8015</span>, <span class="number">6.8015</span>, <span class="number">6.8060</span>, <span class="number">6.8060</span>,</span><br><span class="line">                        <span class="number">6.8060</span>, <span class="number">6.8036</span>, <span class="number">6.8025</span>, <span class="number">6.7877</span>, <span class="number">6.7835</span>, <span class="number">6.7758</span>,</span><br><span class="line">                        <span class="number">6.7700</span>, <span class="number">6.7463</span>, <span class="number">6.7519</span>, <span class="number">6.7511</span>, <span class="number">6.7511</span>, <span class="number">6.7539</span>, <span class="number">6.7265</span>])</span><br><span class="line">eurcny_2019 = np.array([<span class="number">6.8640</span>, <span class="number">6.8705</span>, <span class="number">6.8697</span>, <span class="number">6.8697</span>, <span class="number">6.8697</span>, <span class="number">6.8881</span>,</span><br><span class="line">                        <span class="number">6.8853</span>, <span class="number">6.8856</span>, <span class="number">6.8677</span>, <span class="number">6.8662</span>, <span class="number">6.8662</span>, <span class="number">6.8662</span>,</span><br><span class="line">                        <span class="number">6.8827</span>, <span class="number">6.8761</span>, <span class="number">6.8635</span>, <span class="number">6.8860</span>, <span class="number">6.8737</span>, <span class="number">6.8796</span>, <span class="number">6.8841</span>])</span><br><span class="line"></span><br><span class="line">data_x = np.array([<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>, <span class="number">14</span>, <span class="number">17</span>, <span class="number">18</span>, <span class="number">19</span>, <span class="number">24</span>, <span class="number">25</span>, <span class="number">26</span>, <span class="number">31</span>])</span><br><span class="line"></span><br><span class="line">plt.plot(data_x, eurcny_2017, color=<span class="string">&quot;#006373&quot;</span>, linewidth=<span class="number">2</span>, ls=<span class="string">&quot;-&quot;</span>)</span><br><span class="line">plt.plot(data_x, eurcny_2019, color=<span class="string">&quot;#8A2E76&quot;</span>, linewidth=<span class="number">2</span>, ls=<span class="string">&quot;--&quot;</span>)</span><br><span class="line"></span><br><span class="line">plt.xlabel(<span class="string">&quot;日期&quot;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&quot;汇率&quot;</span>)</span><br><span class="line"><span class="comment"># 图例</span></span><br><span class="line">plt.legend([<span class="string">&#x27;2017年&#x27;</span>, <span class="string">&#x27;2019年&#x27;</span>])</span><br><span class="line"></span><br><span class="line">plt.show()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<p><img data-src="https://raw.githubusercontent.com/cisgu/typora-picture/master/img/202601280913117.png" alt="image-20260128091356077"></p>
+<h3 id="2024-05-30设置数据标记"><a href="#2024-05-30设置数据标记" class="headerlink" title="2024.05.30设置数据标记"></a>2024.05.30设置数据标记</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用窗体显示</span></span><br><span class="line"><span class="comment"># matplotlib.use(&#x27;TkAgg&#x27;)</span></span><br><span class="line"></span><br><span class="line">plt.rcParams[<span class="string">&#x27;font.sans-serif&#x27;</span>] = [<span class="string">&#x27;SimHei&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># marker 设置标记的形状, markersize设置标记的尺寸, markerfacecolor 设置标记的填充色，</span></span><br><span class="line"><span class="comment"># markeredgecolor设置标记的边框颜色， markeredgewidth 设置标记的边框的宽度</span></span><br><span class="line">plt.plot([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>], color=<span class="string">&quot;r&quot;</span>, ls=<span class="string">&quot;-.&quot;</span>, marker=<span class="string">&#x27;^&#x27;</span>, markersize=<span class="number">5</span>,</span><br><span class="line">         markerfacecolor=<span class="string">&#x27;w&#x27;</span>, markeredgecolor=<span class="string">&#x27;g&#x27;</span>, markeredgewidth=<span class="number">2</span>)</span><br><span class="line">plt.show()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<p>​<br><img data-src="https://raw.githubusercontent.com/cisgu/typora-picture/master/img/202601280914089.png" alt="image-20260128091403045"><br>​    </p>
+<h3 id="2024-05-30三款产品年销售额折线图"><a href="#2024-05-30三款产品年销售额折线图" class="headerlink" title="2024.05.30三款产品年销售额折线图"></a>2024.05.30三款产品年销售额折线图</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用窗体显示</span></span><br><span class="line"><span class="comment"># matplotlib.use(&#x27;TkAgg&#x27;)</span></span><br><span class="line"></span><br><span class="line">plt.rcParams[<span class="string">&#x27;font.sans-serif&#x27;</span>] = [<span class="string">&#x27;SimHei&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 数据</span></span><br><span class="line">data_x = [<span class="string">&#x27;第1季度&#x27;</span>, <span class="string">&#x27;第2季度&#x27;</span>, <span class="string">&#x27;第3季度&#x27;</span>, <span class="string">&#x27;第4季度&#x27;</span>]</span><br><span class="line">A = [<span class="number">2144</span>, <span class="number">4617</span>, <span class="number">7674</span>, <span class="number">6666</span>]</span><br><span class="line">B = [<span class="number">853</span>, <span class="number">1214</span>, <span class="number">2414</span>, <span class="number">4409</span>]</span><br><span class="line">C = [<span class="number">153</span>, <span class="number">155</span>, <span class="number">292</span>, <span class="number">680</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 画折线图</span></span><br><span class="line">plt.plot(data_x, A, ls=<span class="string">&#x27;-&#x27;</span>, marker=<span class="string">&#x27;o&#x27;</span>, color=<span class="string">&#x27;b&#x27;</span>, label=<span class="string">&#x27;产品A&#x27;</span>)</span><br><span class="line">plt.plot(data_x, B, ls=<span class="string">&#x27;--&#x27;</span>, marker=<span class="string">&#x27;s&#x27;</span>, color=<span class="string">&#x27;r&#x27;</span>, label=<span class="string">&#x27;产品B&#x27;</span>)</span><br><span class="line">plt.plot(data_x, C, ls=<span class="string">&#x27;:&#x27;</span>, marker=<span class="string">&#x27;x&#x27;</span>, color=<span class="string">&#x27;g&#x27;</span>, label=<span class="string">&#x27;产品C&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置网格</span></span><br><span class="line">plt.grid(alpha=<span class="number">0.3</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加图例</span></span><br><span class="line">plt.legend()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加标题和标签</span></span><br><span class="line">plt.title(<span class="string">&#x27;三款产品年销售额折线图&#x27;</span>)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;季度&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;销售额&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.show()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 39 40 41</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<p><img data-src="https://raw.githubusercontent.com/cisgu/typora-picture/master/img/202601280914070.png" alt="image-20260128091413029"></p>
+<h3 id="2024-05-30设置颜色-1"><a href="#2024-05-30设置颜色-1" class="headerlink" title="2024.05.30设置颜色"></a>2024.05.30设置颜色</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用窗体显示</span></span><br><span class="line"><span class="comment"># matplotlib.use(&#x27;TkAgg&#x27;)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> name, <span class="built_in">hex</span> <span class="keyword">in</span> matplotlib.colors.cnames.items():</span><br><span class="line">    <span class="built_in">print</span>(name, <span class="built_in">hex</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># plt.plot([1, 2, 3], [4, 5, 6], color=&#x27;#9ACD32&#x27;)</span></span><br><span class="line">plt.plot([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>], color=(<span class="number">0.3</span>, <span class="number">0.4</span>, <span class="number">0.5</span>))</span><br><span class="line">plt.show()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<pre><code>aliceblue #F0F8FF
+antiquewhite #FAEBD7
+aqua #00FFFF
+aquamarine #7FFFD4
+azure #F0FFFF
+beige #F5F5DC
+bisque #FFE4C4
+black #000000
+blanchedalmond #FFEBCD
+blue #0000FF
+blueviolet #8A2BE2
+brown #A52A2A
+burlywood #DEB887
+cadetblue #5F9EA0
+chartreuse #7FFF00
+chocolate #D2691E
+coral #FF7F50
+cornflowerblue #6495ED
+cornsilk #FFF8DC
+crimson #DC143C
+cyan #00FFFF
+darkblue #00008B
+darkcyan #008B8B
+darkgoldenrod #B8860B
+darkgray #A9A9A9
+darkgreen #006400
+darkgrey #A9A9A9
+darkkhaki #BDB76B
+darkmagenta #8B008B
+darkolivegreen #556B2F
+darkorange #FF8C00
+darkorchid #9932CC
+darkred #8B0000
+darksalmon #E9967A
+darkseagreen #8FBC8F
+darkslateblue #483D8B
+darkslategray #2F4F4F
+darkslategrey #2F4F4F
+darkturquoise #00CED1
+darkviolet #9400D3
+deeppink #FF1493
+deepskyblue #00BFFF
+dimgray #696969
+dimgrey #696969
+dodgerblue #1E90FF
+firebrick #B22222
+floralwhite #FFFAF0
+forestgreen #228B22
+fuchsia #FF00FF
+gainsboro #DCDCDC
+ghostwhite #F8F8FF
+gold #FFD700
+goldenrod #DAA520
+gray #808080
+green #008000
+greenyellow #ADFF2F
+grey #808080
+honeydew #F0FFF0
+hotpink #FF69B4
+indianred #CD5C5C
+indigo #4B0082
+ivory #FFFFF0
+khaki #F0E68C
+lavender #E6E6FA
+lavenderblush #FFF0F5
+lawngreen #7CFC00
+lemonchiffon #FFFACD
+lightblue #ADD8E6
+lightcoral #F08080
+lightcyan #E0FFFF
+lightgoldenrodyellow #FAFAD2
+lightgray #D3D3D3
+lightgreen #90EE90
+lightgrey #D3D3D3
+lightpink #FFB6C1
+lightsalmon #FFA07A
+lightseagreen #20B2AA
+lightskyblue #87CEFA
+lightslategray #778899
+lightslategrey #778899
+lightsteelblue #B0C4DE
+lightyellow #FFFFE0
+lime #00FF00
+limegreen #32CD32
+linen #FAF0E6
+magenta #FF00FF
+maroon #800000
+mediumaquamarine #66CDAA
+mediumblue #0000CD
+mediumorchid #BA55D3
+mediumpurple #9370DB
+mediumseagreen #3CB371
+mediumslateblue #7B68EE
+mediumspringgreen #00FA9A
+mediumturquoise #48D1CC
+mediumvioletred #C71585
+midnightblue #191970
+mintcream #F5FFFA
+mistyrose #FFE4E1
+moccasin #FFE4B5
+navajowhite #FFDEAD
+navy #000080
+oldlace #FDF5E6
+olive #808000
+olivedrab #6B8E23
+orange #FFA500
+orangered #FF4500
+orchid #DA70D6
+palegoldenrod #EEE8AA
+palegreen #98FB98
+paleturquoise #AFEEEE
+palevioletred #DB7093
+papayawhip #FFEFD5
+peachpuff #FFDAB9
+peru #CD853F
+pink #FFC0CB
+plum #DDA0DD
+powderblue #B0E0E6
+purple #800080
+rebeccapurple #663399
+red #FF0000
+rosybrown #BC8F8F
+royalblue #4169E1
+saddlebrown #8B4513
+salmon #FA8072
+sandybrown #F4A460
+seagreen #2E8B57
+seashell #FFF5EE
+sienna #A0522D
+silver #C0C0C0
+skyblue #87CEEB
+slateblue #6A5ACD
+slategray #708090
+slategrey #708090
+snow #FFFAFA
+springgreen #00FF7F
+steelblue #4682B4
+tan #D2B48C
+teal #008080
+thistle #D8BFD8
+tomato #FF6347
+turquoise #40E0D0
+violet #EE82EE
+wheat #F5DEB3
+white #FFFFFF
+whitesmoke #F5F5F5
+yellow #FFFF00
+yellowgreen #9ACD32
+</code></pre>
+<p><img data-src="https://raw.githubusercontent.com/cisgu/typora-picture/master/img/202601280914169.png" alt="image-20260128091427125"></p>
+<h3 id="2024-05-30未来15天最高和最低气温折线图"><a href="#2024-05-30未来15天最高和最低气温折线图" class="headerlink" title="2024.05.30未来15天最高和最低气温折线图"></a>2024.05.30未来15天最高和最低气温折线图</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用窗体显示</span></span><br><span class="line"><span class="comment"># matplotlib.use(&#x27;TkAgg&#x27;)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># # figsize:指定figure的宽和高，单位为英寸;</span></span><br><span class="line"><span class="comment"># # dpi参数指定绘图对象的分辨率，即每英寸多少个像素，缺省值为80</span></span><br><span class="line"><span class="comment"># i英寸等于2.5cm,A4纸是 21*30cm的纸张</span></span><br><span class="line"><span class="comment"># facecolor:背景颜色</span></span><br><span class="line"><span class="comment"># edgecolor:边框颜色</span></span><br><span class="line"></span><br><span class="line">plt.figure(figsize=(<span class="number">20</span>, <span class="number">6</span>), dpi=<span class="number">80</span>)</span><br><span class="line">plt.rcParams[<span class="string">&quot;font.sans-serif&quot;</span>] = [<span class="string">&quot;SimHei&quot;</span>]</span><br><span class="line">plt.rcParams[<span class="string">&quot;axes.unicode_minus&quot;</span>] = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">x = np.arange(<span class="number">4</span>, <span class="number">19</span>)</span><br><span class="line">y_max = np.array([<span class="number">32</span>, <span class="number">33</span>, <span class="number">34</span>, <span class="number">34</span>, <span class="number">33</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">29</span>, <span class="number">30</span>, <span class="number">29</span>, <span class="number">26</span>, <span class="number">23</span>, <span class="number">21</span>, <span class="number">25</span>, <span class="number">31</span>])</span><br><span class="line">y_min = np.array([<span class="number">19</span>, <span class="number">19</span>, <span class="number">20</span>, <span class="number">22</span>, <span class="number">22</span>, <span class="number">21</span>, <span class="number">22</span>, <span class="number">16</span>, <span class="number">18</span>, <span class="number">18</span>, <span class="number">17</span>, <span class="number">14</span>, <span class="number">15</span>, <span class="number">16</span>, <span class="number">16</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘制折线图</span></span><br><span class="line">plt.plot(x, y_max, marker=<span class="string">&#x27;o&#x27;</span>, label=<span class="string">&#x27;最高温度&#x27;</span>)</span><br><span class="line">plt.plot(x, y_min, marker=<span class="string">&#x27;s&#x27;</span>, label=<span class="string">&#x27;最低温度&#x27;</span>)</span><br><span class="line"></span><br><span class="line">x_temp = <span class="number">4</span></span><br><span class="line"><span class="keyword">for</span> y_h, y_l <span class="keyword">in</span> <span class="built_in">zip</span>(y_max, y_min):</span><br><span class="line">    plt.text(x_temp-<span class="number">0.1</span>, y_h+<span class="number">0.7</span>, y_h, family=<span class="string">&#x27;SimHei&#x27;</span>, fontsize=<span class="number">8</span>, fontstyle=<span class="string">&#x27;normal&#x27;</span>)</span><br><span class="line">    plt.text(x_temp-<span class="number">0.1</span>, y_l+<span class="number">0.7</span>, y_l, family=<span class="string">&#x27;SimHei&#x27;</span>, fontsize=<span class="number">8</span>, fontstyle=<span class="string">&#x27;normal&#x27;</span>)</span><br><span class="line">    x_temp += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">plt.xlabel(<span class="string">&quot;日期&quot;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&quot;温度($^\circ$C)&quot;</span>)</span><br><span class="line">plt.ylim(<span class="number">0</span>, <span class="number">40</span>)</span><br><span class="line">plt.legend()</span><br><span class="line"></span><br><span class="line">plt.show()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<p><img data-src="https://raw.githubusercontent.com/cisgu/typora-picture/master/img/202601280914913.png" alt="image-20260128091434864"></p>
+<h3 id="2024-05-30设置主题风格"><a href="#2024-05-30设置主题风格" class="headerlink" title="2024.05.30设置主题风格"></a>2024.05.30设置主题风格</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.style <span class="keyword">as</span> ms</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用窗体显示</span></span><br><span class="line"><span class="comment"># matplotlib.use(&#x27;TkAgg&#x27;)</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(ms.available)</span><br><span class="line">ms.use(<span class="string">&#x27;Solarize_Light2&#x27;</span>)</span><br><span class="line">plt.plot([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>], marker=<span class="string">&#x27;*&#x27;</span>, ms=<span class="number">20</span>, mfc=<span class="string">&#x27;y&#x27;</span>)</span><br><span class="line">plt.show()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<pre><code>[&#39;Solarize_Light2&#39;, &#39;_classic_test_patch&#39;, &#39;_mpl-gallery&#39;, &#39;_mpl-gallery-nogrid&#39;, &#39;bmh&#39;, &#39;classic&#39;, &#39;dark_background&#39;, &#39;fast&#39;, &#39;fivethirtyeight&#39;, &#39;ggplot&#39;, &#39;grayscale&#39;, &#39;seaborn&#39;, &#39;seaborn-bright&#39;, &#39;seaborn-colorblind&#39;, &#39;seaborn-dark&#39;, &#39;seaborn-dark-palette&#39;, &#39;seaborn-darkgrid&#39;, &#39;seaborn-deep&#39;, &#39;seaborn-muted&#39;, &#39;seaborn-notebook&#39;, &#39;seaborn-paper&#39;, &#39;seaborn-pastel&#39;, &#39;seaborn-poster&#39;, &#39;seaborn-talk&#39;, &#39;seaborn-ticks&#39;, &#39;seaborn-white&#39;, &#39;seaborn-whitegrid&#39;, &#39;tableau-colorblind10&#39;]
+</code></pre>
+<p><img data-src="https://raw.githubusercontent.com/cisgu/typora-picture/master/img/202601280914737.png" alt="image-20260128091442687"></p>
+<h3 id="2024-05-30固定区域单子图绘制"><a href="#2024-05-30固定区域单子图绘制" class="headerlink" title="2024.05.30固定区域单子图绘制"></a>2024.05.30固定区域单子图绘制</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用窗体显示</span></span><br><span class="line"><span class="comment"># matplotlib.use(&#x27;TkAgg&#x27;)</span></span><br><span class="line"></span><br><span class="line">plt.figure(figsize=(<span class="number">20</span>, <span class="number">6</span>), dpi=<span class="number">80</span>)</span><br><span class="line">plt.rcParams[<span class="string">&#x27;font.sans-serif&#x27;</span>] = [<span class="string">&#x27;SimHei&#x27;</span>]</span><br><span class="line">plt.rcParams[<span class="string">&#x27;axes.unicode_minus&#x27;</span>] = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">ax_one = plt.subplot(<span class="number">326</span>)</span><br><span class="line">ax_one.plot(np.arange(<span class="number">5</span>))</span><br><span class="line">ax_one.set_title(<span class="string">&#x27;子图1&#x27;</span>)</span><br><span class="line"></span><br><span class="line">ax_two = plt.subplot(<span class="number">312</span>)</span><br><span class="line">ax_two.plot(np.arange(<span class="number">5</span>))</span><br><span class="line">ax_two.set_title(<span class="string">&#x27;子图2&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.show()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<p><img data-src="https://raw.githubusercontent.com/cisgu/typora-picture/master/img/202601280914308.png" alt="image-20260128091452259"></p>
+<h3 id="2024-05-30某工厂产品A与产品B去年的销售额分析"><a href="#2024-05-30某工厂产品A与产品B去年的销售额分析" class="headerlink" title="2024.05.30某工厂产品A与产品B去年的销售额分析"></a>2024.05.30某工厂产品A与产品B去年的销售额分析</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用窗体显示</span></span><br><span class="line"><span class="comment"># matplotlib.use(&#x27;TkAgg&#x27;)</span></span><br><span class="line"></span><br><span class="line">plt.rcParams[<span class="string">&#x27;font.sans-serif&#x27;</span>] = [<span class="string">&#x27;SimHei&#x27;</span>]</span><br><span class="line"></span><br><span class="line">plt.figure(figsize=(<span class="number">20</span>, <span class="number">6</span>), dpi=<span class="number">80</span>)</span><br><span class="line"></span><br><span class="line">x = np.arange(<span class="number">1</span>, <span class="number">13</span>)</span><br><span class="line">y1 = [<span class="number">20</span>, <span class="number">28</span>, <span class="number">23</span>, <span class="number">16</span>, <span class="number">29</span>, <span class="number">36</span>, <span class="number">39</span>, <span class="number">33</span>, <span class="number">31</span>, <span class="number">19</span>, <span class="number">21</span>, <span class="number">25</span>]</span><br><span class="line">y2 = [<span class="number">17</span>, <span class="number">22</span>, <span class="number">39</span>, <span class="number">26</span>, <span class="number">35</span>, <span class="number">23</span>, <span class="number">25</span>, <span class="number">27</span>, <span class="number">29</span>, <span class="number">38</span>, <span class="number">28</span>, <span class="number">20</span>]</span><br><span class="line">labels = [<span class="string">&#x27;1月&#x27;</span>, <span class="string">&#x27;2月&#x27;</span>, <span class="string">&#x27;3月&#x27;</span>, <span class="string">&#x27;4月&#x27;</span>, <span class="string">&#x27;5月&#x27;</span>, <span class="string">&#x27;6月&#x27;</span>, <span class="string">&#x27;7月&#x27;</span>, <span class="string">&#x27;8月&#x27;</span>, <span class="string">&#x27;9月&#x27;</span>, <span class="string">&#x27;10月&#x27;</span>, <span class="string">&#x27;11月&#x27;</span>, <span class="string">&#x27;12月&#x27;</span>]</span><br><span class="line"></span><br><span class="line">ax1 = plt.subplot(<span class="number">211</span>)</span><br><span class="line">ax1.plot(x, y1, <span class="string">&#x27;m--o&#x27;</span>, lw=<span class="number">2</span>, ms=<span class="number">5</span>, label=<span class="string">&#x27;产品A&#x27;</span>)</span><br><span class="line">ax1.plot(x, y2, <span class="string">&#x27;g--o&#x27;</span>, lw=<span class="number">2</span>, ms=<span class="number">5</span>, label=<span class="string">&#x27;产品B&#x27;</span>)</span><br><span class="line">ax1.set_xlabel(<span class="string">&#x27;月份&#x27;</span>)</span><br><span class="line">ax1.set_ylabel(<span class="string">&#x27;销售额（亿元）&#x27;</span>)</span><br><span class="line">ax1.set_title(<span class="string">&quot;产品A与产品B的销售额&quot;</span>, fontsize=<span class="number">12</span>)</span><br><span class="line">ax1.set_ylim(<span class="number">10</span>, <span class="number">45</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> xy1 <span class="keyword">in</span> <span class="built_in">zip</span>(x, y1):</span><br><span class="line">    ax1.annotate(<span class="string">&quot;%s&quot;</span>% xy1[<span class="number">1</span>], xy=xy1, textcoords=<span class="string">&#x27;offset points&#x27;</span>, xytext=(-<span class="number">5</span>, <span class="number">5</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> xy2 <span class="keyword">in</span> <span class="built_in">zip</span>(x, y2):</span><br><span class="line">    ax1.annotate(<span class="string">&quot;%s&quot;</span>% xy2[<span class="number">1</span>], xy=xy2, textcoords=<span class="string">&#x27;offset points&#x27;</span>, xytext=(-<span class="number">5</span>, <span class="number">5</span>))</span><br><span class="line"></span><br><span class="line">ax1.legend()</span><br><span class="line"></span><br><span class="line">ax2 = plt.subplot(<span class="number">223</span>)</span><br><span class="line">ax2.pie(y1, radius=<span class="number">1</span>, wedgeprops=&#123;<span class="string">&#x27;width&#x27;</span>: <span class="number">0.5</span>&#125;, labels=labels,</span><br><span class="line">        autopct=<span class="string">&#x27;%.1f%%&#x27;</span>, pctdistance=<span class="number">0.75</span>)</span><br><span class="line">ax2.set_title(<span class="string">&quot;产品A的销售额&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ax3 = plt.subplot(<span class="number">224</span>)</span><br><span class="line">ax3.pie(y2, radius=<span class="number">1</span>, wedgeprops=&#123;<span class="string">&#x27;width&#x27;</span>: <span class="number">0.5</span>&#125;, labels=labels,</span><br><span class="line">        autopct=<span class="string">&#x27;%.1f%%&#x27;</span>, pctdistance=<span class="number">0.75</span>)</span><br><span class="line">ax3.set_title(<span class="string">&quot;产品B的销售额&quot;</span>)</span><br><span class="line"></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p><img data-src="https://raw.githubusercontent.com/cisgu/typora-picture/master/img/202601280914550.png" alt="image-20260128091457490"></p>
+<h2 id="数据分析与运用04"><a href="#数据分析与运用04" class="headerlink" title="数据分析与运用04"></a>数据分析与运用04</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 导入Numpy库</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 导入Numpy库</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建一维数组</span></span><br><span class="line">arr1 = np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>])</span><br><span class="line"><span class="built_in">print</span>(arr1)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建一个二维数组</span></span><br><span class="line">arr2 = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>],[<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>],[<span class="number">9</span>,<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>]])</span><br><span class="line"><span class="built_in">print</span>(arr2)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看数组的形状(维度)</span></span><br><span class="line"><span class="built_in">print</span>(arr2.shape)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看数组的元素个数</span></span><br><span class="line"><span class="built_in">print</span>(arr2.size)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看数组的元素类型</span></span><br><span class="line"><span class="built_in">print</span>(arr2.dtype)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重新设置数组的形状</span></span><br><span class="line">arr2.shape = <span class="number">6</span>, <span class="number">2</span></span><br><span class="line"><span class="built_in">print</span>(arr2)</span><br></pre></td></tr></table></figure>
+
+<pre><code>[1 2 3 4]
+[[ 1  2  3  4]
+ [ 5  6  7  8]
+ [ 9 10 11 12]]
+(3, 4)
+12
+int32
+[[ 1  2]
+ [ 3  4]
+ [ 5  6]
+ [ 7  8]
+ [ 9 10]
+ [11 12]]
+</code></pre>
+<h3 id="arange-函数"><a href="#arange-函数" class="headerlink" title="arange 函数"></a>arange 函数</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># arange(start,stop,step)</span></span><br><span class="line">np.arange(<span class="number">0</span>,<span class="number">1</span>,<span class="number">0.1</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>array([0. , 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9])
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">np.arange(<span class="number">1</span>,<span class="number">50</span>,<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>array([ 1,  6, 11, 16, 21, 26, 31, 36, 41, 46])
+</code></pre>
+<h3 id="linspace函数"><a href="#linspace函数" class="headerlink" title="linspace函数"></a>linspace函数</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">np.linspace(<span class="number">0</span>,<span class="number">1</span>,<span class="number">15</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>array([0.        , 0.07142857, 0.14285714, 0.21428571, 0.28571429,
+       0.35714286, 0.42857143, 0.5       , 0.57142857, 0.64285714,
+       0.71428571, 0.78571429, 0.85714286, 0.92857143, 1.        ])
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">np.linspace(<span class="number">1</span>,<span class="number">99</span>,<span class="number">20</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>array([ 1.        ,  6.15789474, 11.31578947, 16.47368421, 21.63157895,
+       26.78947368, 31.94736842, 37.10526316, 42.26315789, 47.42105263,
+       52.57894737, 57.73684211, 62.89473684, 68.05263158, 73.21052632,
+       78.36842105, 83.52631579, 88.68421053, 93.84210526, 99.        ])
+</code></pre>
+<h3 id="logspace函数"><a href="#logspace函数" class="headerlink" title="logspace函数"></a>logspace函数</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># logspace(start, stop, num) 以10为底数的</span></span><br><span class="line">np.logspace(<span class="number">0</span>, <span class="number">2</span>, <span class="number">20</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>array([  1.        ,   1.27427499,   1.62377674,   2.06913808,
+         2.6366509 ,   3.35981829,   4.2813324 ,   5.45559478,
+         6.95192796,   8.8586679 ,  11.28837892,  14.38449888,
+        18.32980711,  23.35721469,  29.76351442,  37.92690191,
+        48.32930239,  61.58482111,  78.47599704, 100.        ])
+</code></pre>
+<h3 id="zeros函数"><a href="#zeros函数" class="headerlink" title="zeros函数"></a>zeros函数</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">np.zeros((<span class="number">3</span>,<span class="number">3</span>))</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>array([[0., 0., 0.],
+       [0., 0., 0.],
+       [0., 0., 0.]])
+</code></pre>
+<h3 id="ones函数"><a href="#ones函数" class="headerlink" title="ones函数"></a>ones函数</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">np.ones((<span class="number">3</span>,<span class="number">3</span>))</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>array([[1., 1., 1.],
+       [1., 1., 1.],
+       [1., 1., 1.]])
+</code></pre>
+<h3 id="eye函数"><a href="#eye函数" class="headerlink" title="eye函数"></a>eye函数</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 对角线是1的矩阵(单位矩阵)</span></span><br><span class="line">np.eye(<span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>array([[1., 0., 0., 0.],
+       [0., 1., 0., 0.],
+       [0., 0., 1., 0.],
+       [0., 0., 0., 1.]])
+</code></pre>
+<h3 id="diag函数"><a href="#diag函数" class="headerlink" title="diag函数"></a>diag函数</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 对角线是给定的数矩阵</span></span><br><span class="line">np.diag([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>])</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>array([[1, 0, 0, 0, 0],
+       [0, 2, 0, 0, 0],
+       [0, 0, 3, 0, 0],
+       [0, 0, 0, 4, 0],
+       [0, 0, 0, 0, 5]])
+</code></pre>
+<h3 id="Numpy数据类型"><a href="#Numpy数据类型" class="headerlink" title="Numpy数据类型"></a>Numpy数据类型</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># boolv(True False)</span></span><br><span class="line"><span class="comment"># int8 int16 int32 int64</span></span><br><span class="line"><span class="comment"># float16 float32 float64</span></span><br><span class="line"><span class="comment"># uint16 uint32 uint64  无负号数</span></span><br><span class="line"><span class="comment"># complex64 complex128   复数</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="数组的数据类型转换"><a href="#数组的数据类型转换" class="headerlink" title="数组的数据类型转换"></a>数组的数据类型转换</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 整数转换成浮点数</span></span><br><span class="line"><span class="built_in">print</span>(np.float64(<span class="number">42</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>42.0
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 浮点数转换成整数(只保留整数部分)</span></span><br><span class="line"><span class="built_in">print</span>(np.int8(<span class="number">42.7</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>42
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 整数转换成布尔类型(不为0就是True)</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">bool</span>(<span class="number">42</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>True
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="built_in">bool</span>(<span class="number">0</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>False
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 布尔类型转换成浮点数</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">float</span>(<span class="literal">True</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>1.0
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="built_in">float</span>(<span class="literal">False</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>0.0
+</code></pre>
+<h3 id="生成随机数"><a href="#生成随机数" class="headerlink" title="生成随机数"></a>生成随机数</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># random函数</span></span><br><span class="line"><span class="built_in">print</span>(np.random.random(<span class="number">50</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>[0.59232633 0.6411107  0.97898929 0.97087818 0.67003048 0.28415536
+ 0.89445312 0.1846121  0.85321461 0.23154943 0.04957189 0.21285043
+ 0.872293   0.67200539 0.42790104 0.58703862 0.82047001 0.86142295
+ 0.15375558 0.10183155 0.39696772 0.19298618 0.31944434 0.26318058
+ 0.46526374 0.23245513 0.29115143 0.62654022 0.30740245 0.43103429
+ 0.12004474 0.07347149 0.42652956 0.22008496 0.42964808 0.48136023
+ 0.88608138 0.64089157 0.5597949  0.10002506 0.61452597 0.15090955
+ 0.41359357 0.86451418 0.7956261  0.25228129 0.20252272 0.12602809
+ 0.08028642 0.73315099]
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 服从均匀分布的随机数</span></span><br><span class="line"><span class="built_in">print</span>(np.random.rand(<span class="number">10</span>,<span class="number">5</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>[[0.48605743 0.02788955 0.43162964 0.43513563 0.64833316]
+ [0.56585512 0.04759614 0.41381475 0.06863375 0.81682306]
+ [0.1860506  0.73255099 0.93522819 0.9325931  0.66704483]
+ [0.54770451 0.13453971 0.8763998  0.50201713 0.22395692]
+ [0.49932342 0.88922754 0.93717527 0.77217021 0.02917072]
+ [0.1180286  0.47482095 0.16971992 0.0906512  0.77002346]
+ [0.70222973 0.74629622 0.1330453  0.18641943 0.70758914]
+ [0.87520014 0.35884683 0.13991008 0.97581861 0.77213821]
+ [0.35218032 0.59927793 0.2687652  0.3136718  0.09065667]
+ [0.20142969 0.91113678 0.0994763  0.21456229 0.63351802]]
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 服从正态分布的随机数</span></span><br><span class="line"><span class="built_in">print</span>(np.random.randn(<span class="number">10</span>,<span class="number">5</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>[[ 1.98843720e-01 -7.82082761e-01  1.07255075e+00 -1.15325253e+00
+  -2.19557026e+00]
+ [-8.99431827e-01  2.02099185e+00  1.94988756e+00 -2.65094608e-02
+   1.35984532e+00]
+ [ 3.94889801e-01  7.61017055e-01 -6.06915532e-01 -1.89712350e+00
+  -1.36715888e+00]
+ [ 1.26061930e+00 -2.84968250e-01  1.58989171e-01  6.40721631e-02
+  -1.08572218e+00]
+ [ 1.22593797e+00  1.75438505e+00 -5.13927487e-01  4.28192394e-01
+  -1.76706086e+00]
+ [-6.88507790e-01 -5.37639044e-01  3.11335716e-01 -1.76635091e-01
+   4.27737397e-01]
+ [ 5.41820856e-01 -1.41832314e-01  1.16090179e+00  1.37208675e+00
+  -9.57200202e-01]
+ [-1.50901932e+00  2.70189734e-01  1.35290223e-01  8.62887153e-01
+  -1.98848629e-01]
+ [-3.44205093e-02 -2.83798634e-04 -9.81579652e-01 -1.06813568e+00
+   2.52478465e-01]
+ [-1.74419041e-01 -2.31019485e+00  6.37876009e-01 -1.93424876e+00
+   6.32421025e-01]]
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 生成指定范围的随机数</span></span><br><span class="line"><span class="built_in">print</span>(np.random.randint(<span class="number">50</span>,<span class="number">100</span>,size=[<span class="number">5</span>,<span class="number">5</span>]))</span><br></pre></td></tr></table></figure>
+
+<pre><code>[[89 96 80 95 78]
+ [85 91 96 56 90]
+ [59 83 50 75 92]
+ [94 86 57 82 58]
+ [50 95 86 58 83]]
+</code></pre>
+<h3 id="索引访问数组元素"><a href="#索引访问数组元素" class="headerlink" title="索引访问数组元素"></a>索引访问数组元素</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 一维数组的元素访问</span></span><br><span class="line">arr = np.arange(<span class="number">10</span>)</span><br><span class="line"><span class="built_in">print</span>(arr)</span><br><span class="line"></span><br><span class="line">arr[<span class="number">5</span>]  <span class="comment"># 索引是从0开始的</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>[0 1 2 3 4 5 6 7 8 9]
+
+
+
+
+
+5
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 切片操作   （取不到最后一个元素）</span></span><br><span class="line"><span class="built_in">print</span>(arr[<span class="number">3</span>:<span class="number">5</span>])</span><br></pre></td></tr></table></figure>
+
+<pre><code>[3 4]
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 取到第三位</span></span><br><span class="line"><span class="built_in">print</span>(arr[:<span class="number">3</span>])</span><br></pre></td></tr></table></figure>
+
+<pre><code>[0 1 2]
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 从3开始取</span></span><br><span class="line"><span class="built_in">print</span>(arr[<span class="number">3</span>:])</span><br></pre></td></tr></table></figure>
+
+<pre><code>[3 4 5 6 7 8 9]
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 2是步长</span></span><br><span class="line"><span class="built_in">print</span>(arr[<span class="number">1</span>:<span class="number">7</span>:<span class="number">2</span>])</span><br></pre></td></tr></table></figure>
+
+<pre><code>[1 3 5]
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 修改数组的元素</span></span><br><span class="line">arr[<span class="number">3</span>] = <span class="number">300</span></span><br><span class="line"><span class="built_in">print</span>(arr)</span><br></pre></td></tr></table></figure>
+
+<pre><code>[  0   1   2 300   4   5   6   7   8   9]
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">arr[<span class="number">4</span>:<span class="number">6</span>] = <span class="number">400</span>, <span class="number">500</span></span><br><span class="line"><span class="built_in">print</span>(arr)</span><br></pre></td></tr></table></figure>
+
+<pre><code>[  0   1   2 300 400 500   6   7   8   9]
+</code></pre>
+<h3 id="多维数组元素访问"><a href="#多维数组元素访问" class="headerlink" title="多维数组元素访问"></a>多维数组元素访问</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">arr = np.arange(<span class="number">12</span>).reshape(<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line"><span class="built_in">print</span>(arr)</span><br></pre></td></tr></table></figure>
+
+<pre><code>[[ 0  1  2  3]
+ [ 4  5  6  7]
+ [ 8  9 10 11]]
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(arr[<span class="number">1</span>,<span class="number">0</span>])</span><br></pre></td></tr></table></figure>
+
+<pre><code>4
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(arr[<span class="number">1</span>,<span class="number">3</span>])</span><br></pre></td></tr></table></figure>
+
+<pre><code>7
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 切片操作</span></span><br><span class="line"><span class="built_in">print</span>(arr[<span class="number">0</span>,<span class="number">1</span>:<span class="number">3</span>])</span><br></pre></td></tr></table></figure>
+
+<pre><code>[1 2]
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(arr[<span class="number">1</span>:<span class="number">3</span>,<span class="number">1</span>:<span class="number">3</span>])</span><br></pre></td></tr></table></figure>
+
+<pre><code>[[ 5  6]
+ [ 9 10]]
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 取整行</span></span><br><span class="line"><span class="built_in">print</span>(arr[<span class="number">1</span>,:])</span><br></pre></td></tr></table></figure>
+
+<pre><code>[4 5 6 7]
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 取整列</span></span><br><span class="line"><span class="built_in">print</span>(arr[:,<span class="number">3</span>])</span><br></pre></td></tr></table></figure>
+
+<pre><code>[ 3  7 11]
+</code></pre>
+<h3 id="数组的组合与分割"><a href="#数组的组合与分割" class="headerlink" title="数组的组合与分割"></a>数组的组合与分割</h3><h4 id="hstack-横向组合"><a href="#hstack-横向组合" class="headerlink" title="hstack()  横向组合"></a>hstack()  横向组合</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(arr)</span><br></pre></td></tr></table></figure>
+
+<pre><code>[[ 0  1  2  3]
+ [ 4  5  6  7]
+ [ 8  9 10 11]]
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">arr2 = arr * <span class="number">2</span></span><br><span class="line"><span class="built_in">print</span>(arr2)</span><br></pre></td></tr></table></figure>
+
+<pre><code>[[ 0  2  4  6]
+ [ 8 10 12 14]
+ [16 18 20 22]]
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(np.hstack((arr, arr2)))</span><br></pre></td></tr></table></figure>
+
+<pre><code>[[ 0  1  2  3  0  2  4  6]
+ [ 4  5  6  7  8 10 12 14]
+ [ 8  9 10 11 16 18 20 22]]
+</code></pre>
+<h4 id="vstack-纵向组合"><a href="#vstack-纵向组合" class="headerlink" title="vstack()  纵向组合"></a>vstack()  纵向组合</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(np.vstack((arr, arr2)))</span><br></pre></td></tr></table></figure>
+
+<pre><code>[[ 0  1  2  3]
+ [ 4  5  6  7]
+ [ 8  9 10 11]
+ [ 0  2  4  6]
+ [ 8 10 12 14]
+ [16 18 20 22]]
+</code></pre>
+<h4 id="hsplit-横向分割"><a href="#hsplit-横向分割" class="headerlink" title="hsplit()  横向分割"></a>hsplit()  横向分割</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(arr)</span><br></pre></td></tr></table></figure>
+
+<pre><code>[[ 0  1  2  3]
+ [ 4  5  6  7]
+ [ 8  9 10 11]]
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(np.hsplit(arr,<span class="number">2</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>[array([[0, 1],
+       [4, 5],
+       [8, 9]]), array([[ 2,  3],
+       [ 6,  7],
+       [10, 11]])]
+</code></pre>
+<h4 id="vsplit-纵向分割"><a href="#vsplit-纵向分割" class="headerlink" title="vsplit()  纵向分割"></a>vsplit()  纵向分割</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">arr = np.arange(<span class="number">16</span>).reshape(<span class="number">4</span>,<span class="number">4</span>)</span><br><span class="line"><span class="built_in">print</span>(np.vsplit(arr,<span class="number">2</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>[array([[0, 1, 2, 3],
+       [4, 5, 6, 7]]), array([[ 8,  9, 10, 11],
+       [12, 13, 14, 15]])]
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(np.vsplit(arr,<span class="number">2</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>[array([[0, 1, 2, 3],
+       [4, 5, 6, 7]]), array([[ 8,  9, 10, 11],
+       [12, 13, 14, 15]])]
+</code></pre>
+<h3 id="2024-06-06绘制棉棒图"><a href="#2024-06-06绘制棉棒图" class="headerlink" title="2024.06.06绘制棉棒图"></a>2024.06.06绘制棉棒图</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用窗体显示</span></span><br><span class="line"><span class="comment"># import matplotlib</span></span><br><span class="line"><span class="comment"># matplotlib.use(&#x27;TkAgg&#x27;)</span></span><br><span class="line"></span><br><span class="line">plt.rcParams[<span class="string">&#x27;font.sans-serif&#x27;</span>] = <span class="string">&#x27;SimHei&#x27;</span></span><br><span class="line">plt.rcParams[<span class="string">&#x27;axes.unicode_minus&#x27;</span>] = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">x = np.arange(<span class="number">1</span>, <span class="number">16</span>)</span><br><span class="line">y = np.array([<span class="number">5.9</span>, <span class="number">6.2</span>, <span class="number">6.7</span>, <span class="number">7.0</span>, <span class="number">7.0</span>, <span class="number">7.1</span>, <span class="number">7.2</span>, <span class="number">7.4</span>,</span><br><span class="line">              <span class="number">7.5</span>, <span class="number">7.6</span>, <span class="number">7.7</span>, <span class="number">7.7</span>, <span class="number">7.7</span>, <span class="number">7.8</span>, <span class="number">7.9</span>])</span><br><span class="line"></span><br><span class="line">labels = np.array([<span class="string">&#x27;宝骏310&#x27;</span>, <span class="string">&#x27;宝马13&#x27;</span>, <span class="string">&#x27;致享&#x27;</span>, <span class="string">&#x27;焕驰&#x27;</span>, <span class="string">&#x27;力帆530&#x27;</span>,</span><br><span class="line">                   <span class="string">&#x27;派力奥&#x27;</span>, <span class="string">&#x27;悦翔V3&#x27;</span>, <span class="string">&#x27;乐风RV&#x27;</span>, <span class="string">&#x27;奥迪A1&#x27;</span>, <span class="string">&#x27;威驰FS&#x27;</span>,</span><br><span class="line">                   <span class="string">&#x27;夏利N7&#x27;</span>, <span class="string">&#x27;启辰R30&#x27;</span>, <span class="string">&#x27;和悦A13RS&#x27;</span>, <span class="string">&#x27;致炫&#x27;</span>, <span class="string">&#x27;赛欧&#x27;</span>])</span><br><span class="line"></span><br><span class="line">plt.figure(figsize=(<span class="number">10</span>, <span class="number">6</span>), dpi=<span class="number">80</span>)</span><br><span class="line">(markerline, stemline, baseline) = plt.stem(x, y, linefmt=<span class="string">&#x27;-&#x27;</span>, markerfmt=<span class="string">&#x27;o&#x27;</span>, use_line_collection=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">plt.setp(markerline, color=<span class="string">&#x27;r&#x27;</span>, ms=<span class="number">10</span>)</span><br><span class="line">plt.setp(stemline, color=<span class="string">&#x27;g&#x27;</span>, lw=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">plt.title(<span class="string">&#x27;不同品牌轿车燃料销号量&#x27;</span>, fontdict=&#123;<span class="string">&#x27;size&#x27;</span>: <span class="number">18</span>&#125;)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;燃料消耗量（L/km）&#x27;</span>)</span><br><span class="line">plt.xticks(x, labels, rotation=<span class="number">60</span>)</span><br><span class="line">plt.ylim([<span class="number">0</span>, <span class="number">10</span>])</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> temp_x, temp_y <span class="keyword">in</span> <span class="built_in">zip</span>(x, y):</span><br><span class="line">    plt.text(temp_x, temp_y+<span class="number">0.2</span>, s=<span class="string">&#x27;&#123;&#125;&#x27;</span>.<span class="built_in">format</span>(temp_y), ha=<span class="string">&#x27;center&#x27;</span>, va=<span class="string">&#x27;bottom&#x27;</span>, fontsize=<span class="number">14</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">plt.show()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<p><img data-src="https://raw.githubusercontent.com/cisgu/typora-picture/master/img/202601280915381.png" alt="image-20260128091512289"></p>
+<h3 id="2024-06-06绘制甘特图"><a href="#2024-06-06绘制甘特图" class="headerlink" title="2024.06.06绘制甘特图"></a>2024.06.06绘制甘特图</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用窗体显示</span></span><br><span class="line"><span class="comment"># import matplotlib</span></span><br><span class="line"><span class="comment"># matplotlib.use(&#x27;TkAgg&#x27;)</span></span><br><span class="line"></span><br><span class="line">plt.rcParams[<span class="string">&#x27;font.sans-serif&#x27;</span>] = <span class="string">&#x27;SimHei&#x27;</span></span><br><span class="line">plt.rcParams[<span class="string">&#x27;axes.unicode_minus&#x27;</span>] = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">ticks = np.array([<span class="string">&#x27;报告提交&#x27;</span>, <span class="string">&#x27;数据分析&#x27;</span>, <span class="string">&#x27;数据录入&#x27;</span>, <span class="string">&#x27;实地执行&#x27;</span>,</span><br><span class="line">                  <span class="string">&#x27;问卷确定&#x27;</span>, <span class="string">&#x27;试访&#x27;</span>, <span class="string">&#x27;问卷设计&#x27;</span>, <span class="string">&#x27;项目确定&#x27;</span>])</span><br><span class="line"></span><br><span class="line">y_data = np.arange(<span class="number">1</span>, <span class="number">9</span>)</span><br><span class="line">x_data = np.array([<span class="number">0.5</span>, <span class="number">1.5</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">0.5</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>])</span><br><span class="line">ax = plt.axes((<span class="number">0.1</span>, <span class="number">0.1</span>, <span class="number">0.8</span>, <span class="number">0.8</span>))</span><br><span class="line">plt.barh(y_data, x_data, tick_label=ticks, left=[<span class="number">7.5</span>, <span class="number">6</span>, <span class="number">5.5</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">1.5</span>, <span class="number">0</span>],</span><br><span class="line">         color=<span class="string">&#x27;#cd5c5c&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.title(<span class="string">&#x27;任务甘特图&#x27;</span>)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;日期&#x27;</span>)</span><br><span class="line"></span><br><span class="line">ax.spines[<span class="string">&#x27;top&#x27;</span>].set_color(<span class="string">&#x27;none&#x27;</span>)</span><br><span class="line">ax.spines[<span class="string">&#x27;right&#x27;</span>].set_color(<span class="string">&#x27;none&#x27;</span>)</span><br><span class="line">plt.grid(axis=<span class="string">&#x27;x&#x27;</span>, alpha=<span class="number">0.5</span>)</span><br><span class="line"></span><br><span class="line">plt.show()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<p><img data-src="https://raw.githubusercontent.com/cisgu/typora-picture/master/img/202601280915157.png" alt="image-20260128091520067"></p>
+<h3 id="2024-06-06绘制人口金字塔图"><a href="#2024-06-06绘制人口金字塔图" class="headerlink" title="2024.06.06绘制人口金字塔图"></a>2024.06.06绘制人口金字塔图</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用窗体显示</span></span><br><span class="line"><span class="comment"># import matplotlib</span></span><br><span class="line"><span class="comment"># matplotlib.use(&#x27;TkAgg&#x27;)</span></span><br><span class="line"></span><br><span class="line">plt.rcParams[<span class="string">&#x27;font.sans-serif&#x27;</span>] = <span class="string">&#x27;SimHei&#x27;</span></span><br><span class="line">plt.rcParams[<span class="string">&#x27;axes.unicode_minus&#x27;</span>] = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">df = pd.read_excel(<span class="string">r&#x27;population.xlsx&#x27;</span>)</span><br><span class="line"><span class="comment"># print(df)</span></span><br><span class="line"></span><br><span class="line">df_male = df.groupby(by=<span class="string">&#x27;Gender&#x27;</span>).get_group(<span class="string">&#x27;Male&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(df_male)</span><br><span class="line">list_male = df_male[<span class="string">&#x27;Number&#x27;</span>].values.tolist()</span><br><span class="line"><span class="built_in">print</span>(list_male)</span><br><span class="line"></span><br><span class="line">df_female = df.groupby(by=<span class="string">&#x27;Gender&#x27;</span>).get_group(<span class="string">&#x27;Female&#x27;</span>)</span><br><span class="line"><span class="comment"># print(df_male)</span></span><br><span class="line">list_female = df_female[<span class="string">&#x27;Number&#x27;</span>].values.tolist()</span><br><span class="line"><span class="built_in">print</span>(list_female)</span><br><span class="line"></span><br><span class="line">df_age = df.groupby(<span class="string">&#x27;AgeGroup&#x27;</span>).<span class="built_in">sum</span>()</span><br><span class="line"><span class="built_in">print</span>(df_age)</span><br><span class="line"></span><br><span class="line">labels = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(df_age.shape[<span class="number">0</span>]):</span><br><span class="line">    age = df_age.index[i]</span><br><span class="line">    labels.append(age)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(labels)</span><br><span class="line"></span><br><span class="line">y = np.arange(<span class="number">1</span>, <span class="number">11</span>)</span><br><span class="line">plt.barh(y, list_male, tick_label=labels, label=<span class="string">&#x27;男&#x27;</span>, color=<span class="string">&#x27;#6699FF&#x27;</span>)</span><br><span class="line">plt.barh(y, list_female, tick_label=labels, label=<span class="string">&#x27;女&#x27;</span>, color=<span class="string">&#x27;#CC6699&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.xlabel(<span class="string">&#x27;人数&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;年龄段(岁)&#x27;</span>)</span><br><span class="line">plt.title(<span class="string">&#x27;某城市人口金字塔&#x27;</span>)</span><br><span class="line">plt.legend()</span><br><span class="line"></span><br><span class="line">plt.show()</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<pre><code>  AgeGroup Gender  Number
+0      0-9   Male  -70812
+1    10-19   Male  -64963
+2    20-29   Male  -89947
+3    30-39   Male  -86653
+4    40-49   Male  -98391
+5    50-59   Male  -79226
+6    60-69   Male  -59308
+7    70-79   Male  -26564
+8    80-89   Male   -9418
+9      90+   Male    -791
+[-70812, -64963, -89947, -86653, -98391, -79226, -59308, -26564, -9418, -791]
+[60814, 55015, 83940, 84858, 94798, 77357, 60288, 28578, 11897, 1628]
+          Number
+AgeGroup        
+0-9        -9998
+10-19      -9948
+20-29      -6007
+30-39      -1795
+40-49      -3593
+50-59      -1869
+60-69        980
+70-79       2014
+80-89       2479
+90+          837
+[&#39;0-9&#39;, &#39;10-19&#39;, &#39;20-29&#39;, &#39;30-39&#39;, &#39;40-49&#39;, &#39;50-59&#39;, &#39;60-69&#39;, &#39;70-79&#39;, &#39;80-89&#39;, &#39;90+&#39;]
+</code></pre>
+<p><img data-src="https://raw.githubusercontent.com/cisgu/typora-picture/master/img/202601280915960.png" alt="image-20260128091526858"></p>
+<h3 id="2024-06-06绘制漏斗图"><a href="#2024-06-06绘制漏斗图" class="headerlink" title="2024.06.06绘制漏斗图"></a>2024.06.06绘制漏斗图</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用窗体显示</span></span><br><span class="line"><span class="comment"># import matplotlib</span></span><br><span class="line"><span class="comment"># matplotlib.use(&#x27;TkAgg&#x27;)</span></span><br><span class="line"></span><br><span class="line">plt.rcParams[<span class="string">&#x27;font.sans-serif&#x27;</span>] = <span class="string">&#x27;SimHei&#x27;</span></span><br><span class="line">plt.rcParams[<span class="string">&#x27;axes.unicode_minus&#x27;</span>] = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">y = np.linspace(<span class="number">4</span>, <span class="number">0</span>, num=<span class="number">5</span>)</span><br><span class="line">x1 = np.array([<span class="number">1000</span>, <span class="number">500</span>, <span class="number">300</span>, <span class="number">200</span>, <span class="number">150</span>])</span><br><span class="line">x2 = np.array((x1.<span class="built_in">max</span>() - x1) / <span class="number">2</span>)</span><br><span class="line"><span class="comment"># print(x2)  [  0. 250. 350. 400. 425.]</span></span><br><span class="line">x3 = [i + j <span class="keyword">for</span> i, j <span class="keyword">in</span> <span class="built_in">zip</span>(x1, x2)]</span><br><span class="line"><span class="comment"># print(x3)   [1000.0, 750.0, 650.0, 600.0, 575.0]</span></span><br><span class="line">labels = [<span class="string">&#x27;访问商品&#x27;</span>, <span class="string">&#x27;加购物车&#x27;</span>, <span class="string">&#x27;生成订单&#x27;</span>, <span class="string">&#x27;支付订单&#x27;</span>, <span class="string">&#x27;完成交易&#x27;</span>]</span><br><span class="line">ax = plt.axes((<span class="number">0.2</span>, <span class="number">0.1</span>, <span class="number">0.7</span>, <span class="number">0.8</span>))</span><br><span class="line">rect1 = plt.barh(y, x3, <span class="number">0.5</span>, tick_label=labels, color=<span class="string">&#x27;g&#x27;</span>)</span><br><span class="line">rect2 = plt.barh(y, x2, <span class="number">0.5</span>, tick_label=labels, color=<span class="string">&#x27;w&#x27;</span>)</span><br><span class="line">plt.plot(x3, y, <span class="string">&#x27;black&#x27;</span>, alpha=<span class="number">0.6</span>)</span><br><span class="line">plt.plot(x2, y, <span class="string">&#x27;black&#x27;</span>, alpha=<span class="number">0.6</span>)</span><br><span class="line"></span><br><span class="line">notes = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(x1)):</span><br><span class="line">    notes.append(<span class="string">&#x27;%.2f%%&#x27;</span> % ((x1[i]) / x1[<span class="number">0</span>] * <span class="number">100</span>))</span><br><span class="line"><span class="comment"># print(notes)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> rect_one, rect_two, note <span class="keyword">in</span> <span class="built_in">zip</span>(rect1, rect2, notes):</span><br><span class="line">    text_x = rect_two.get_width() + (rect_one.get_width() - rect_two.get_width())/<span class="number">2</span></span><br><span class="line">    text_y = rect_one.get_y() + <span class="number">0.25</span></span><br><span class="line">    ax.text(text_x, text_y, note, ha=<span class="string">&#x27;center&#x27;</span>, va=<span class="string">&#x27;top&#x27;</span>)</span><br><span class="line"></span><br><span class="line">ax.set_xticks([])</span><br><span class="line"><span class="keyword">for</span> direction <span class="keyword">in</span> [<span class="string">&#x27;top&#x27;</span>, <span class="string">&#x27;left&#x27;</span>, <span class="string">&#x27;right&#x27;</span>, <span class="string">&#x27;bottom&#x27;</span>]:</span><br><span class="line">    ax.spines[direction].set_color(<span class="string">&#x27;none&#x27;</span>)</span><br><span class="line">ax.yaxis.set_ticks_position(<span class="string">&#x27;none&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p><img data-src="https://raw.githubusercontent.com/cisgu/typora-picture/master/img/202601280915692.png" alt="image-20260128091534596"></p>
+<h3 id="2024-06-06绘制桑基图"><a href="#2024-06-06绘制桑基图" class="headerlink" title="2024.06.06绘制桑基图"></a>2024.06.06绘制桑基图</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> matplotlib.sankey <span class="keyword">import</span> Sankey</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用窗体显示</span></span><br><span class="line"><span class="comment"># import matplotlib</span></span><br><span class="line"><span class="comment"># matplotlib.use(&#x27;TkAgg&#x27;)</span></span><br><span class="line"></span><br><span class="line">plt.rcParams[<span class="string">&#x27;font.sans-serif&#x27;</span>] = <span class="string">&#x27;SimHei&#x27;</span></span><br><span class="line">plt.rcParams[<span class="string">&#x27;axes.unicode_minus&#x27;</span>] = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 消费收入与支出数据</span></span><br><span class="line">flows = [<span class="number">0.7</span>, <span class="number">0.3</span>, -<span class="number">0.3</span>, -<span class="number">0.1</span>, -<span class="number">0.3</span>, -<span class="number">0.1</span>, -<span class="number">0.1</span>, -<span class="number">0.1</span>]</span><br><span class="line"><span class="comment"># 流的标签列表</span></span><br><span class="line">labels = [<span class="string">&quot;工资&quot;</span>, <span class="string">&quot;副业&quot;</span>, <span class="string">&quot;生活&quot;</span>, <span class="string">&quot;购物&quot;</span>, <span class="string">&quot;深造&quot;</span>, <span class="string">&quot;运动&quot;</span>, <span class="string">&quot;其它&quot;</span>, <span class="string">&quot;买书&quot;</span>]</span><br><span class="line"><span class="comment"># 流的方向</span></span><br><span class="line">orientations = [<span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, -<span class="number">1</span>, <span class="number">1</span>, -<span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">sankey = Sankey()</span><br><span class="line">sankey.add(</span><br><span class="line">    flows=flows,</span><br><span class="line">    labels=labels,</span><br><span class="line">    orientations=orientations,</span><br><span class="line">    color=<span class="string">&#x27;black&#x27;</span>,</span><br><span class="line">    fc=<span class="string">&#x27;lightgreen&#x27;</span>,</span><br><span class="line">    patchlabel=<span class="string">&#x27;生活消费&#x27;</span>,</span><br><span class="line">    alpha=<span class="number">0.7</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">diagrams = sankey.finish()</span><br><span class="line">diagrams[<span class="number">0</span>].text.set_fontsize(<span class="number">20</span>)</span><br><span class="line">diagrams[<span class="number">0</span>].text.set_fontweight(<span class="string">&quot;bold&quot;</span>)</span><br><span class="line">diagrams[<span class="number">0</span>].texts[<span class="number">4</span>].set_color(<span class="string">&quot;r&quot;</span>)</span><br><span class="line">plt.show()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<p><img data-src="https://raw.githubusercontent.com/cisgu/typora-picture/master/img/202601280915840.png" alt="image-20260128091545752"></p>
+<h3 id="2024-06-06绘制华夫饼图"><a href="#2024-06-06绘制华夫饼图" class="headerlink" title="2024.06.06绘制华夫饼图"></a>2024.06.06绘制华夫饼图</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pywaffle</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> pywaffle <span class="keyword">import</span> Waffle</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用窗体显示</span></span><br><span class="line"><span class="comment"># import matplotlib</span></span><br><span class="line"><span class="comment"># matplotlib.use(&#x27;TkAgg&#x27;)</span></span><br><span class="line"></span><br><span class="line">plt.rcParams[<span class="string">&#x27;font.sans-serif&#x27;</span>] = <span class="string">&#x27;SimHei&#x27;</span></span><br><span class="line">plt.rcParams[<span class="string">&#x27;axes.unicode_minus&#x27;</span>] = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">plt.figure(figsize=(<span class="number">4</span>, <span class="number">4</span>),</span><br><span class="line">           dpi=<span class="number">80</span>,</span><br><span class="line">           FigureClass=Waffle,</span><br><span class="line">           rows=<span class="number">10</span>,</span><br><span class="line">           columns=<span class="number">10</span>,</span><br><span class="line">           values=[<span class="number">10</span>, <span class="number">85</span>, <span class="number">5</span>],</span><br><span class="line">           colors=[<span class="string">&#x27;#FF0000&#x27;</span>, <span class="string">&#x27;#ff0000&#x27;</span>, <span class="string">&#x27;#20B2AA&#x27;</span>],</span><br><span class="line">           vertical=<span class="literal">True</span>,</span><br><span class="line">           title=&#123;<span class="string">&#x27;label&#x27;</span>: <span class="string">&#x27;&lt;&lt;少年的你&gt;&gt;上座率&#x27;</span>&#125;,</span><br><span class="line">           legend=&#123;<span class="string">&#x27;loc&#x27;</span>: <span class="string">&quot;upper right&quot;</span>, <span class="string">&#x27;labels&#x27;</span>: [<span class="string">&#x27;情侣座&#x27;</span>, <span class="string">&#x27;占座&#x27;</span>, <span class="string">&#x27;空座&#x27;</span>]&#125;)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>生活</category>
+        <category>笔记</category>
       </categories>
       <tags>
-        <tag>生活</tag>
-        <tag>徒步</tag>
-        <tag>自驾</tag>
-        <tag>骑行</tag>
+        <tag>python</tag>
+        <tag>matplotlib</tag>
+        <tag>numpy</tag>
       </tags>
   </entry>
   <entry>
@@ -1008,7 +1651,125 @@
       </tags>
   </entry>
   <entry>
-    <title>大数据技术笔记</title>
+    <title>端午节游玩：徒步、骑行、跑山</title>
+    <url>/2024-06-10-travel-in-june.html</url>
+    <content><![CDATA[<p>转瞬间距上一次更新博客快半年了，主要是这段时间在享<a href="https://www.thepaper.cn/newsDetail_forward_3291793">福报</a>，享完福报后周末就开车拉着同事去徒步游玩放松一下，因此实在是没有心情来写博客（其实是自己懒，找个借口自欺一下自己 😔</p>
+<p><img data-src="https://p.k8s.li/2024-06-10-travel-in-june/image-20240607205814023.png"></p>
+<p>不过好在端午节前终于修完了所有的 ticket，QE 小伙伴也完成了第一轮测试，项目终于有了个阶段性的成果，没了这个烦恼心情自然好了很多。正好端午节完成了一次环千岛湖骑行，就想着和《<a href="https://blog.k8s.li/taihu.html">2021 五一假期环太湖骑行之旅</a>》一样，水一篇博客来记录一下游玩时的所思所想以及所见所闻吧。那么咱们就开始回顾下端午节游玩的经历吧 😇</p>
+<h2 id="计划篇"><a href="#计划篇" class="headerlink" title="计划篇"></a>计划篇</h2><h3 id="饭搭子"><a href="#饭搭子" class="headerlink" title="饭搭子"></a>饭搭子</h3><p>在《<a href="https://blog.k8s.li/honda-civic.html">考驾照和买二手车</a>》里曾提到过，自从去年买车之后就和同事入坑了户外徒步，每个月都会和同事一起自驾去江浙附近徒步游玩。因为一起出去玩儿的次数多了，和其中两位同事的关系也就密切了很多。其中一位是前端开发，另一位是 UI 设计师，为了后面叙述方便，就分别简称他俩为 <code>FE</code> 和 <code>UI</code> 好了。在公司每到饭点，我们仨个就一起去楼下吃麻辣烫或者油泼面，再或者晚上下班后一起骑车去耀华路附近的路边摊吃炒饭。时间长了，三个人的关系就变得非同一般了，这也是我毕业后工作五多年来结交的关系最好的两个朋友。之前在公司都是做一个小透明，就像学校里的<a href="https://zh.wikipedia.org/wiki/%E6%AD%B8%E5%AE%85%E9%83%A8">归宅部</a>，下班后就早早溜回家一个人玩泥巴，也不太参与同事之间的社交。这种局面从去年我买车之后才开始真正改变的，不得不说有了一辆车之后，生活的确改变了很多，变得越来越现充了。</p>
+<h3 id="熊野古道徒步"><a href="#熊野古道徒步" class="headerlink" title="熊野古道徒步"></a>熊野古道徒步</h3><p>早在过年之前，另一位同事（也是前端开发）和 <code>UI</code> 就计划清明节休假几天去日本田边市和歌山的<a href="https://www.tb-kumano.jp/tw/kumano-kodo/suggested-walks/">熊野古道</a>徒步。春节期间开车回老家顺路送 <code>UI</code>，<code>UI</code> 在车里开始学日语五十音。我们周末出去徒步游玩的时候 <code>UI</code> 也在车里跟着多邻国学日语，有时候他突然蹦出来一句日语，整得我们一阵欢声笑语。</p>
+<p>不过好景不长，正当 <code>UI</code> 每日充满期待干劲满满地学日语的时候，在 3 月底公司迎来了一波裁员，不幸 <code>UI</code> 在裁员的队列中。得知被裁的消息后，<code>UI</code> 直接愣住了，给我说的第一句话居然是：我被裁了，熊野古道徒步去不了了。我赶紧安抚他说：裁员是小事，熊野古道徒步还是要去，因为机会难得，现在放弃了会让你后悔一辈子。<code>UI</code> 听从了我的建议端午节和另一位同事去了熊野古道。</p>
+<p><code>UI</code> 从熊野古道徒步回来后，晚上一起吃饭的时候就和们分享了在日本游玩的经历，听的着实有些羡慕，那时就萌生了也要去熊野古道徒步的念头。接着到了四月底，同事在我们徒步小队微信群里说端午节期间上海到名古屋的往返机票只要 1500 出头，赶紧冲冲冲鸭。当时感觉我的熊野古道徒步机会来了，于是就立马在淘宝上找了个旅行社准备办一个三年多次的赴日签证。因为当时再过几天就到五一假期了，就行动起来准备签证材料。还好准备的都比较顺利，在五一放假前旅行社就牵收到了我邮寄的材料。五一过后大概等了七个工作日，签证就顺利办下来了。</p>
+<p><img data-src="https://p.k8s.li/2024-06-10-travel-in-june/image-20240612071324128.png"></p>
+<p>签证下来后，正准备定酒店和机票，就在那时自己负责的项目出现了风险要延期发布了。当时有点纠结端午节究竟要不要休假去熊野古道徒步。那天正好到了和 leader 每个月 1:1 的时间点，就想着等和 leader 1:1 后再做决定吧。和 leader 1:1 后感觉要凉了，因为端午节前 QE 会完成第一轮的测试，端午节后要进行第二轮的回归测试，由于要搭配两个产品的版本发布，第二轮的回归测试要在这两个版本上分别测一遍。赶在 6 月底项目发布，QE 测试的压力会很大，因此需要投入研发的人力到回归测试中。当时就没有再考虑，果断放弃了熊野古道徒步的计划，等到以后项目发布之后再去吧。端午节就像往常一样，和饭搭子一块去江浙附近徒步游玩吧。</p>
+<h3 id="环千岛湖骑行"><a href="#环千岛湖骑行" class="headerlink" title="环千岛湖骑行"></a>环千岛湖骑行</h3><p>五一假期的时候和饭搭子一块去台州仙居的公盂村以及神仙居景区徒步游玩了几天，可能是路途遥远加上徒步也比较累，端午节 <code>FE</code> 想去享福躺平型的路线，不想再像五一那样那么累了。而 <code>UI</code> 也没有主见，觉着去哪里都可以。期间想过去绍兴东白山露营观星，不过由于天气原因被否了；也想过去嵊泗海岛游玩，但担心由于天气原因被困在岛上买不到回来的票就放弃了；也想过去台州温岭的水桶岙徒步赶海，因为是徒步路线也被 <code>FE</code> 否掉了。就这样大家纠结了很久也没有想好要去哪儿，既然这样那这次就单独行动，自己一个人出去玩儿吧。</p>
+<p>在石头星球和游侠客小程序上都看到了千岛湖两天一夜的骑行玩法，就想着要不端午节来一次环千岛湖骑行，嗯，可以可以，冲冲冲。于是看了下江浙附近的天气预报，说是周六有小雨、周日阴天、周一多云。又看了下环千岛湖骑行的轨迹，不到 140 公里，骑两天感觉太轻松，不如挑战一下自己，一天完成环千岛湖骑行？那就定下了周日完成环千岛湖骑行。</p>
+<p>又接着看了去千岛湖的导航路线，会路过富阳和绍兴，那周六就选择一个在富阳的徒步路线，于是就找到了<a href="https://www.2bulu.com/community/gotohuatinfo.htm?id=ZRcf7qbTjLO8jmiMc8ZMEg==&type=">杏梅尖</a>。然后又看了下回来时的路线，可以绕一点远路去王位山跑山，然后再从莫干山景区附近上 S12 申嘉湖高速回上海。去年 12 月底的时候和饭搭子去过一次王位山徒步，感觉那里的山路真的不错，有杭州秋名山之称，十分适合跑山（练习排水沟过弯）。</p>
+<p>于是端午节大体的游玩计划初步成型：</p>
+<ul>
+<li>Day1：富阳杏梅尖徒步，13 公里爬升 1000 米；</li>
+<li>Day2：环千岛湖 138 公里骑行；</li>
+<li>Day3：余杭王位山跑山，练习排水沟过弯 🤣；</li>
+</ul>
+<p>和往常出去游玩时一样，在 Notion 上制定了一个游玩时的计划表：</p>
+<p><img data-src="https://p.k8s.li/2024-06-10-travel-in-june/image-20240610203217734.png" alt="image-20240610203217734"></p>
+<h2 id="准备篇"><a href="#准备篇" class="headerlink" title="准备篇"></a>准备篇</h2><h3 id="公路车"><a href="#公路车" class="headerlink" title="公路车"></a>公路车</h3><p>在《<a href="https://blog.k8s.li/taihu.html">2021 五一假期环太湖骑行之旅</a>》的时候骑行用的车子是 2012 款 GIANT 捷安特 ATX770-D，这辆车子从杭州搬家来上海的时候也一并带来了，一直用它骑行上下班。在去年四月份的时候想换一辆公路车了，因为 ATX770-D 车身太重骑行起来比较累，于是就在闲鱼上花了 1500 买了辆二手的捷安特 ROAM 2 跨界公路车。这辆车一个特点就是车架是山地车，轮圈可以装山地车宽胎，也可以装公路车窄胎，算是公路车和山地车的缝合怪 😂。自从把买来后它一直是我主力代步工具，每天都会骑着它上下班，这次的环千岛湖骑行就准备带着它去。</p>
+<p>这辆 ROAM2 公路车本身没有太多问题，前段时间后轮辐条断了一根。去公司附近的捷安特专卖店问了下可以修但配件等的时间比较久，但我感觉是只换一根辐条修车的利润比较少，店员不想给修。于是就自己买来辐条进行更换，顺带更换了下前后轮的外胎和内胎。</p>
+<h3 id="小区停车"><a href="#小区停车" class="headerlink" title="小区停车"></a>小区停车</h3><p>由于小区停车很难，对于咱这种实力（习）期的新手而言简直就是噩梦。有好几次停进来的时候很顺利，开出去的时候由于旁边的车停得不讲武德导致我出库的时候被卡住，每次都要保安指挥或者打电话让车主来挪车才能出来：</p>
+<ul>
+<li>我们小区的车道是一个 U 形的单行路，路的左侧可以侧位停车，然后路的右侧有一些画库位线的车位，当侧位停的车太靠外的时候就会导致右侧的车右转出来的时候没有足够转弯半径，由于这被卡住过一次。然后保安指挥了我很久仍没能将车开出来，最后保安只能骂骂咧咧地联系车主让他来挪车，我觉着应该不是我菜 😅；</li>
+<li>我们楼下也有一排车位，当车位满了的时候有些车主就直接停在路上，由此被堵住过三次，这种情况只联系车主来挪车，有的车主电话打不通，保安就会帮忙到车主家里叫他来挪车；</li>
+<li>有车车停得很随意，不是右前轮压住库位线就是车头太靠前，旁边的车位想要左转出来的时候车轮就会碰到马路牙子，再加路不到两米宽，倒库和出库的时候都很极限地贴着旁车或者轮胎碰着路沿石。因为这被卡住一次，那时候保安让车主下来挪车往后倒一点就能将车开出来了；</li>
+</ul>
+<p>为了周六早上出发的时候车子不像往常一样被堵在车位里，周五早上就将车挪到了外面方便出库的位置。后来事实证明这样做是对的，周六早上出发的时候果然有辆车和往常一样停在路上，挡住了车位线里面的车。还好有先见之明，不然早上五点半多让车主来挪车，车主也是挺奔溃的。</p>
+<h3 id="Ticket-修完啦"><a href="#Ticket-修完啦" class="headerlink" title="Ticket 修完啦"></a>Ticket 修完啦</h3><p>周五下午 TL 告诉我项目就剩最后一个待验证的 ticket 了，我瞅了一下 Jira 面板，哦豁，还真是耶。赶紧 DM 鼓励了一下 QE 小伙伴，加油加油，冲冲冲！等收到 ticket close 的邮件后，第一时间感谢了下 QE 小伙伴。这是我入职以来作为主力后端开发的第二个项目，也是我觉着最难的项目。第一轮测试结束算是一个阶段性的胜利，心情好了很多，之前一直在崩溃的边缘挣扎，今天终于要结束了。没了烦恼端午节就能有个好心情愉快地玩耍啦，在这里再次感谢我那位 QE 小伙伴。</p>
+<p><img data-src="https://p.k8s.li/2024-06-10-travel-in-june/image-20240608200713378.png" alt="image-20240608200713378"></p>
+<h3 id="收拾车子"><a href="#收拾车子" class="headerlink" title="收拾车子"></a>收拾车子</h3><p>忙完项目上的事情后看了下时间大概五点多了，就赶紧骑车溜回家，因为要把在骑的这辆公路车塞到我那辆思域车里，还不确定车里能不能放得下，为了以防万一就早点回家吧，要是真的放不下也有时间想办法来处理，不至于忙到天黑。</p>
+<p>到家后，就将公路车的车轮和车座拆下，并用塑封膜包裹住链条和牙盘的部分，以免油泥擦碰到车上。刚开始试着将车子放进后备箱，调整了好几次都不太行。如果是辆两厢或者旅行车就好了，有点后悔当初买了三厢的思域。主要是三厢车后排放倒后空间还是很紧凑，容纳不下山地车横放的空间。于是试着把车子放在后排，没想到能完美地塞进去，就是挤占了后排的空间，不过这次就我一个人出来玩，后排不用坐人所以也没事儿。最后再用安全带固定主车架，以免禁止制动的时候车子由于惯性飞到前排来，这样吃席风险大大减少。</p>
+<p><img data-src="https://p.k8s.li/2024-06-10-travel-in-june/IMG_6177.JPG" alt="IMG_6177"></p>
+<p>把车子装好之后就放心了，本以为放不下的，没想到后排的空间斜放一辆公路车还是绰绰有余滴，等到以后去莫干山或崇明岛骑行游玩的时候就可以采用相同的办法了，非常不戳。</p>
+<h2 id="Day1-杏梅尖徒步"><a href="#Day1-杏梅尖徒步" class="headerlink" title="Day1 杏梅尖徒步"></a>Day1 杏梅尖徒步</h2><h3 id="出发"><a href="#出发" class="headerlink" title="出发"></a>出发</h3><p>每次要出去玩儿的时候，头天晚上就兴奋地睡不着，有点像上学的时候放寒暑假的那天晚上一直睡不着，和宿舍下铺聊天到大半夜一样。晚上睡得不是很好，凌晨四点多就不知不觉醒来了，醒来后干瞪眼睡不着。距离出发还有两个小时，干瞪眼也是浪费时间，索性就起床打开笔记本开始整理博客，思考下这篇游记的内容。一直等到 5 点半左右，就起身洗脸刷牙收拾东西，开始出发了。</p>
+<p>收拾好东西后，就下楼准备把车从车位开出来。下楼后发现果然有个大聪明把车停在出库的路上，幸好昨天早上我把车挪走了，不然今天又要打电话让他来挪车了。因此出门前做好规划，把一些潜在的问题提前规避掉，能省不少事儿。上午先导航到绍兴，去我姐那里拿帐篷以及一些其他的露营装备。这次的导航路线还是和往常一样：S32 申嘉湖高速 -&gt; G60 沪昆高速 -&gt; G1522 常台高速。在浦东出沪去往宁波或绍兴方向，如果是住在 S32 申嘉湖高速以北的地方，还是挺建议这里路线的。会比走 S20 外环高速 -&gt; G60 沪昆高速路况要好很多。因为 S20 外环高速和  G60 沪昆高速途径上海的主要城区，高速的出入口会很多，车流量也很大，节假肯定会堵车。而 S32 申嘉湖高速途径的地方基本上都是一些郊区，车流量会少一些，很少会遇到堵车的情况。不过等到今年 7 月份 <a href="https://www.dongchedi.com/article/7301984401263641138">S32 申嘉湖高速上海段免费</a>之后可能会有所不同了，毕竟还是会有很多人绕一点远路来白嫖这几十公里的高速费的 😂。</p>
+<p><img data-src="https://p.k8s.li/2024-06-10-travel-in-june/IMG_6139.PNG" alt="IMG_6139"></p>
+<p>因为选择了路线比较通畅且出发的比较早，路上基本上没有遇到堵车的情况，一路很顺畅地来到了绍兴，从我姐那拿到帐篷后就继续出发前往富阳杏梅尖了。之所以来拿帐篷因为想着在千岛湖骑行的时候看看能不能在千岛湖找到一个合适的露营地点，晚上就不住酒店来露营。后来事实证明我太天真了，露营什么的根本就不存在。</p>
+<h3 id="杏梅尖徒步"><a href="#杏梅尖徒步" class="headerlink" title="杏梅尖徒步"></a>杏梅尖徒步</h3><p>9 点半左右到达富阳瑶坞村，村子里的露天停车场收费 10 块。车子停好后，收拾好行李就开始跟着两步路上的轨迹徒步。富阳杏梅尖这条经典的徒步路线像空心户外、游侠客、浦东户外、华东户外每个月都会成团来的。这里不是一个正规开发的景区，不过好在当地建设和维护的都还不错，中途还有一个补给点可以休息。虽然这条路线 13 公里爬升 1000 米看着有点难度，但爬升的坡度还是相对轻松一些，不像之前去盐帮古道回来时 1.5 公里爬升 400 米那样十分陡峭难走。只要放慢节奏，正常人还是能走完全程的。</p>
+<ul>
+<li>午餐，一个大大的甜瓜就填饱肚子了 😋</li>
+</ul>
+<p><img data-src="https://p.k8s.li/2024-06-10-travel-in-june/IMG_6151.JPG" alt="IMG_6151"></p>
+<ul>
+<li>登顶杏梅尖，景色真不戳 😆</li>
+</ul>
+<p><img data-src="https://p.k8s.li/2024-06-10-travel-in-june/IMG_6167.JPG" alt="IMG_6167 2"></p>
+<ul>
+<li>途中的蚊虫很多，坐下休息的时候一只小蜜蜂落在我胳膊上</li>
+</ul>
+<p><img data-src="https://p.k8s.li/2024-06-10-travel-in-june/IMG_6161.JPG" alt="IMG_6161"></p>
+<p>下山的时候看到一个很有意思的路标牌，上面写着 「<strong>很明显这里有条近路</strong>」，于是赶紧拍照发在我们的徒步小队微信群里。去年带饭搭子去覆卮山徒步，下山回来的时候因为我选择了抄近路把大家带到了一片深山老林里，在丛林里走了大半天差点就要叫救援，好在有惊无险最终安全下山了。从那以后我只要一提抄近路，就会引来他们的一阵嘲讽，调侃我这是大聪明行为 🤣。这次可是货真价实的近路，而 FE 回复：只有聪明的人才能看到的近路！哈哈，可能是因为那次抄近路翻车，我在他们心中的形象就变成了一个大聪明 😓。</p>
+<p><img data-src="https://p.k8s.li/2024-06-10-travel-in-june/IMG_6173.JPG" alt="IMG_6173"></p>
+<p>顺着这条近路下山，小路周边被树木和芦苇覆盖的严严实实，有时候需要弯腰从这些茂密的树丛钻过去，有那么一点点丛林探险的感觉 😂。半路遇到一处小池子，在里面玩了会水，洗了洗就继续下山了。</p>
+<p><img data-src="https://p.k8s.li/2024-06-10-travel-in-june/IMG_6171.JPG" alt="IMG_6171"></p>
+<p>到达停车场后才下午三点多，比预期回来早一个小时。当时太阳正烈，打开车门发现车内 50 多度。有点后悔没有带隔热的车衣，虽然挡风玻璃上撑开了遮阳伞，但隔热效果并不佳。50 多度简直像蒸拿房一样热，坐在这里一小会已经汗流浃背了，比中午在上山的时候还要热。于是导航看了下去千岛湖的路线，看看能不能在上高速前找个加油站休息会，顺便在阴凉的地方开空调让车内温度降下来。看地图导航发现去千岛湖的长深高速要堵车 30 分钟，原本一个半小时的车程现在要两个小时了。顺着路线找到了另一个高速入口刚好能绕过堵车的路段，附近还有一个加油站，十分合适，于是就开车前往加油站。</p>
+<p><img data-src="https://p.k8s.li/2024-06-10-travel-in-june/IMG_6175.JPG" alt="IMG_6175"></p>
+<h3 id="停车费"><a href="#停车费" class="headerlink" title="停车费"></a>停车费</h3><p>出来村子的时候看到了有个宝马车主和村民小哥发生了冲突。因为杏梅尖这里并不是一个正规开发的景区，不是本村的车进村都要交 10 块钱的停车费。开宝马的老哥很任性，就是不想交这 10 块钱的停车费，想要从逆向车道硬闯过来，我刚好路过差一点点撞上，拿二维码收费的村民小哥也被气得骂骂咧咧地问候他全家。小哥帮我看了下车没有被剐蹭到，我就尴尬地调侃了下：你看吧，人与人之间的差距比宝马与思域的差距还要大。</p>
+<p>虽然村民收停车费不是很正规也没有发票啥的，但这种情况我们徒步的时候也遇到的可多了，不过我们每次都会很爽快地交个停车费。10 块钱的停车费可以避免很多不必要的麻烦，总不能为了省个 10 块钱绕大半天找个车位。如果停的地方不合适的话说不定还会被贴违章罚款 200 块，再或者停路边被剐蹭了也不好弄，所以为了省事和节省时间成本我们都不会太计较这些。之前去绍兴的呼狗崖徒步的时候就停在农家里，收费 10 块；去台州仙居的时候村里的露天停车场收费 10 块；去宁波风车公路的时候在童夏家村，那里建设的比较好，村口会有停车收费的闸机，然后附近还有卫生间，周边的基础设施做的很好。尽管我们徒步游玩去的都是一些免费白嫖的路线，但和当地的村民相处还是很融洽的，从来没有发生过冲突。</p>
+<p>所以嘛，出门在外，花点小钱可以摆平的事情还是不要发生不必要的冲突，和人吵一架一天的好心情就没了。在中国，尤其是农村，说点好话讲点人情世故，互相理解一下，相处起来就会很融洽。就像虽然我没有抽烟的习惯，但我车里仍然会放一包烟，真的遇到点麻烦事儿，给大哥大叔大爷啥的递根烟，说点好话人家还是很愿意帮忙的。之前我在小区停车被堵住的时候，我都会给保安大叔递根烟，说声谢谢麻烦啦等客套话，他都会很乐意帮忙指挥我把车开出来。因为帮的次数多了，慢慢就混熟了，在小区偶尔遇到了也会相互打招呼说两句。</p>
+<h3 id="淳安县城"><a href="#淳安县城" class="headerlink" title="淳安县城"></a>淳安县城</h3><p>导航到加油站加完油，休息了一段时间继续前往淳安县城。下高速进入到淳安县城后，道路就变得十分离谱。双向两车道开着开着右侧的非机动车道就变成了机动车道，然后一过红绿灯又强行变成了两车道，我满脸？？？。然后旁边非机动车道的车就被强行挤了过来，每过路口的时候都要留意一下，还有次险些撞上。还有一些机动车直接开在非机动车道，遇到前面有电驴的时候又加塞过来，开车体验极差。</p>
+<p>更离谱的是酒店门口大概有十个画车位线的车位，这些画车位线的车位都不是酒店的，而是政府规划的。停车按小时收费，每小时 5 块，停一天要 60。然后酒店住客的车就停在车位线外面的一些狭窄空位上。经过酒店保安大叔的指挥总算在一个犄角旮旯里停好了车。停好车后就把山地车拿出来装上轮子，轮子装上后发现刹车盘会蹭碟刹片，一顿操作猛如虎，调试了大半天还是会蹭那么一点点，先就这样凑活着吧，又不是不能骑。</p>
+<p>晚上没有吃饭，简单吃了点水果和粽子就算填饱肚子了。拿出笔记本整理了下今天的日记，就睡了，希望明天的环千岛湖骑行能顺利一些。</p>
+<h2 id="Day2-环千岛湖骑行"><a href="#Day2-环千岛湖骑行" class="headerlink" title="Day2 环千岛湖骑行"></a>Day2 环千岛湖骑行</h2><h3 id="出发-1"><a href="#出发-1" class="headerlink" title="出发"></a>出发</h3><p>之前看天气预报说是千岛湖周六有雨周日多云的，没想到周日早上开始下雨了。用彩云天气看了下，上午会一直下雨，中午会停一会。八点半之后雨会小一些，于是就想着等雨小一点再去骑行吧。如果因为下雨就放弃了感觉还是挺遗憾的。就这样一直等到 9 点左右，雨终于小了一些。已经九点了，再不出发晚上回来就要走夜路是十分危险的。当时内心还是有一点退缩想要放弃的想法，不过又想起了一位推友的话：</p>
+<p><img data-src="https://p.k8s.li/2024-06-10-travel-in-june/image-20240612215737254.png" alt="image-20240612215737254"></p>
+<p>如果放弃了，我可能会后悔一辈子，所以即便还在零星下着小雨，还是毅然决然出发了，冲冲冲！</p>
+<h3 id="骑行"><a href="#骑行" class="headerlink" title="骑行"></a>骑行</h3><p>刚开始骑行的时候就遇到了不顺，由于昨晚没有调整好轮组，刹车碟片会一直蹭外层的刹车片，相当于踩着 10% 的刹车在骑，导致骑起来特别费劲。于是不得不停下来调整轮组的角度，让它刚好卡在一个不碰刹车片的位置。当时雨还突然下大了，穿着雨衣热得满头大汗，再加上忘记带毛巾了，十分地狼狈。不过好在经过一顿操作终于调整好了。调整好车子后就继续骑行，刚开始的一段距离特别难走，因为下雨怕身体被雨淋失温就不得不披着雨衣，雨衣又不透气，出汗之后汗水顺着胳膊流到袖口，手一甩就一大把汗水。，就像一只落汤鸡，好狼狈。</p>
+<ul>
+<li>在桥上遇到了几个驴友，看来雨中骑行的铁憨憨不止我一个 🤡，心态瞬间好了很多。</li>
+</ul>
+<p><img data-src="https://p.k8s.li/2024-06-10-travel-in-june/IMG_6189.JPG" alt="IMG_6189"></p>
+<p>从九点一直骑行到 11 点半，中途休息了十几分钟。出发时只带了一瓶水，刚开始骑行的了大概 20 多公里仍然没有找到一家超市可以买水和。路上刚好碰见一个卖杨梅的老奶奶，就从她那里买了一小筐杨梅。顺便问了下老奶奶附近有没有吃饭的地方，她说还比较远，骑车可能要 20 分钟。老奶奶看着我可怜兮兮的样子，就从饭盒里拿出一个自家做的包子要送给我，让我填一下肚子。当时感觉好尴尬 😅，我就厚着脸皮有点不好意思地接受了。豆腐馅的包子是我喜欢吃的，真好。吃着吃着鼻子一酸，莫名其妙想起了已故的奶奶，小时候经常和弟弟偷偷摸摸向奶奶要零花钱，回想起那一幕着真的好怀念。想起《寻梦环游记》中的一段台词：<strong>死亡不是生命的终点，遗忘才是</strong>。</p>
+<p>吃完包子和杨梅后就继续向前出发，争取十二点前找到一家农家乐吃午饭补充下体力。终于上午骑行了 50 公里后到了一家农家乐，在里面点了一份蛋炒饭和一瓶柚子汁。</p>
+<p><img data-src="https://p.k8s.li/2024-06-10-travel-in-june/IMG_6192.JPG" alt="IMG_6192"></p>
+<p>吃饭的时候听农家乐老板讲了一段故事：他之前是上海的武警，退役之后在杭州找了份工作，这里的农家乐是租的当地村民的房子开的。他们周末会开车来这里，因为他们夫妻俩不想一直生活在大城市里，周末和节假日就来千岛湖这里体验农村的生活，这里是他们的第二个家。听的着实有些羡慕，整得我都有点想把父母接来南方农村生活了。</p>
+<p>吃完饭后在院子里休息了一会就继续出发，现在才骑行了 50 公里，还不到一半。于是就给自己定下了等骑行到 70 公里的时候再休息一会。中途遇到了一片雏菊花田，就在附近拍照休息了一小会。这里一瓜人都没有，独享这番美景，真不错 😌。</p>
+<p><img data-src="https://p.k8s.li/2024-06-10-travel-in-june/IMG_6194.JPG" alt="IMG_6194"></p>
+<p>偶见老大哥语录 「<strong>绿水青山就是金山银山</strong>」。如果和饭搭子 <code>UI</code> 一起来，看到这个标语后肯定又开始键政了 😂。每次和 <code>FE</code> 以及 <code>UI</code> 我们仨出去徒步的时候，政治和历史是必聊的话题，一些无关的话题聊着聊着就会扯上政治。关于政治话题，虽然我们仨的观点都各不相同，有时候也会争论的面红耳赤，不过都能互相包容理解对方，不会像小粉红那样友谊小船说翻就翻。我觉着这也是我们几个能经常聚在一起玩的原因吧，朋友之间的友谊会像生物学进化论那样经过一层层筛选和进化，那些与你相处不来的人可能玩个一两次因为观念不和就分开了。而最终能长久陪你玩下去的那些人，都是会容忍并包容你身上的缺点以及那些不和的观念。</p>
+<p>说到政治，之前写《<a href="https://blog.k8s.li/One-Year-After-the-Lockdown-in-Shanghai.html">写在上海封城一年之后</a>》时感触最深的是：「或许我们已经早已经听惯了<strong>你不关心政治政治会来关心你</strong>这句废话，但当经历了这场灾难（防疫闹剧）之后，我们或多或少地能感触到<strong>一个国家的政治气候的变化是如何深刻地影响和限制人类生存的状态和生存的可能</strong>。在某些性命攸关的时刻，政治它直接或间接地决定了我们还能不能在这个世界生存下去。」</p>
+<p><img data-src="https://p.k8s.li/2024-06-10-travel-in-june/IMG_6197.JPG" alt="IMG_6197"></p>
+<p>有一段下坡了，为了节省体力想多白嫖一些重力势能（大雾，就骑行得特别快，速度已经达到了 56KM&#x2F;h，当时如果稍不留神就有可能当场吃席，还好作为一个骑车驾龄 20 多年的老司机比较稳没有翻车 🤣。</p>
+<p><img data-src="https://p.k8s.li/2024-06-10-travel-in-june/IMG_6201.JPG" alt="IMG_6201"></p>
+<p>休息完后就继续出发，现在差不多已经骑行了一半的路程了，还有 70 公里到终点。继续加油加油，冲冲冲！</p>
+<p><img data-src="https://p.k8s.li/2024-06-10-travel-in-june/IMG_6203.JPG" alt="IMG_6203"></p>
+<p>到了下午五点左右，还剩 30 公里的路程，如果顺利的话 6 点半前就可以到达终点。而这时天气又开始下雨了，虽然不是很大但看天气预报 6 点之后雨量会增大。休息了一会就继续赶路，刚骑没多久在十字路口遇到两个老哥，他俩的充电宝因为上午下雨淋坏了，然后一个人手机没电了，另一个手机还剩百分之十的电。因为如果骑行回淳安县城酒店必须要看轨迹导航的，这点电量肯定是不够的。看了下我带的充电宝，还有 30% 的电量，应该够他们用的了，也没顾虑啥就借给了他俩，希望他们能安全到达淳安县城吧。</p>
+<h3 id="摔车"><a href="#摔车" class="headerlink" title="摔车"></a>摔车</h3><p>就在最后五公里的时候，雨就突然下大了起来，不得不穿上雨衣，顶着大雨继续骑行。在最后两公里，路过千岛湖大桥的时候不幸发生了点意外。当时我记得清清楚楚我骑在了红色的非机动车道上，但到了千岛湖大桥后就没了非机动车道。我就选择骑在了桥的高台上，那是一条瓷砖路，下雨之后路就特别地滑，当时一直纠结要不要把车放到机动车道去骑，这样会更安全一点？正想着要不要停下来到机动车道上骑，前轮就突然侧滑了，连车带人直接从高台上摔了下来。摔到后的第一反应就是连滚带爬赶紧躲到高台上，以免被机动车碾压到。或许是求生本能的挣扎，那一刻肾上腺素急剧上升，反应十分迅速，没有半点拖泥带水。伴随着心脏砰砰地跳动，坐在高台上久久才缓过来，感觉就像从鬼门关走了一遭。旁边机动车道中的车辆见到我的车子摔倒在路边后也很热心地打开双闪停了下来，我挥了挥手说没事儿他就慢慢地开走了。</p>
+<p><img data-src="https://p.k8s.li/2024-06-10-travel-in-june/IMG_6209.JPG" alt="IMG_6209"></p>
+<h3 id="归来"><a href="#归来" class="headerlink" title="归来"></a>归来</h3><p>终于在 7 点前安全到达酒店，把车子锁在路边的栏杆上就感紧到房间洗了个热水澡，顺带叫了一份外卖。吃饭的时候之前遇到的那两个老哥也将充电宝送到酒店的前台，保安帮忙上楼送到了房间。真好，人与人之间的信任就是这样奇妙，你怎么对待别人比人就怎么对待你。吃完饭后太累了很快就睡着了，本想着今晚要在千岛湖附近找个地儿露营来着，看来是我多想了，骑行归来后这么累而且这么大的雨去露营脑袋真的被驴踢了。</p>
+<p><img data-src="https://p.k8s.li/2024-06-10-travel-in-june/IMG_6879.jpg" alt="IMG_6879"></p>
+<h2 id="Day3-王位山跑山"><a href="#Day3-王位山跑山" class="headerlink" title="Day3 王位山跑山"></a>Day3 王位山跑山</h2><h3 id="出发-2"><a href="#出发-2" class="headerlink" title="出发"></a>出发</h3><p>早上醒来后就收拾东西准备出发，6 点之后可能还要下雨。昨晚回来后车子锁在了路边还没有收拾，今早要赶在下雨前把我那辆公路车拆下来重新塞回思域车里。收拾好车子后，让保安帮忙指挥将车开到路边，就导航出发前往王位山。</p>
+<h3 id="跑山"><a href="#跑山" class="headerlink" title="跑山"></a>跑山</h3><p>这里给大家解释一下，这里提到的<strong>跑山</strong>并不是我跑着 🏃 在山里瞎逛，而是开车在山路狂飙，属实有点鬼 👻 火 🔥 少年行为 🌚。平时晚上睡觉前会刷一些交通事故相关的电子榨菜视频，目的是想根据这些交通事故学习一下防御性驾驶，比如路口不超齐头车。每当在视频里看到一些鬼火少年骑摩托在山路飙车压弯摔进排水沟里时，弹幕评论都会嘲笑他们为<strong>又菜又爱玩儿</strong>。也会看一些教你怎么开车跑山的视频，比如 <a href="https://www.bilibili.com/video/BV1Md4y1474T">90% 老司机不会！开 BRZ 跑山悟出的十条道理！慢进快出、左脚刹车</a>、<a href="https://www.bilibili.com/video/BV1KG41137Dc">手动档跑山的正确操作方式!别被假老司机各种错误操作忽悠了</a>、<a href="https://www.bilibili.com/video/BV1JU4y1g7pG">跑山需谨慎，思域上演排水渠过弯</a>。排水渠过弯其实也是一种嘲讽，就是出弯的时候车子推头导致失控前轮一头扎进路边排水沟里，这时你只能打电话叫救援把车拖出来了，妥妥滴<strong>又菜又爱玩儿</strong>。</p>
+<p>不过这次跑山的体验还可以，总共有六十多个弯，其中有十几个发卡弯，十分有挑战性。尤其是在过发卡弯的时候，因为入弯后的坡度很大，不得不用一档全油门轰上去，入弯前二降一减速并配合着降档补油，转速直接拉到六千转，那种燃油车发动机嗡嗡嗡的巨响真的能够激发出你去不断挑战人车合一操控极限的斗志。</p>
+<p><img data-src="https://p.k8s.li/2024-06-10-travel-in-june/IMG_6227.JPG" alt="IMG_6227"></p>
+<p>正因为现在还单身，所以有大把的时间来体验这种驾驶乐趣。寻找这种人车合一的操纵感，不断地试探出人和车的一个极限，是可以提升自己的驾驶技术的，这样也能在一些紧要关头作出正确的反应来自救。不过鬼火少年终究还是会成长的，等将来我有了老婆和孩子，我开手动挡绝对比开 CVT 自动挡还要稳。因为那时候身上已经有了责任，要安全驾驶保护好家人，不能再像现在这样瞎玩了。哈哈哈，开个玩笑，将来我也可能单身一辈子，只是徒步的时候遇到过一些家长带着孩子出来玩，有点羡慕这样的生活，所有偶尔也会想象一下将来这样的生活也未尝不可。</p>
+<h3 id="回家"><a href="#回家" class="headerlink" title="回家"></a>回家</h3><p>跑完山后在周边镇子上逛了一会就返航回家，在服务区简单吃了顿午饭在车里休息了一会，玩了两天多了确实有点累了。到家后收拾完车里的东西，将车开到空地上，自己动手洗了下车。端午假期就这样完美结束了 🎉</p>
+<h2 id="总结篇"><a href="#总结篇" class="headerlink" title="总结篇"></a>总结篇</h2><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
+<li>雨天骑行很危险，一定好多加小心带好保命头盔，自从回来后我每天上下班路上骑车都会带上头盔，虽然长这么大骑车没摔过；</li>
+<li>整体的计划完成度 90%，因为下雨的关系导致周日露营取消了。其实露营也不太现实，因为骑行回来后身心疲惫只想洗个热水澡躺床上睡大觉，去露营睡帐篷不妥妥找罪受吗；</li>
+<li>行程去的地方都是冷门小众免费的路线，不存在堵车，也没有人山人海排队现场，游玩体验极佳；</li>
+</ul>
+<h3 id="费用"><a href="#费用" class="headerlink" title="费用"></a>费用</h3><p>端午节三天大概花了 1200 左右，其中油费高速费就花了 732、住宿花了 262、吃的就花了 157。花了 1200 独自一人游玩三天，感觉这个体验还是挺值的。</p>
+<p><img data-src="https://p.k8s.li/2024-06-10-travel-in-june/image-20240612224210576.png" alt="image-20240612224210576"></p>
+<h2 id="尾声"><a href="#尾声" class="headerlink" title="尾声"></a>尾声</h2><p>洋洋洒洒写完这篇游记才发现不知不觉已经水了一万多字了 🥲，可能是我很久没有写博客太想表达自己的一些内心想法和感受了，终于找回了之前坚持写博客的那种感觉。后面有机会再写一写技术相关的博客吧，不然我要变成一个生活博主了？感谢大家看完我这么多废话，谢谢大家的陪伴。祝大家生活愉快，开开心心 😋。</p>
+]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>生活</tag>
+        <tag>徒步</tag>
+        <tag>自驾</tag>
+        <tag>骑行</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>大数据技术</title>
     <url>/2024-09-12-big-data-development.html</url>
     <content><![CDATA[<h3 id="思维导图"><a href="#思维导图" class="headerlink" title="思维导图"></a>思维导图</h3><h4 id="大数据技术栈思维导图"><a href="#大数据技术栈思维导图" class="headerlink" title="大数据技术栈思维导图"></a>大数据技术栈思维导图</h4><p><img data-src="https://raw.githubusercontent.com/cisgu/typora-picture/master/img/202601271727671.png" alt="大数据技术栈思维导图"></p>
 <h4 id="大数据处理简化流程"><a href="#大数据处理简化流程" class="headerlink" title="大数据处理简化流程"></a>大数据处理简化流程</h4><p><img data-src="https://raw.githubusercontent.com/cisgu/typora-picture/master/img/202601271727873.png" alt="大数据处理简化流程"></p>
